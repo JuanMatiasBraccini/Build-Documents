@@ -1,0 +1,136 @@
+---
+title: "Recortes"
+output: html_document
+date: "2023-11-13"
+---
+
+
+# Background
+This memo provides the formal advice on the stock status and risks to sustainability for all elasmobranch (sharks and rays) stocks identified in the catch of commercial and/or recreational fisheries operating in Western Australia (WA). This includes indicator species, Gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*), whiskery (*Furgaleus macki*) and sandbar (*C. plumbeus*) sharks, and non-indicator species. A risk-based Weight of Evidence (WoE) assessment of stocks status was undertaken for all species, using ISO 31000-based risk assessment methods (Appendix 1).
+
+The previous assessment (November 2017) determined a **Medium** risk for whiskery, sandbar and dusky sharks, and a **Low** risk for gummy shark. The previous assessment did not determine the risk level for non-indicator species. 
+
+
+
+# Current situation
+**REDO FROM HERE....**For Snapper, the current assessment (Level 5) is primarily based on estimates of relative female spawning biomass (Brel) and fishing mortality (F) from an integrated model fitted to commercial catch rate data, catch and age composition data up to and including the 2020/21 quota year.
+Based on all available lines of evidence (see Weight of Evidence Table below), the risk level for  Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
+On the basis of this evidence, Gascoyne Oceanic Snapper is classified as a **Recovering stock**. 
+For Goldband snapper, the current assessment (Level 3) is primarily based on estimates of ‘long term’ (equilibrium) fishing mortality (F) and relative female spawning biomass (Brel) from catch curve and per-recruit analyses, respectively, and incorporates catch and age composition data up to and including the 2019/20 quota year.  
+Based on all available lines of evidence (see Weight of Evidence Table below), the risk level for Goldband snapper in Gascoyne over the next five years is estimated to be **Low**.
+On the basis of this evidence, Goldband snapper in the Gascoyne is classified as a **Sustainable stock**.
+**.... TO HERE**
+
+# Executive summary
+Over a hundred elasmobranch species have been identified in the catch of commercial and/or recreational fisheries in WA. Gummy, dusky, whiskery and sandbar sharks are the most commonly captured species (~80% of the elasmobranch catch). These species have been targeted in the Temperate Demersal Gillnet and Demersal Longline Fisheries (TDGDLF), which operate in the West Coast and South Coast Bioregions and comprise the West Coast Demersal Gillnet and Demersal Longline (Interim) Managed Fishery (WCDGDLF), which operates between 26° and 33° S, and the Joint Authority Southern Demersal Gillnet and Demersal Longline Managed Fishery (JASDGDLF), which operates from 33° S to the WA/SA border. Sandbar shark and to a lower extent dusky shark were also targeted by the Northern Shark Fisheries, which operated between 114° 06' E and the WA/Northern Territory (NT) border and ceased operations in 2008-09. The current catch of sharks and rays in other WA commercial fisheries is negligible (< 10 t per annum) and recreational fishers retain very small numbers of sharks in WA. Indigenous catches of these species are considered to have always been negligible.
+
+Based on their inherent vulnerability and risk to the sustainability, whiskery, gummy, dusky and sandbar sharks have been selected as indicators for the status of the temperate elasmobranch (sharks and rays) ‘suite’ as they represent the range of life history strategies of other elasmobranch species caught by these fisheries. However, with the increasing number of elasmobranch species being listed in national (Environment Protection and Biodiversity Conservation Act 1999, EBPC Act) and international (Convention on International Trade in Endangered Species, CITES; Convention on the Conservation of Migratory Species, CMS) protection lists, species-specific scientific advice on stock status at the local level is needed to comply with national and international legislation.  
+
+Following a comprehensive reconstruction of total catch trajectories, a range of assessment methods was used to provide species-specific scientific advice on the stock status of all elasmobranch species identified in the reconstructed catches. First, a Productivity Susceptibility Analysis (PSA) was used to filter out species with historically low catch volumes from further analysis. Second, species ranked by the PSA as having high vulnerability were assessed using a combination of spatio-temporal changes in reported catch and effort, catch-only models, State-space surplus production models, and age- and sex-structured integrated models, depending on data availability (Figure 1). Biomass estimates from the production and integrated models were compared to reference levels relating to estimates of Maximum Sustainable Yield (MSY). The estimated biomass expected to achieve MSY (B~MSY~) is considered as the Threshold reference level (B~Thr~) for the stock, 0.5 B~MSY~ is set as the Limit reference level (B~Lim~) and 1.2 B~MSY~ was set as the Target reference level (B~Tar~). A flowchart explaining the steps undertaken in this assessment is shown in Figure 2.
+
+**REDO FROM HERE............** For whiskery and gummy sharks, an integrated size-based model was implemented in 2017 to extend previous assessment models. The integrated model incorporated life history, gear selectivity, size composition, growth, catch and standardised fishery-dependent catch rate data up to and including the 2015-16 financial year. In addition, life history and catch information were used in a combined demographic and stock-reduction model (SR) to assess stock sustainability. Standardised fishery-dependent catch rate of gummy sharks was concluded to be a poor index of population abundance. For dusky and sandbar sharks, the time series of catch and effort data were considered to be insufficient for estimating biomass trends from fitting population dynamics models. Hence, a SR modelling approach was implemented to determine catch sustainability using life history and catch information up to and including the 2015-16 financial year.
+
+The integrated model estimate for fishing mortality in 2021 was 0.024 year-1, with the 95% CLs ranging from 0.011 to 0.037 year-1. As the current value of this performance indicator is well below the estimated level of F corresponding to B~MSY~ (i.e., F~MSY~), the stock is unlikely to deplete to a level at which recruitment could be impaired if the current historically low level of catch is maintained. The integrated model estimate for female spawning biomass in 2021 was at 0.27 of the unfished level (95% CLs = 0.13-0.42). Although the current value of this performance indicator is below the threshold of 0.3, Gascoyne Oceanic Snapper is expected to recover to above this level over the next five years if the current low level of catch is maintained.
+
+Based on all available lines of evidence (see Table below), the risk level for Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
+On the basis of the evidence, Gascoyne Oceanic Snapper is classified as a  **Recovering stock**.**............. TO HERE**
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Available time series by species.tiff',sep='')
+
+```
+![Figure 1. Available time series for the species assessed as High vulnerability by the PSA. F, empirical fishing mortality estimates for the TDGDLF.](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.an,'/Stock assessment flow chart.tiff',sep='')
+
+```
+![Figure 2. Flowchart describing the steps undertaken in the current assessment.](`r path`){width=800px}
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Catch-MSY
+The F/F~MSY~ trajectories for indicator species are shown in Figure A.10.5 and for non-indicator species are shown in Figure A.10.6.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/F.over.Fmsy_catch.only_Indicator.sp.tiff',sep='')
+```
+![Figure A.10.5. Time series of F over FMSY (60% and 95% confidence intervals shown in dark grey and light grey, respectively) inferred from the catch-only model ensemble for indicator species. Also shown is the threshold reference point.](`r path`){width=800px}
+
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/F.over.Fmsy_catch.only_Other.sp.tiff',sep='')
+```
+![Figure A.10.6. Time series of F over FMSY (60% and 95% confidence intervals shown in dark grey and light grey, respectively) inferred from the catch-only model ensemble for non-indicator species. Also shown is the threshold reference point.](`r path`){width=800px}
+
+
+The B/BMSY trajectories inferred from the COM ensemble showed considerable uncertainty mostly due to the wide Bf/K range used to minimize constraining the models. The B/BMSY trajectories started to decline mostly around the late 1970s and early 1980s following initial exploitation and then increased or stabilised following the reduction in catches in recent years (Figure A.10.4). For 2021-22, inferred median B/BMSY was at or above the target reference level for most species, above threshold levels for spurdogs and at threshold levels for angel, copper and pigeye sharks.    
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/B.over.Bmsy_catch.only_Indicator.sp.tiff',sep='')
+```
+![Figure A.10.3. Time series of B over BMSY (60% and 95% confidence intervals shown in dark grey and light grey, respectively) inferred from the catch-only model ensemble for indicator species. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/B.over.Bmsy_catch.only_Other.sp.tiff',sep='')
+```
+![Figure A.10.4. Time series of B over BMSY (60% and 95% confidence intervals shown in dark grey and light grey, respectively) inferred from the catch-only model ensemble for non-indicator species. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+
+These scenarios were compared on the basis of Deviance Information Criterion (DIC) and Root-Mean-Squared-Error (RMSE) values and overall biomass trajectories.
+
+A comparison of the goodness of fit statistics for the different sensitivity tests done is shown in Figure A.11.1 for indicator and Figure A.11.2 for non-indicator species. For all species, the different scenarios considered showed very similar DIC and RMSE values with the exception of S4 (lower process error), which shower higher values.
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/GoodnessFit per scenario_JABBA CPUE_Indicator.sp.tiff',sep='')
+```
+![Figure A.11.1. Goodness of fit statistics for the different sensitivity tests conducted for indicator species. S2, lower r value; S3, higher r value; S4, smaller process error; S5, uniform K prior; S6, Schaefer production function; S7; Fox production function. DIC, Deviance Information Criterion; RMSE, Root Mean Squared Error.](`r path`){width=600px}
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/GoodnessFit per scenario_JABBA CPUE_Other.sp.tiff',sep='')
+```
+![Figure A.11.2. Goodness of fit statistics for the different sensitivity tests conducted for non-indicator species. S2, lower r value; S3, higher r value; S4, smaller process error; S5, uniform K prior; S6, Schaefer production function; S7; Fox production function. DIC, Deviance Information Criterion; RMSE, Root Mean Squared Error.](`r path`){width=600px}
+
+<br>
+
+<!-- Display Kobe plots for S1--> 
+For the base case scenario, Kobe plots for indicator species are shown in Figure A.11.16.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Kobe_plot_JABBA CPUE_Indicator.sp.tiff',sep='')
+```
+![Figure A.11.16. Kobe plots indicating the estimated trajectories of B over BMSY and F over FMSY for indicator species. The legends show the credibility intervals for the terminal assessment year (grey areas) and the probability of the terminal year falling within each quadrant.](`r path`){width=800px}
+
+For the base case scenario, Kobe plots for non-indicator species are shown in Figure A.11.17.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Kobe_plot_JABBA CPUE_Other.sp.tiff',sep='')
+```
+![Figure A.11.17. Kobe plots indicating the estimated trajectories of B over BMSY and F over FMSY for non-indicator species. The legends show the credibility intervals for the terminal assessment year (grey areas) and the probability of the terminal year falling within each quadrant.](`r path`){width=800px}
+
+<br>
+
+For wobbegongs, as only large individuals are retained (@bracciniQuantifyingSharkRay2021), a retention function was also implemented with discard mortality pre-specified at 10% (@bracciniHighPostcaptureSurvival2012).
+For copper shark, length composition was also available for South Australia Marine Scalefish Fishery, the main source of fishing mortality for this species.
+
+
+For sandbar sharks, only the survey series was used as this reflects breeding biomass trends whereas TDGLDF catch rates reflect small juveniles' biomass due to strong gillnet selectivity effects (@Simpfendorfer1998c, @McAuley2007a).
+
+
+
+
+For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.11.8) and hence supporting the use of the base case model for making future projections. However, for dusky and spinner sharks the Mohn's-rho (ρ) statistic fell outside the expected interval for long-lived species of -0.15 and 0.2 (@carvalhoCookbookUsingModel2021) for B/B~MSY~ and B, respectively, indicating a degree of retrospective pattern although retrospective peels fell within the estimated 95% CI from the reference run, which is consistent with the uncertainty introduced by removing years of data
+
+For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.11.9).  For copper, gummy and spinner sharks, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that  the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). However, the predictions fell within the 95% CI and that for both species, the indices have a flat trend. For the other species, the MASE scores were ≤ 1 (i.e., predictions are better than a random walk) although for dusky shark most predicted years fell outside the 95% CI.
+
+
+The alternative M scenarios used in the demographic analysis were used as a sensitivity (Table A.10.1).
+Two *r* scenarios, resulting from the alternative M scenarios used in the demographic analysis, were used as a sensitivity (Table A.10.2).

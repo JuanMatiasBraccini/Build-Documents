@@ -1,0 +1,1603 @@
+---
+title: "Risk-based Weight of Evidence Assessment of the Elasmobranch Resources of Western Australia"
+author: "Matias Braccini & Alex Hesp"
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  officedown::rdocx_document  
+bibliography: 'C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/Build documents/Weight of Evidence/My Library.bib'
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Reports/WoE Advice/2023") })
+
+
+---
+
+```{r globaloptions, include=FALSE}
+this.yr=2022      # assessment year
+report.yr=2023    # report year
+source('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/SOURCE_SCRIPTS/Git_other/handl_OneDrive.R')
+library(knitr)
+library(tidyverse)
+library(readxl)
+library(Hmisc)
+library(officedown)
+library(flextable)
+library(stringi)
+library(Hmisc)
+library(officer)
+```
+
+<!-- global for setting path to figures -->
+```{r, echo=FALSE}
+#outputs in RAR folder
+Model.outputs.RAR=handl_OneDrive(paste('Reports/RARs',this.yr,'Figures_and_Tables',sep='/'))   
+Model.risk.tabs.RAR=handl_OneDrive(paste('Reports/RARs',this.yr,'Risk tables',sep='/'))
+
+#outputs in Analysis folder
+Model.outputs.an=handl_OneDrive('Analyses/Population dynamics/')       
+
+#location of static figures/tables (i.e. background info)
+Repository=handl_OneDrive('Reports/RARs/Repository')   
+
+Indicator.species=c("Gummy shark","Dusky shark","Whiskery shark","Sandbar shark")
+
+year_current_future<- read.csv(paste(Model.outputs.RAR,'/year_current_future.csv',sep=''))
+year.current=year_current_future$year.current
+year.future=year_current_future$year.future
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, ft.keepnext = F)  #chunk for keep table next to caption
+knitr::opts_chunk$set(tab.cap.pre = "", tab.cap.sep = "")   #remove Table prefix
+knitr::opts_chunk$set(comment = '', fig.width = 10,fig.height = 10)   #figure dimensions
+```
+
+To	Executive Director – Fisheries and Agriculture Resource Assessment
+	
+From	Director; Aquatic Science and Assessment
+	
+`r paste('Subject ELASMOBRANCH RESOURCE -' ,format(Sys.time(), "%Y"), 'ASSESSMENT')` 	  
+	
+File No	xx-xxxxx
+	
+CC	SPRS Offshore; PRS Demersal; SPRS SADA
+	
+Date	`r format(Sys.time(), "%d %B %Y")` 
+
+
+# Background
+This memo provides the formal advice on the stock status and risks to sustainability for all elasmobranch (sharks and rays) stocks identified in the catch of commercial and/or recreational fisheries operating in Western Australia (WA). This includes indicator species, Gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*), whiskery (*Furgaleus macki*) and sandbar (*C. plumbeus*) sharks, and non-indicator species. A risk-based Weight of Evidence (WoE) assessment of stocks status was undertaken for all species, using ISO 31000-based risk assessment methods (Appendix 1).
+
+Over a hundred elasmobranch species have been identified in the catch of commercial and/or recreational fisheries in WA. Gummy, dusky, whiskery and sandbar sharks are the most commonly captured species (~80% of the elasmobranch catch). These species have been targeted in the Temperate Demersal Gillnet and Demersal Longline Fisheries (TDGDLF), which operate in the West Coast and South Coast Bioregions and comprise the West Coast Demersal Gillnet and Demersal Longline (Interim) Managed Fishery (WCDGDLF), which operates between 26° and 33° S, and the Joint Authority Southern Demersal Gillnet and Demersal Longline Managed Fishery (JASDGDLF), which operates from 33° S to the WA/SA border. Sandbar shark and to a lower extent dusky shark were also targeted by the Northern Shark Fisheries, which operated between 114° 06' E and the WA/Northern Territory (NT) border and ceased operations in 2008-09. The current catch of sharks and rays in other WA commercial fisheries is negligible (< 10 t per annum) and recreational fishers retain very small numbers of sharks in WA. Indigenous catches of these species are considered to have always been negligible.
+
+Based on their inherent vulnerability and risk to the sustainability, whiskery, gummy, dusky and sandbar sharks have been selected as indicators for the status of the temperate elasmobranch (sharks and rays) ‘suite’ as they represent the range of life history strategies of other elasmobranch species caught by these fisheries. However, with the increasing number of elasmobranch species being listed in national (Environment Protection and Biodiversity Conservation Act 1999, EBPC Act) and international (Convention on International Trade in Endangered Species, CITES; Convention on the Conservation of Migratory Species, CMS) protection lists, species-specific scientific advice on stock status at the local level is needed to comply with national and international legislation.  
+
+Following a comprehensive reconstruction of total catch trajectories, a range of assessment methods was used to provide species-specific scientific advice on the stock status of all elasmobranch species identified in the reconstructed catches. First, a Productivity Susceptibility Analysis (PSA) was used to filter out species with historically low catch volumes from further analysis. Second, species ranked by the PSA as having high vulnerability were assessed using a combination of spatio-temporal changes in reported catch and effort, catch-only models, State-space surplus production models, and age- and sex-structured integrated models, depending on data availability (Figure 1). Biomass estimates from the production and integrated models were compared to reference levels relating to estimates of Maximum Sustainable Yield (MSY). The estimated biomass expected to achieve MSY (B~MSY~) is considered as the Threshold reference level (B~Thr~) for the stock, 0.5 B~MSY~ is set as the Limit reference level (B~Lim~) and 1.2 B~MSY~ was set as the Target reference level (B~Tar~). A flowchart explaining the steps undertaken in this assessment is shown in Figure 2.
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Available time series by species.tiff',sep='')
+
+```
+![Figure 1. Available time series for the species assessed as High vulnerability by the PSA. F, empirical fishing mortality estimates for the TDGDLF.](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.an,'/Stock assessment flow chart.tiff',sep='')
+
+```
+![Figure 2. Flowchart describing the steps undertaken in the current assessment.](`r path`){width=800px}
+
+
+# Current situation
+**REDO FROM HERE....**For Snapper, the current assessment (Level 5) is primarily based on estimates of relative female spawning biomass (Brel) and fishing mortality (F) from an integrated model fitted to commercial catch rate data, catch and age composition data up to and including the 2020/21 quota year.
+Based on all available lines of evidence (see Weight of Evidence Table below), the risk level for  Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
+On the basis of this evidence, Gascoyne Oceanic Snapper is classified as a **Recovering stock**. 
+For Goldband snapper, the current assessment (Level 3) is primarily based on estimates of ‘long term’ (equilibrium) fishing mortality (F) and relative female spawning biomass (Brel) from catch curve and per-recruit analyses, respectively, and incorporates catch and age composition data up to and including the 2019/20 quota year.  
+Based on all available lines of evidence (see Weight of Evidence Table below), the risk level for Goldband snapper in Gascoyne over the next five years is estimated to be **Low**.
+On the basis of this evidence, Goldband snapper in the Gascoyne is classified as a **Sustainable stock**.
+**.... TO HERE**
+
+
+**REDO FROM HERE............** For whiskery and gummy sharks, an integrated size-based model was implemented in 2017 to extend previous assessment models. The integrated model incorporated life history, gear selectivity, size composition, growth, catch and standardised fishery-dependent catch rate data up to and including the 2015-16 financial year. In addition, life history and catch information were used in a combined demographic and stock-reduction model (SR) to assess stock sustainability. Standardised fishery-dependent catch rate of gummy sharks was concluded to be a poor index of population abundance. For dusky and sandbar sharks, the time series of catch and effort data were considered to be insufficient for estimating biomass trends from fitting population dynamics models. Hence, a SR modelling approach was implemented to determine catch sustainability using life history and catch information up to and including the 2015-16 financial year.
+
+The integrated model estimate for fishing mortality in 2021 was 0.024 year-1, with the 95% CLs ranging from 0.011 to 0.037 year-1. As the current value of this performance indicator is well below the estimated level of F corresponding to B~MSY~ (i.e., F~MSY~), the stock is unlikely to deplete to a level at which recruitment could be impaired if the current historically low level of catch is maintained. The integrated model estimate for female spawning biomass in 2021 was at 0.27 of the unfished level (95% CLs = 0.13-0.42). Although the current value of this performance indicator is below the threshold of 0.3, Gascoyne Oceanic Snapper is expected to recover to above this level over the next five years if the current low level of catch is maintained.
+
+Based on all available lines of evidence (see Table below), the risk level for Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
+On the basis of the evidence, Gascoyne Oceanic Snapper is classified as a  **Recovering stock**.**............. TO HERE**
+
+
+# Future Monitoring & Assessment
+Additional data (e.g., providing information on mortality for a certain period, as could be generated from representative age composition data or at least length composition data), would assist in reducing model uncertainties, particularly for those species for which reconstructed catches are not negligible but only catch and life history information is available. Also, life history information for most species is not stock-specific, and in a few cases, not species-specific. Hence, targeted collection of biological information (reproduction, growth) would assist future assessments.
+
+The reliance on fishery-dependent catch rate data to inform depletion levels is evident for all species except sandbar shark for which reliable fishery-independent data are available. A long-term monitoring program, particularly in temperate WA would also assist in reducing model uncertainties. 
+
+**UPDATE Consider JABBA select to include selectivity as Sandbar TDGDLF discardedSS high risk for dusky and whiskery due to uncertainties and overall poor diagnostics, hence need for better data, genetics techniques?? Need to properly use conventional tagging for indicator species and to provide spatially-explicit indices by zone-mesh as different fleets??.......**
+
+Finally, a formal harvest strategy that considers and defines reference points and control rules for managing the resource (which also considers economic and social objectives) is required.  **test harvest strategy thru MSE. Also, add management recommendations here (catch ranges, MSY, etc) in relations to RISK and uncertainties...**
+Next assessment is proposed for 2028 to allow for data collection, processing and analyses.
+
+
+
+# Assessed species
+Including the four indicator species, >100 shark and ray taxonomic groups (herein referred to as 'species') have been identified in the catch of recreational and/or commercial fisheries operating in WA (Table A2). However, only a subset of those are currently assessed because quantitative population assessment approaches are not suitable for species with negligible catches (@Martell2012) and some species were assessed elsewhere. Blacktip (*C. limbatus* and *C. tilstoni*) and spot-tail (*C. sorrah*) sharks form a single biological stock with the NT and WA catches are a small fraction of the total catch; hence, these species are assessed as part of the assessment conducted by the NT Fisheries Department (@Stewardson2018). Similarly, school shark (*Galeorhinus galeus*) form a single biological stock in southern Australia and WA catches are negligible compared to other jurisdictions. Hence, this species is assessed by the Commonwealth of Australia (@Stewardson2018). Next, white shark (*Carcharodon carcharias*), which were reported as landed catch in commercial logbooks until protection in 1997, were assessed by @hillaryGeneticRelatednessReveals2018. For bull shark (*C. leucas*), reported catches (mostly taken in the NSF), are negligible and unreliable as this species was not observed during three years of intensive on-board observer sampling or during several years of fishery-independent shark longline surveys (Heupel and McAuley, 2007). Hence, bull shark catches were combined with those of pigeye shark (*C. amboinensis*) and assessed as ‘pigeye’, given the species morphological similarities (@tillettSimilarLifeHistory2011) and the validated presence of pigeye sharks in the catches of northern shark fisheries (@Heupel2007b). Finally, due to variable resolution in species identification across the different catch sources, catsharks (Scyliorhinidae), sawsharks (Pristiophoridae), thresher sharks (Alopidae), wobbegongs (Orectolobidae), angel sharks (Squatinidae), banjo rays (Trygonorrhinidae), and wedgefish (Rhinidae) were assessed at the family level. All analyses were done using the statistical package R (@RDevelopmentCoreTeam2014). 
+
+
+```{r, echo=FALSE}
+assessed.species<- read.csv(paste(Model.outputs.RAR,'/Assessed_species.csv',sep=''))
+assessed.species<-assessed.species%>%pull(Species)
+names.assessed.species<- paste(paste(assessed.species[1:(length(assessed.species)-1)],collapse=', '),
+                             'and',assessed.species[length(assessed.species)])
+```
+
+A PSA assessment was done to remove species with historically low catches from quantitative assessments. Productivity scores were determined using life history information on maturity, fecundity, reproductive strategy and trophic level (Table A3). Susceptibility scores were determined using information on species availability, encounterability, selectivity and post-capture survival in relation to the four main types of commercial fishing gears used in WA: gillnets, hooks, trawl and traps (Table A3). The cumulative impact of these gears was accounted for by calculating an aggregated susceptibility index following (@Micheli2014). Many species have been historically caught only sporadically and in very low volumes, indicating no sustainability risk (@Newman2018). Hence, availability and encounterability scores were set to one for species with maximum annual catches < 50 tonnes and annual catches < five tonnes for ≥ five years. Annual catches from WA shark and ray species taken in WA fisheries were extracted from @Braccini2021, @bracciniQuantifyingSharkRay2021 and @bracciniRecreationalHarvestSharks2021. These data include time series of reconstructed recreational catches, reported domestic commercial landings, unreported domestic discards, and illegal and unreported foreign catches within WA waters. For copper shark (*C. brachyurus*) catches from South Australia, New South Wales and Commonwealth Fisheries were also included in the assessment as this species forms a single unit-stock across southern Australia (Huveneers et al., 2021). Next, vulnerability scores were used to determine which species were further assessed. Vulnerability was calculated as the Euclidean distance from the origin to the coordinates of the productivity and susceptibility scores on the PSA plots (@cortesEXPANDEDECOLOGICALRISK2015). Vulnerability thresholds for defining risk level were set at <2.64 (low risk), 2.64 to 3.18 (medium risk) and > 3.18 (high risk) (@Hobday2007). Only species with ‘high’ vulnerability scores were considered in subsequent analyses. The indicator species were not considered in this analysis as the vulnerability score is high by definition.
+
+Of the >100 species considered in this assessment, `r tolower(names.assessed.species)` had high vulnerability (Figure 3) and were subsequently assessed.   
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.an,'PSA/Figure_PSA.tiff',sep='')
+
+```
+![Figure 3. PSA for assessed species. Also shown is the resulting vulnerability threshold. The size of the species name label is proportional to the vulnerability score.](`r path`){width=800px}
+
+Statewide, most of the shark and ray catch taken in WA originates from the state's shark fisheries (Figure A.4.1). Hence, analysis of spatio-temporal catch and effort dynamics focused on these fisheries. 
+
+<br>
+
+
+# Weight of evidence by species
+<!-- Populate each species' Weight of evidence table and Risk-based weight of evidence -->
+```{r, echo=FALSE, results ='asis', ft.align="left"}
+get.excel.tabs=function(PATH)
+{
+  tab_names <- excel_sheets(path = PATH)
+  data.list=lapply(tab_names, function(x) read_excel(path = PATH, sheet = x))
+  names(data.list)=tab_names
+  return(data.list)
+}
+
+WoE.tables=get.excel.tabs(paste(Model.risk.tabs.RAR,'1.Weight of evidence tables.xlsx',sep='/'))
+
+Species=names(WoE.tables)
+for(i in 1:length(Species))
+{
+  cat('\n##', paste('Risk-based weight of evidence table:',Species[i]), '\n')
+  flextable(WoE.tables[[i]])%>%
+  width(j='Category',width=3,unit='cm')%>%
+  width(j='Lines of evidence',width=14,unit='cm')%>%
+  align(align="left")%>%
+  valign(valign = "top", part = "all")%>%
+  hline(part="all")%>%
+  vline(part="all")%>%
+  border_outer(part="all")%>%
+  merge_at(i = 3, j = 1:2 )%>%
+  merge_at(i = 4, j = 1:2 )%>%
+  merge_at(i = 7, j = 1:2 )%>%
+  merge_at(i = 8, j = 1:2 )%>%
+  merge_at(i = 9, j = 1:2 )%>%
+  merge_at(i = 15, j = 1:2 )%>%
+  merge_at(i = 16, j = 1:2 )%>%
+  merge_at(i = 17, j = 1:2 )%>%
+  merge_at(i = 18, j = 1:2 )%>%
+  merge_at(i = 19, j = 1:2 )%>%
+  merge_at(i = 20, j = 1:2 )%>%
+  merge_at(i = 21, j = 1:2 )%>%
+  merge_at(i = 22, j = 1:2 )%>%
+  merge_at(i = 23, j = 1:2 )%>%
+  merge_at(i = 24, j = 1:2 )%>%
+  merge_at(i = 25, j = 1:2 )%>%
+  merge_at(i = 26, j = 1:2 )%>%
+  bold(i=c(3,7,9,15:18,19,21,22,24,25))%>%
+  bg(i=c(3:4,7:9,15:24),bg='grey85')%>%
+  bg(i=c(25:26),bg='lightblue2')%>%
+  bg(bg = 'grey85', part = "header")%>%
+  bold(part = "header")%>%
+  bold(i=c(1:2,5:6,10:14,19),j=1)%>%
+  hline(i=c(3,7:8,15,17,19:20,22:23,25),border=fp_border(color="transparent"))%>%
+    flextable_to_rmd
+
+  cat('\n')
+}
+
+```
+
+<br>
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Risk_Indicator.sp.tiff',sep='')
+
+```
+![Figure 4. Weight of evidence assessment for indicator species. BCur, Current biomass; BLim, limit biomass; BThr, threshold biomass; BTar, target biomass.](`r path`){width=800px}
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Risk_Other.sp.tiff',sep='')
+
+```
+![Figure 5. Weight of evidence assessment for non-indicator species. BCur, Current biomass; BLim, limit biomass; BThr, threshold biomass; BTar, target biomass.](`r path`){width=800px}
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Risk_all LoE for each species.tiff',sep='')
+
+```
+![Figure 6. Risk score for each line of evidence (LoE) and overall risk score for all species assessed. Species names were color coded: Bold brown, indicator species; Grey, non-indicator species; Black, species assessed only by the PSA.](`r path`){width=800px}  
+
+<br>
+
+<!-- Display Final risk for each LoE and Overall--> 
+The final risk for each line of evidence and the overall risk score is shown in Table 1 for each species. 
+  
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 13. Risk of each LoE and Overall.csv',sep=''))
+PSA.species=Tab1%>%filter(!is.na(PSA))%>%pull(Species)
+Tab1.agg=Tab1%>%filter(Species%in%PSA.species)
+Tab1.agg=Tab1.agg%>%
+            distinct(Risk.overall,.keep_all = T)%>%
+            mutate(Species=paste0('PSA-only species \n', '(n=',length(PSA.species),')'))
+Tab1=Tab1%>%filter(!Species%in%PSA.species)%>%arrange(Species)
+Tab=rbind(Tab1,Tab1.agg)
+names(Tab)[match('Risk.overall',names(Tab))]='Overall risk'  
+  
+Tab%>% 
+  flextable()%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(width=2,unit='cm')%>%
+  width(j='Species',width=4,unit='cm')%>%
+  set_caption(caption = "Table 1 Final risk score for each line of evidence and overall risk.",
+              autonum = NULL)
+
+```
+<br>
+
+# References
+
+<div id="refs"></div>
+
+<br>
+
+# Appendix 1. Consequence, Likelihood and Risk Levels (based on AS 4360 / ISO 31000) 
+Following @Fletcher2015, fishing sustainability risk was defined as negligible, low, medium, high or severe. These risk levels were calculated as the combination of consequence and likelihood (see definition below). The likelihood of each consequence level was calculated for each line of evidence as follows. For changes in catch and effort, the likelihood values were derived using Table A.6.1. For COMs, likelihood values were derived from the probability of the average total catch for the last five years being below, between or above catch reference points. The target, threshold and limit catch reference point were set at the 50%, 60% and 95% percentiles of the estimated MSY, respectively. For the state-space surplus production and integrated models, likelihood levels were derived from the model outputs. Risk scores were calculated for `r year.current` and `r year.future`. For this, the population models were projected for five years assuming a constant catch set at the average catch of the last five years.
+Finally, risk scores were then calculated as the product of each consequence level and a weighted mean likelihood. Changes in catch and effort, COMs, state-space surplus production models and integrated population models were given a weight of 0.25, 0.5, 1 and 2, respectively. The highest score chosen as the overall fishing sustainability risk following the precautionary approach.
+
+
+## Consequence levels
+1. Minor – Fishing impacts either not detectable against background variability for this population; or if detectable, minimal impact on population size and none on dynamics. Biomass > Target level (B~MEY~)
+1. Moderate – Fishery operating at maximum acceptable level of depletion. Biomass < Target level (B~MEY~) but > Threshold level (B~MSY~) 
+1. High – Level of depletion unacceptable but still not affecting recruitment levels of stock. Biomass < Threshold level (B~MSY~) but >Limit level (B~REC~) 
+1. Major – Level of depletion is already affecting (or will definitely affect) future recruitment potential/ levels of the stock. Biomass < Limit level (B~REC~) 
+
+## Likelihood levels
+These are defined as the likelihood of a particular consequence level actually occurring within the assessment period (5 years was used)
+
+1. Remote – The consequence has never been heard of in these circumstances, but it is not impossible within the time frame (Probability of <5%)
+2. Unlikely – The consequence is not expected to occur in the timeframe but it has been known to occur elsewhere under special circumstances (Probability of 5 - <20%)
+3. Possible – Evidence to suggest this consequence level is possible and may occur in some circumstances within the timeframe. (Probability of 20 - <50%)
+4. Likely – A particular consequence level is expected to occur in the timeframe (Probability of >50%)
+
+```{r, echo=FALSE}
+path=handl_OneDrive('Reports/RARs/Repository/Table_C_L.jpg')
+```
+![Figure A.1.1. Consequence - Likelihood table.](`r path`){width=800px}
+
+<br>
+
+```{r, echo=FALSE}
+path=handl_OneDrive('Reports/RARs/Repository/Table_Risk.jpg')
+```
+![Figure A.1.2. Risk table.](`r path`){width=800px}
+
+<br>
+
+
+# Appendix 2. Assessed species
+```{r,echo=FALSE,ft.align="left"}
+Tab<- read.csv(paste(Model.outputs.an,'PSA/Table S1_All.species.caught.by.fishery.csv',sep=''))
+Tab<- Tab%>%dplyr::select(Name,Scien.nm)%>%rename('Common name'=Name,'Scientific name'=Scien.nm)
+flextable(Tab)%>%
+  width(j='Common name',width=5,unit='cm')%>%
+  width(j='Scientific name',width=6,unit='cm')%>%
+  italic(j='Scientific name')%>%
+  set_caption(caption = 'Table A2. Shark and ray species identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Species are ordered alphabetically by common name.',
+              autonum = NULL)
+# knitr::kable(Tab, caption='Table A2. Shark and ray taxonomic groups identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Taxonomic groups are ordered alphabetically by common name.')
+
+```
+<br>
+
+
+<!---BLOCK_LANDSCAPE_START--->
+# Appendix 3. PSA scores
+```{r,echo=FALSE,ft.align="left"}
+Tab<- read.csv(paste(Model.outputs.an,'PSA/Table S2_PSA scores.csv',sep=''))
+Nms=names(Tab)
+flextable(Tab)%>%
+  width(j='Species',width=3,unit='cm')%>%
+  set_header_labels(
+      Species="",
+      Max.age="MA",Age.mat='AM',Fecun='FE',Max.size='MS',Size.mat='SM',Rep.strat='RS',Troph.Lvl='TL',
+      Net.avail='Av',Net.encoun='En',Net.sel='Sel',Net.PCM='PCM',
+      Line.avail='Av',Line.encoun='En',Line.sel='Sel',Line.PCM='PCM',
+      Trawl.avail='Av',Trawl.encoun='En',Trawl.sel='Sel',Trawl.PCM='PCM',
+      Trap.avail='Av',Trap.encoun='En',Trap.sel='Sel',Trap.PCM='PCM',
+      Vulnerability.score="")%>%
+  width(j=Nms[-match("Species",Nms)],width=.95,unit='cm')%>%
+  width(j=Nms[grep('PCM',Nms)],width=1.25,unit='cm')%>%
+  width(j="Vulnerability.score",width=1,unit='cm')%>%
+  fontsize(size=9, part='all')%>%
+  add_header_row(values = c("Species", "Life history","Net","Hook","Trawl","Trap","Vu"),
+                 colwidths = c(1, 7,4,4,4,4,1))%>%
+  border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+  set_caption(caption = 'Table A3. PSA scores for the species considered in the assessment (NB, catsharks, sawsharks, thresher sharks, wobbegongs, angel sharks, banjo rays, wedgefishes, stingrays, and ‘rays and skates’ were aggregated and assessed as at the group level due to unreliable species reporting for some fisheries). MA, maximum age; AM, age at maturity; FE, fecundity; MS, maximum size; SM, size at maturity; RS, reproductive strategy; TL, trophic level; Av, availability; En, encounterability; Sel, selectivity; PCM, post-capture mortality; VU, vulnerability.',
+              autonum = NULL)%>%
+  flextable::align(align = "center", part = "all")%>%
+  flextable::align(j=1,align='left',part='all')  
+
+```
+<!---BLOCK_LANDSCAPE_STOP--->
+
+Climate change risk scores were sourced from (@chinIntegratedRiskAssessment2010) and (@Walker2021).
+
+```{r, results = 'asis'}
+Paz=handl_OneDrive("Analyses/Catch and effort/Outputs/Spatial_Climate change/elasmos")
+plots <- list.files(Paz) 
+plots=plots[-grep(paste(c('Eagle','Pencil','Common sawshark','Shortfin mako'),collapse='|'),plots)]  #no stand. cpue
+for(i in 1:length(plots))
+{
+  filename <- file.path(paste(Paz, plots[i],sep='/'))
+  Titl=gsub("\\..*", "", plots[i])  
+  cat(sprintf('![%s](%s)', paste('Figure A.3.1.',i,'. ',Titl,'. Spatial distribution of nominal catch rates (kg per km gillnet hour) for the TDGDLF. Also shown are the annual sea surface temperature anomalies.',sep=''), 
+               filename), sep = '\n')
+  cat("\n")
+}
+```
+
+
+<br>
+
+
+
+# Appendix 4. Catch
+
+```{r, fig.width = 5, fig.height=5, fig.cap = "Figure A.4.1. Proportional shark and ray catch for Western Australia fisheries. The top panel shows the proportion by method for shark and non-shark fisheries. The bottom panel is a word cloud of the different fisheries interacting with sharks and rays. The southern and northern shark fisheries are shown in green and orange, respectively, whereas non-shark fisheries are shown in black. The size of the word is proportional to the square root of the total catch.", fig.pos='h',fig.align='center'}
+knitr::include_graphics(paste(Model.outputs.an,'Proportional catch_WA_combined.tiff',sep=''))
+```
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Catch_all_species_Indicator.sp.tiff',sep='')
+```
+![Figure A.4.2. Catch time series for indicator species. Recreational, WA reconstructed recreational harvest (boat-based, shore-based and charter boats); TEP, WA Reported Threatened, Endangered and Protected species catches; WRL, WA reconstructed Western Rock lobster Fishery; NT, Northern Territory's commercial landings; SA MSF, South Australia’s Marine Scalefish Fishery landings; GAB Trawl, Great Australian Bight Trawl Fishery landings; WTB, Western Tuna and Billfish Fishery landings; Taiwan, reconstructed catches by Taiwanese vessels in WA waters; Indonesia, reconstructed catches by Indonesian vessels in WA waters.](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Catch_all_species_Other.sp.tiff',sep='')
+```
+![Figure A.4.3. Catch time series for non-indicator species. Recreational, WA reconstructed recreational harvest (boat-based, shore-based and charter boats); TEP, WA Reported Threatened, Endangered and Protected species catches; WRL, WA reconstructed Western Rock lobster Fishery; NSW Fisheries, New South Wales Fisheries commercial landings; SA MSF, South Australia’s Marine Scalefish Fishery landings; GAB Trawl, Great Australian Bight Trawl Fishery landings; WTB, Western Tuna and Billfish Fishery landings; Taiwan, reconstructed catches by Taiwanese vessels in WA waters; Indonesia, reconstructed catches by Indonesian vessels in WA waters.](`r path`){width=800px}
+
+<br>
+
+# Appendix 5. Effort and management dynamics for shark fisheries
+```{r, fig.width = 7, fig.height=8, fig.cap = "Figure A.5. Total reported effort for the TDGDLF (top pane) and NSF (bottom pane) shark fisheries. Also shown are the management measures and data collection initiatives implemented since the start of these fisheries. Effort is shown in a logarithmic scale. Red, data collection; Blue, spatial closures; Green, other management measures.", fig.pos='h',fig.align='center'}
+knitr::include_graphics(paste(handl_OneDrive('Management/Sharks/Timeline management measures/'),'Effort.management_TDGDLF & NSF.tiff',sep=''))
+```
+<br>
+
+
+# Appendix 6. Spatio-temporal changes in fishing effort and reported catch for shark fisheries
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Spatio.temporal.catch_Indicator.sp.tiff',sep='')
+```
+![Figure A.6.1. Reported catch and effort dynamics for WA’s shark fisheries (indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the northern shark fisheries and km gillnet days for the southern shark fisheries) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the southern shark fisheries. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Spatio.temporal.catch_Other.sp.tiff',sep='')
+```
+![Figure A.6.2. Effort and reported catch dynamics for WA’s shark fisheries (non-indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the northern shark fisheries and km gillnet days for the southern shark fisheries) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the southern shark fisheries. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
+
+<br>
+
+```{r,echo=FALSE,ft.align="left"}
+Tab<- read.csv(paste(Model.outputs.RAR,'/Spatial_LoE_Table.csv',sep=''))
+
+flextable(Tab)%>%
+      set_header_labels(Blocks.fished="Blocks\nfished",
+                        Blocks.fished.with.catch="Blocks fished\nwith catch")%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(j='Effort',width=2,unit='cm')%>%
+  width(j='Blocks.fished',width=3,unit='cm')%>%
+  width(j='Blocks.fished.with.catch',width=3,unit='cm')%>%
+  width(j='Consequence',width=3,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=c('Effort'),align='left',part='all')%>%
+  set_caption(caption = 'Table A.6.1. Derived Consequence and Likelihood levels from the spatial distribution of catch and effort (NB for species for which market value decrease or became protected, ‘Blocks fished with catch’ were set to ‘Stable’).',
+              autonum = NULL)
+```
+
+<br>
+
+# Appendix 7. Standardised catch rates
+Abundance indices are available for a subset of species from standardising the commercial catch and effort from the TDGDLF (kg per km gillnet-hours) and from the longline abundance survey conducted in north-western WA (number of individuals per 50 hook-hours). The standardisation process is described in (@bracciniSpatialTemporalPatterns2021) for the fishery-dependent abundance index and in (@Braccini2020) for the fishery-independent abundance index.
+
+```{r, results='asis'}
+Species.with.abundance<- read.csv(paste(Model.outputs.RAR,'/Species.with.abundance.csv',sep=''))
+Species.with.abundance=Species.with.abundance%>%pull(x)
+if(!"1.Dusky shark"%in%Species.with.abundance) Species.with.abundance=c(Species.with.abundance,"1.Dusky shark")
+if(!"1.Spinner shark"%in%Species.with.abundance) Species.with.abundance=c(Species.with.abundance,"1.Spinner shark")
+Species.with.abundance=sort(Species.with.abundance)
+sort.species.id=match(paste('1.',Indicator.species,sep=''),Species.with.abundance)
+Species.with.abundance=c(Species.with.abundance[sort.species.id],Species.with.abundance[-sort.species.id])
+
+for(i in 1:length(Species.with.abundance)){
+  Titl=gsub(".*\\.", "", Species.with.abundance[i])  
+       cat(sprintf('![%s](%s)', paste('Figure A.7.',i,'. ',Titl,'. Standardised catch rates (mean and 95% CI).',sep=''), 
+                 paste(Model.outputs.an,paste(Species.with.abundance[i],this.yr,
+                      '1_Inputs/Visualise data/All cpues.tiff',sep='/'),sep='')), sep = '\n')
+  cat("\n")
+}
+
+```
+
+<br>
+
+# Appendix 8. Commercial catch length composition
+Sex-specific length composition from the northern and southern shark fisheries are available for a subset of species collected by onboard observers. The sampling protocol is described in (Braccini and Taylor (2016)). No data are currently available on catch age-composition. 
+
+```{r, results='asis', fig.width = 6, fig.height=6}
+Species.with.length.comp<- read.csv(paste(Model.outputs.RAR,'/Species.with.length.comp.csv',sep=''))
+Species.with.length.comp=Species.with.length.comp%>%pull(x)
+sort.species.id=match(paste('1.',Indicator.species,sep=''),Species.with.length.comp)
+only.indicator=FALSE
+if(only.indicator)
+{
+  Species.with.length.comp=Species.with.length.comp[sort.species.id]
+}
+if(!only.indicator)
+{
+  Species.with.length.comp=c(Species.with.length.comp[sort.species.id],Species.with.length.comp[-sort.species.id])
+}
+  
+for(i in 1:length(Species.with.length.comp)){
+  Titl=gsub(".*\\.", "", Species.with.length.comp[i])
+  disfile=paste(Model.outputs.an,paste(Species.with.length.comp[i],this.yr,'1_Inputs/Visualise data',sep='/'),sep='')
+  
+  file.ls <- list.files(path=disfile, pattern=paste0("Size.comp",".*\\.tif"),all.files = TRUE,  
+                        full.names = TRUE, recursive = TRUE)
+  file.ls.names<- list.files(path=disfile, pattern=paste0("Size.comp",".*\\.tif"))
+  file.ls=file.ls[-grep(paste(c("_dist","Catch curve"),collapse='|'),file.ls)]
+  file.ls.names=file.ls.names[-grep(paste(c("_dist","Catch curve"),collapse='|'),file.ls.names)]
+  file.ls.names=gsub("Size.comp.","",gsub('.tiff','',file.ls.names))
+   for(l in 1:length(file.ls))
+   {
+     Nme=file.ls.names[l]
+     if(Nme=='Other')
+     {
+      if(Titl=="Copper shark") Nme='SA MSF' 
+      if(Titl=="Angel sharks") Nme='GAB trawl' 
+     }
+     if(Nme=='Pilbara.trawl') Nme='Pilbara Fish Trawl'
+     if(Nme=="TDGDLF") Nme= paste(Nme, 'by zone and mesh size (WC, West Coast; Zn1, Zone 1; Zn2, Zone 2)')
+     if(!Nme=="Other")
+     {
+      cat(sprintf('![%s](%s)', paste('Figure A.8.',i,'.',l,'. ',Titl,'. Observed size composition in the catches of the ',Nme,'.',sep=''), 
+                 file.ls[l]), sep = '\n')
+     cat("\n")
+     }
+   }
+  cat("\n")
+}
+```
+
+
+<br>
+
+# Appendix 9. Demographic modelling
+Demographic modelling was used to construct priors for the maximum intrinsic rate of population increase, *r* (@McAllister2001), a required input for the population models described below. Life history information  and Leslie Matrices were combined in a Monte Carlo procedure (10,000 iterations) to derive *r* priors as per described in @bracciniDisplayingUncertaintyBiological2015. A birth-pulse (i.e. a discrete breeding season), post-breeding census and a yearly time step were assumed (e.g., @Aires-da-Silva2007). The *popbio* R package (@stubbenEstimatingAnalyzingDemographic2007) was used to solve the Leslie Matrix.
+Information on female litter size, maximum age, age at 50% maturity (A~50~), reproductive cycle length, growth, and the assumed distributions for these life history parameters were sourced from the literature (Table A.9.1). Instantaneous natural mortality at age (M~*a*~) was derived using the unified M estimation method developed by (@dureuilUnifiedNaturalMortality2021) for elasmobranchs. Two scenarios were considered, one using a constant M value, set at the adult M, and one using the M~*a*~ vector.
+<!---BLOCK_LANDSCAPE_START--->
+<!-- Life history table -->
+```{r,echo=FALSE,ft.align="left"}
+Tab<- read.csv(paste(Model.outputs.RAR,'/Table 1. Life history pars.csv',sep=''))
+Tab=Tab%>%
+  mutate(a_w8t=formatC(a_w8t, format = "e", digits = 3))
+names(Tab)=gsub("\\.", "", names(Tab), perl=TRUE)
+disnames=c("Kyear1","FL_infcm","MaxAgeyear","Age50Matyear","TL50matcm","TL95matcm","Littersize",  
+           "Repcycleyear","a_w8t","b_w8t")
+names(Tab)[match(disnames,names(Tab))]=c("k","FLinf","Max age","Age 50% Mat","TL 50 Mat",
+                                         "TL95 Mat","Litter size",  
+                                         "Rep. cycle","a","b")
+flextable(Tab)%>%
+  width(j='Species',width=3,unit='cm')%>%
+  width(j='a',width=1.8,unit='cm')%>%
+  width(j=5,width=3,unit='cm')%>%
+  width(j=8,width=3.5,unit='cm')%>%
+  width(j=9,width=2.5,unit='cm')%>%
+  align(j=1,align='left',part='all')%>%
+  align(j=2:11,align='center',part='all')%>%
+  fontsize(size=9, part = "all")%>%
+  #compose(i=1,j=2,part='header',value=as_paragraph('K (year',as_sup('-1'),')'))%>%
+  flextable::compose(i=1,j=3,part='header',value=as_paragraph('FL',as_sub(stri_unescape_unicode('\\u221E'))))%>%
+  flextable::compose(i=1,j=5,part='header',value=as_paragraph('Age',as_sub('50')))%>%
+  flextable::compose(i=1,j=6,part='header',value=as_paragraph('TL',as_sub('50')))%>%
+  flextable::compose(i=1,j=7,part='header',value=as_paragraph('TL',as_sub('95')))%>%
+  set_caption(caption = 'Table A.9.1. Life history information used for the calculation of r and h. k, growth coefficient; FL, fork length (cm); TL, total length (cm); Age50; age at 50% maturity (year); TL50 and TL95, total length at 50% and 95% maturity (cm); Rep. cycle, reproductive cycle length (year); a and b, parameters of the length-weight relationship (in cm and kg, respectively).',
+              autonum = NULL)
+```
+<!---BLOCK_LANDSCAPE_STOP--->
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Prior_r_Indicator.sp.tiff',sep='')
+```
+![Figure A.9.1. Distribution of maximum intrinsic rate of population increase (r) derived from the demographic analysis for indicator species.](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Prior_r_Other.sp.tiff',sep='')
+```
+![Figure A.9.2. Distribution of maximum intrinsic rate of population increase (r) derived from the demographic analysis for non-indicator species.](`r path`){width=800px}
+
+# Appendix 10. Catch-only modelling
+Catch-only models (COMs) were used to determine catch sustainability based on the comparison of catch trajectories and model-inferred MSY. Three COMs were used to account for model structural uncertainty and integrate across alternative processes: DBSRA, depletion-based stock reduction analysis  (@Dick2011), Catch-MSY (@Martell2012), and SSS, Simple Stock Synthesis (@copeImplementingStatisticalCatchatage2013)). The selected methods are within the recommended stock assessment toolbox for data-limited assessments, make use of available life history information and full catch trajectories, allow specifying initial and final depletion conditions, and are implemented in R. 
+To inform model dynamics, we used species-specific life history (Table A.9.1) and stock-specific depletion information derived from the known history of management and fishery dynamics in WA (Figures A.5 and A.6) because catch declines are not only due to population declines driven by overfishing but also due to environmental conditions affecting productivity and/or fisheries regulation explicitly designed to reduced catches (@Ovando2022). 
+
+## DB-SRA
+DB-SRA (available in the *fishmethods* R package @Nelson2021) simulates a stock’s biomass trajectory using a catch time series and a delay-difference model parametrised as function of M, A~50~, F~MSY~/M (the ratio of F~MSY~, the fishing mortality associated with MSY, and M), B~MSY~/K (the ratio of B~MSY~, the biomass level associated with the MSY, and K, stock carrying capacity), and the expected depletion at the start (B~0~/K) and end (B~f~/K) of the catch time series. Monte Carlo simulations (10,000 iterations; preliminary analysis showed similar results from a larger number of iterations), were used to draw random parameter values from specified prior distributions. Using the catch history, a biomass trajectory is calculated based on the sampled input parameters. The trajectory and corresponding input parameters are retained if the biomass trajectory does not go below zero. The parameter values and distributions used in this study are presented in Table A.10.1. Distributions for M and A~50~ were obtained from the demographic modelling outlined above assuming a lognormal distribution (e.g., @swekaApplicationDepletionBasedStock2018) with CV calculated as the standard deviation (SD) over the mean. F~MSY~/M had a lognormal distribution with a mean of 0.41 (@zhouLinkingFishingMortality2012) and a CV of 0.1. B~MSY~/K had a beta distribution with mean calculated based on @Cortes2012 and CV of 0.1. B~0~/K had uniform distributions ranging [0.95, 1]. A high B~0~/K level was assumed because the start of the catch time series is considered to be the start of any type of commercial/recreational shark fishing in WA so stocks are assumed to be at around carrying capacity. For B~f~/K, it is unlikely that stocks are at very low depletion levels given that total catches have been in the order of tens of tonnes or less per year for most species and for some species catches have been negligible over multiple generations. Hence, for most species B~f~/K had uniform distributions ranging [0.2, 95] so as not to restrict the model. For some species with high productivity and negligible exploitation in recent years the lower bound was increased to allow model convergence. Finally, K had a uniform distribution ranging between five and 50 times the species’ maximum annual catch (e.g., @Federal2017). Model parameter inputs are shown in Table A.10.1. 
+
+
+## Catch-MSY
+Catch-MSY simulates a stock’s biomass trajectory using a catch time series and a surplus production model parametrised as function of *r*, K, B~0~/K, and B~f~/K. As for DB-SRA, catch time series and input parameter values, drawn from a Monte Carlo procedure, are used to reconstruct biomass trajectories, retaining the combinations of *r* and K values that did not cause the stock to go extinct or above K (@Martell2012). Following @Dichmont2021, we used Haddon’s parametrisation of Catch-MSY available from the *datalowSA* R package @Haddon2019. Rather than sampling *r* values from the prespecified default productivity ranges, a uniform distribution was used with lower and upper ranges set at the 90% percentile of the *r* distributions derived from demographic modelling. Catch-MSY allows incorporating process error to simulate stochasticity in biomass dynamics. This is considered to be much lower for sharks than for broadcast spawners such as teleosts and marine invertebrates. Hence, process error was set at 1e^-3^ as catch-only methods yield considerably uncertain estimates by nature. The K, B~0~/K, and B~f~/K priors were modelled as for the DB-SRA models. Model parameter inputs are shown in Table A.10.2.
+
+
+## SSS
+SSS is based on the Stock Synthesis stock assessment model (@methotStockSynthesisBiological2013), providing an age-structured alternative to the other COMs. SSS uses a Monte Carlo approach to draw samples of key input parameters, which are prespecified in the Stock Synthesis model, and estimates only the log of unexploited equilibrium recruitment (lnRo). Input parameters drawn from prior distributions included M, B~0~/K, B~f~/K, and steepness, *h*, the fraction of recruitment from a virgin population obtained when the population is at 20% virgin level. Other input parameters were prespecified at the midpoint of the reported range used for demographic modelling (Table A.9.1). Values of M were drawn from a lognormal distribution with mean and SD set at the mean and SD of the empirical M distribution obtained from the demographic analysis. Values of B~0~/K and B~f~/K were drawn from the prior distributions used for DB-SRA. Steepness (mean and SD) was calculated using the analytical solution derived by (@Brooks2010) and the life history information used in the demographic analysis. For great (*Sphyrna mokarran*) and smooth (*S. zygaena*) hammerheads and tiger (*Galeocerdo cuvier*), zebra and whiskery sharks, the derived *h* values were 0.77, 0.66, 0.70, 0.71 and 0.60, respectively. These high *h* values resulted from the combination of relatively high fecundity and longevity (mostly hammerheads and tiger shark), low juvenile mortality and early age at maturity. For sawsharks, green sawfish (*Pristis zijsron*) and milk shark (*Rhizoprionodon acutus*), the derived *h* values were 0.31, 0.36 and 0.44, respectively, which is considered an underestimate for these relatively productive species. Hence, alternative *h* values were tested as a sensitivity. These alternative *h* values were derived from a linear model fitted to the *r* and *h* values calculated for the other assessed species (Figure A.10.1). For SSS, random values of *h* were drawn from a truncated beta distribution with mean and SD derived from the calculation of *h* described above and boundaries set at 0.3 and 0.8, respectively. The lower bound was set at 0.3 on the basis of the evolutionary principle that a minimum recruitment compensation is needed for population persistence given recruitment variability (@He2006). The upper bound was set at the average *h* value for blue shark (*Prionace glauca*), considered to be one of the most productive shark species (@Cortes2016a; @Kai2018). Model runs were retained if the difference between observed and predicted B~f~/K values was ≤0.01 (@copeImplementingStatisticalCatchatage2013). Model parameter inputs are shown in Table A.10.3.
+
+<!---BLOCK_LANDSCAPE_START--->
+<!-- DBSRA scenarios -->
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 2. Catch only_scenarios_DBSRA_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 2. Catch only_scenarios_DBSRA_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+      arrange(Species)%>%
+  dplyr::select(-Scenario)%>%
+  mutate(bmsyk.mean=round(bmsyk.mean,2))
+flextable(Tab)%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(j='Species',width=2.5,unit='cm')%>%
+  width(j=c(3,8),width=2,unit='cm')%>%
+  width(j=c(11),width=1,unit='cm')%>%
+  width(j=c(14,17),width=1.5,unit='cm')%>%
+  width(j=2,width=2,unit='cm')%>%
+  width(j=c(2,5:6,10,13,15:16,18:19),width=1,unit='cm')%>%
+  width(j=6:7,width=1.35,unit='cm')%>%
+  width(j=c(4,9,12),width=1.2,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=1,align='left',part='all')%>%
+  set_header_labels(
+      Species="",AgeMat='',M.dist='Dist.',Mmean='Mean',M.CV='CV',
+      Klow="Low",Kup="Up",fmsym.dist="Dist.",fmsy.m="Mean",fmsym.CV="CV",
+      bmsyk.dist="Dist.",bmsyk.mean="Mean",bmsyk.CV="CV",
+      b1k.dist="Dist.",b1k.low="Low",b1k.up="Up",
+      btk.dist="Dist.",btk.low="Low",btk.up="Up")%>%
+  add_header_row(values = c("Species","Age at","M","K","FMSY","BMSY/K","Bo/K","Bf/K"),
+                 colwidths = c(1,1,3,2,3,3,3,3))%>%
+  flextable::compose(i=1,j=2,part='header',value=as_paragraph('Age',as_sub('50')))%>%
+  flextable::compose(i=1,j=8,part='header',value=as_paragraph('F',as_sub('MSY')))%>%
+  flextable::compose(i=1,j=11,part='header',value=as_paragraph('B',as_sub('MSY'),'/K'))%>%
+  #compose(i=1,j=14,part='header',value=as_paragraph('B',as_sub('o'),'/K'))%>%
+  #compose(i=1,j=17,part='header',value=as_paragraph('B',as_sub('f'),'/K'))%>%
+  border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+  set_caption(caption = "Table A.10.1. Input parameter values for the DBSRA models. Age50, age at 50% maturity (year); M, natural mortality; Dist., distribution; K, carrying capacity (tonnes); Low, lower bound; Up, upper bound; FMSY, Fishing mortality at MSY; BMSY, Biomass at MSY; Bo, initial biomass; Bf, final biomass.",
+              autonum = NULL)
+```
+
+\newpage
+<!-- CMSY scenarios -->
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 2. Catch only_scenarios_CMSY_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 2. Catch only_scenarios_CMSY_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+      arrange(Species)%>%
+  dplyr::select(-Scenario)
+flextable(Tab)%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(width=2,unit='cm')%>%
+  width(j='Species',width=2.5,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=1,align='left',part='all')%>%
+  set_header_labels(
+      Species="",r.low='Low',r.up='Up',Klow='Low',Kup='Up',
+      Bo.low='Low',Bo.hi='Up',Bf.low='Low',Bf.hi='Up',Proc.error='')%>%
+  add_header_row(values = c("Species","r","K","Bo/K","Bf/K","Proc. error"),
+                 colwidths = c(1,2,2,2,2,1))%>%
+  flextable::compose(i=1,j=2,part='header',value=as_paragraph(as_i('r')))%>%
+  #compose(i=1,j=6,part='header',value=as_paragraph('B',as_sub('o'),'/K'))%>%
+  #compose(i=1,j=8,part='header',value=as_paragraph('B',as_sub('f'),'/K'))%>%
+  #compose(i=1,j=10,part='header',value=as_paragraph(stri_unescape_unicode('\u03c3'),as_sup('2')))%>%
+  border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+  set_caption(caption = "Table A.10.2. Input parameter values for the CMSY models. r, maximum intrinsic rate of population increase; K, carrying capacity (tonnes); Low, lower bound; Up, upper bound; Bo, initial biomass; Bf, final biomass; Proc. error, process error.",
+              autonum = NULL)
+```
+
+\newpage
+<!-- SSS scenarios -->
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 2. Catch only_scenarios_SSS_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 2. Catch only_scenarios_SSS_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+      arrange(Species)%>%
+  dplyr::select(-c(F_ballpark))%>%
+  mutate(Mmean=round(Mmean,2),
+         h.mean=round(h.mean,2),
+         Msd=round( Msd,3))%>%
+  relocate(Msd,.after=Mmean)
+flextable(Tab)%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(width=1.25,unit='cm')%>%
+  width(j='Species',width=2.5,unit='cm')%>%
+  width(j='Scenario',width=2,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=1,align='left',part='all')%>%
+  set_header_labels(
+      Species="",Scenario="",Mmean="Mean",Msd="SD",h.mean="Mean",h.sd="SD",Initial.bio.low="Low",Initial.bio.up="Up",
+      Final.bio.low="Low",Final.bio.up="Up",Ln_R0_min="Low",Ln_R0_max="Up")%>%
+  add_header_row(values = c("Species","Scenario","M","h","Bo/K","Bf/K","ln(Ro)"),
+                 colwidths = c(1,1,2,2,2,2,2))%>%
+ # compose(i=1,j=6,part='header',value=as_paragraph('B',as_sub('o'),'/K'))%>%
+ #  compose(i=1,j=8,part='header',value=as_paragraph('B',as_sub('f'),'/K'))%>%
+  border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+  set_caption(caption = "Table A.10.3. Input parameter values for the SSS models. M, natural mortality; h, steepness; Low, lower bound; Up, upper bound; Bo, initial biomass; Bf, final biomass; lnRo, log of unexploited equilibrium recruitment.",
+              autonum = NULL)
+```
+
+<!---BLOCK_LANDSCAPE_STOP--->
+
+The COMs considered here represent alternative states of nature; hence, an ensemble was constructed as model ensembles can streamline stock assessments and are typically more accurate and less biased than individual COM estimates (@jardimOperationalizingEnsembleModels2021). For each COM, an equal number of random samples of accepted trajectories and inferred MSY values were drawn and the 60% and 95% percentiles were calculated.
+
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.an,'Steepness_vs_r.tiff',sep='') 
+```
+![Figure A.10.1. Linear regression of maximum intrinsic rate of population increase (r) and steepness (h).](`r path`){width=800px}
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Catch_vs_MSY_catch.only_Indicator.sp.tiff',sep='')
+```
+![Figure A.10.2. Time series of total catch (blue line) and MSY (black line) with 60% and 95% confidence intervals (dark grey and light grey shaded areas, respectively) inferred from the catch-only model ensemble for indicator species.](`r path`){width=800px}
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Catch_vs_MSY_catch.only_Other.sp.tiff',sep='')
+```
+![Figure A.10.3. Time series of total catch (blue line) and MSY (black line) with 60% and 95% confidence intervals (dark grey and light grey shaded areas, respectively) inferred from the catch-only model ensemble for non-indicator species.](`r path`){width=800px}
+
+<br>
+
+# Appendix 11. State-space surplus production modelling
+State-space surplus production models were fitted to catch and catch rate series derived from standardised commercial catch and effort (@bracciniSpatialTemporalPatterns2021) or a fishery-independent survey (@Braccini2020) using JABBA, Just Another Bayesian Biomass Assessment (@winkerJABBAJustAnother2018). The survey collects abundance data in numbers so it was converted to biomass by multiplying numbers by the reported average annual weight (@Braccini2020). A full description of the JABBA model (state-space implementation, prior specification options, diagnostic tools, etc.) is available in (@winkerJABBAJustAnother2018). JABBA is implemented in R with a JAGS interface (@Plummer2003) to estimate the Bayesian posterior distributions using Markov Chains Monte Carlo (MCMC) simulations. A Pella-Tomlinson production function was used by setting the inflection point B~MSY~/K and converting this ratio into a shape parameter *m* that determines at which B/K ratio maximum surplus production is attained. Schaefer and Fox production functions were considered as sensitivity tests. We used two MCMC chains each of 30,000 iterations, sampled with a burn-in period of 5,000 iterations and thinning rate of five iterations (e.g., @Winker2019). Model diagnostics included Bayesian fit diagnostics (visualization of the MCMC chains, posterior densities, autocorrelation and the @Gelman2003 and @Geweke1992 diagnostics as implemented in the *ggmcmc* R package @FernandezMarin2016) and model goodness-of-fit, retrospective analysis and prediction skill as implemented in the *ss3diags* R package (@carvalhoCookbookUsingModel2021). Key priors required are *r*, K and B~0~/K whereas priors for B~MSY~/K, and process error were also specified (Table A.11.1). A lognormal distribution was used for *r* and K and a beta distribution was used for B~0~/K as it is considered to have better convergence properties than uniform priors (@winkerJABBAJustAnother2018). For *r*, the mean and CV were obtained from the demographic modelling. For K, the mean was set at the average of the uniform distribution used in the COMs, and the CV was prespecified at 200% (Winker et al., 2019). A uniform distribution, prespecified at the range used for the COMs, was considered as a sensitivity. For B~0~/K, the mean was prespecified the average of the lower and upper bounds of the B~0~/K distribution used in the COMs and the CV was calculated as the SD of those distribution over the mean. Process error was prespecified at 0.05, which assumes low stochastic variation in biomass given sharks productivity (Winker et al., 2019). We used the same B~MSY~/K values used in the DB-SRA modelling. 
+
+
+Standardisation of catch rates can yield very small CVs (as observed for the analysed species); hence, the minimum CV used in the models was extracted from fitting a simple smoother to the catch rate data (on the natural log scale) and estimating the residual variance (@Francis2011). A thorough description of this method can be found in (@courtneyStockSynthesisSS32017). 
+
+The construction of JABBA models was possible for a subset of species (copper, dusky, gummy, milk, sandbar, tiger and whiskery sharks) due to availability of reliable survey and catch rate series. 
+
+For spinner shark, TDGDLF catch rates were not considered to represent abundance trend as they tracked catch trends (Figures A.4.3, A.7.7). 
+
+For dusky shark, the reliability of the TDGDLF catch rate as an index of abundance is unclear. Due to the tight gillnet selectivity schedule of the mesh sizes used in the TDGDLF, the catch comprises mostly of 0+ and 1 year old individuals, potentially representing a recruitment index. However, between 1975 and 1985 catches of the NSF and ‘other’ fisheries (which caught adult individuals) moderately increased from 36 to 74 tonnes but the TDGDLF monthly catch rates substantially decreased (75% reduction). Also, overall fishery catches substantially increased after 1985 (Figure A.4.2) and these higher catch levels were able to be sustained, suggesting that recruitment was unlikely to have markedly declined between 1975 and 1985 as suggested by the TDGDLF catch rates (Figure A.7.2). Hence, if the TDGDLF catch rates was a recruitment index, a substantial recruitment reduction between 1975 and 1985 within the context of the species exploitation history would be biologically unfeasible. Furthermore, since the late 1980s, TDGDLF catch rates fluctuated showing no overall trend (hence no trend in recruitment) despite catches (of adults and juveniles) substantially increasing to a history peak in the late 1980s and then substantially decreasing due to management-driven effort reductions (Figures A.4.2, A.5). The fishery-independent survey is highly uncertain as only a few individuals are caught each year due to nature of the survey (20 fishing stations revisited annually) which is designed to target mostly sandbar sharks (Figure A.7.2). Hence, abundance series were considered unreliable and JABBA models were not built for dusky shark.
+
+For sandbar shark, the TDGDLF monthly catch rate series was excluded from the analysis because it tracked the catch series (Figures A.4.2, A.7.4). Preliminary analysis including this catch series showed similar population trajectories albeit considerably more uncertain, displaying a sudden peak in relative biomass in 1986, not consistent with sandbar shark productivity. Hence, the TDGDLF monthly catch rate was considered unreliable as an index of abundance and not used in the JABBA models.
+
+For gummy shark, the years 1975 to 1985 of the monthly catch rates series were not included because catch rates decreased by ~80% during this period following only a moderate increase in catches (Figures A.4.2, A.7.1) and the fleet was composed of a large number of vessels that fished mostly sporadically. 
+
+For whiskery shark, changes in fishers' targeting behaviour (from whiskery to dusky sharks) in the early 1980s (@Simpfendorfer2000a) were modeled by the inclusion of two catchability coefficients for the periods 1975-1980 and 1984-2005. Finally, sensitivity tests were done to evaluate the effect of the assumed process error, *r*, production function and K prior (Table A.11.1).
+
+Finally, for TDGDLF catch rates derived from standardised commercial catch and effort data, the financial years 2007 and 2008 are considerably higher (~100%) than subsequent years for all species. This coincides with the transition of monthly to daily catch and effort reporting in WA which distorted the calculation of effort variables (@bracciniSpatialTemporalPatterns2021) and a period of stable of decreasing catches. Hence, these two years were removed from the catch rate series as they are most likely reflecting changes in the reporting of the effort variables used in the standardisations.
+
+<!---BLOCK_LANDSCAPE_START--->
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 7. JABBA CPUE_scenarios_Indicator.sp.csv',sep=''))
+SP_ind=Tab1%>%pull(Species)
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 7. JABBA CPUE_scenarios_Other.sp.csv',sep=''))
+SP_other=Tab2%>%pull(Species)
+
+Tab=rbind(Tab1,Tab2)%>%
+  arrange(Species)%>%
+  mutate(r.mean=round(r.mean,2),
+         PsiDist=capitalize(PsiDist),
+         model.type=ifelse(grepl('Pella',model.type),'Pella-Tomlinson',model.type))%>%
+  dplyr::select(-c(PsiDist,Bo.mean,Bo.CV))
+if('Daily.cpues'%in%names(Tab))
+{
+  Tab=Tab%>%mutate(Daily.cpues=ifelse(is.na(Daily.cpues),'',Daily.cpues),
+                   Daily.cpues=ifelse(Species%in%c('Dusky shark','Milk shark','Sandbar shark'),'N/A',Daily.cpues))
+  flextable(Tab)%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=1.35,unit='cm')%>%
+    width(j=c(3,6),width=1.75,unit='cm')%>%
+    width(j=c(10,12),width=1.85,unit='cm')%>%
+    width(j=c(13),width=3,unit='cm')%>%
+    width(j='Species',width=2.5,unit='cm')%>%
+    width(j='Scenario',width=2,unit='cm')%>%
+    align(align='center',part='all')%>%
+    align(j=1,align='left',part='all')%>%
+    set_header_labels(
+      Species="",Scenario="",Rdist="Dist.",r.mean="Mean",r.cv="CV",
+      Kdist="Dist.",K.mean="Mean",K.CV="CV",
+      bmsyk.mean="",Proc.error="error",Ktch.CV="CV",Daily.cpues="CPUE",model.type="type")%>%
+    add_header_row(values = c("Species","Scenario","r","K","Bmsyk","Process","Catch","Removed","Model"),
+                   colwidths = c(1,1,3,3,1,1,1,1,1))%>%
+    flextable::compose(i=1,j=3,part='header',value=as_paragraph(as_i('r')))%>%
+    flextable::compose(i=1,j=9,part='header',value=as_paragraph('B',as_sub('MSY'),'/K'))%>%
+    border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+    set_caption(caption = "Table A.11.1. Input parameter values for the Bayesian state-space surplus production models. r, maximum intrinsic rate of population increase; K, carrying capacity (tonnes); Dist., distribution.",
+                autonum = NULL)
+}else
+{
+  flextable(Tab)%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=1.35,unit='cm')%>%
+    width(j=c(3,6),width=1.75,unit='cm')%>%
+    width(j=c(10),width=1.85,unit='cm')%>%
+    width(j=c(12),width=3,unit='cm')%>%
+    width(j='Species',width=2.5,unit='cm')%>%
+    width(j='Scenario',width=2,unit='cm')%>%
+    align(align='center',part='all')%>%
+    align(j=1,align='left',part='all')%>%
+    set_header_labels(
+      Species="",Scenario="",Rdist="Dist.",r.mean="Mean",r.cv="CV",
+      Kdist="Dist.",K.mean="Mean",K.CV="CV",
+      bmsyk.mean="",Proc.error="error",Ktch.CV="CV",model.type="type")%>%
+    add_header_row(values = c("Species","Scenario","r","K","Bmsyk","Process","Catch","Model"),
+                   colwidths = c(1,1,3,3,1,1,1,1))%>%
+    flextable::compose(i=1,j=3,part='header',value=as_paragraph(as_i('r')))%>%
+    flextable::compose(i=1,j=9,part='header',value=as_paragraph('B',as_sub('MSY'),'/K'))%>%
+    border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+    set_caption(caption = "Table A.11.1. Input parameter values for the Bayesian state-space surplus production models. r, maximum intrinsic rate of population increase; K, carrying capacity (tonnes); Dist., distribution.",
+                autonum = NULL)
+}
+```
+<!---BLOCK_LANDSCAPE_STOP--->
+
+<!-- Display Sensitivity analysis--> 
+ The resulting relative biomass trajectories based on the scenarios considered are shown in Figures A.11.1 for indicator species and A.11.2 for non-indicator species. Overall, the different scenarios considered showed very similar trajectories and current depletion levels. On the basis of these comparisons, S1 was selected as the base case scenario.
+
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Indicator.sp_sensitivity.tiff',sep='')
+```
+![Figure A.11.1. Sensitivity analysis showing the influence of the assumed value of r (S2), process error (S3) and K (S4), and type of production model (S5 & S6) for indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% credibility intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Other.sp_sensitivity.tiff',sep='')
+```
+![Figure A.11.2. Sensitivity analysis showing the influence of the assumed value of r (S2), process error (S3) and K (S4), and type of production model (S5 & S6) for non-indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% credibility intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+<br>
+
+
+<!-- Display Bayesian convergence for S1--> 
+For the base case scenario, Bayesian fit diagnostics showed good convergence properties for all species (Figure A.11.3). The posterior distributions for the two chains were aligned indicating convergence to the similar space. The trace plots showed good chain mixing. The running means diagnostic showed that chains quickly approached the posterior distribution and there was low autocorrelation beyond the first lag. Finally, the Gelman diagnostic values were close to the expected value of 1 (@Gelman2003) and the Geweke diagnostic values were within the expected range [-2,2] (@Geweke1992).
+<br>
+
+```{r, results='asis'}
+# SP_ind=read.csv(paste(Model.outputs.RAR,"Table 7. JABBA CPUE_scenarios_Indicator.sp.csv",sep='/'))%>%
+#           pull(Species)
+# SP_other=read.csv(paste(Model.outputs.RAR,"Table 7. JABBA CPUE_scenarios_Other.sp.csv",sep='/'))%>%
+#           pull(Species)
+Species=unique(sort(c(SP_ind,SP_other)))
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.3.',i,'. ',Titl,'. Bayesian fit diagnostics for the base case scenario and the two MCMC chains. K, carrying capacity (tonnes); m, shape parameter of the production function; r, maximum intrinsic rate of population increase.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'JABBA CPUE/S1/Fit_Bayesian convergence diagnostics.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display priors and posteriors for S1--> 
+For the base case scenario, marginal posterior and prior distributions showed considerable overlap (Figure A.11.4), providing no evidence of severe prior misspecification and indicating that posteriors were largely informed by the priors. However, the K parameter was updated by the data for all species whereas the *m* and *r* parameters were updated by the data for tiger and whiskery sharks and to some extent sandbar shark.
+<br>
+
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.4.',i,'. ',Titl,'. Prior and posterior distributions for  the base case scenario. K, carrying capacity (tonnes); m, shape parameter of the production function; r, maximum intrinsic rate of population increase.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'JABBA CPUE/S1/Prior.and.posterior.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display Fit to cpue series for S1--> 
+For the base case scenario, the models fit the abundance series reasonably well with most fits falling within the 95% CI (Figure A.11.5). The run tests provided no evidence to reject the hypothesis of randomly distributed residuals (Figure A.11.6). The goodness-of-fit was adequate for most species (RMSE≤30%, @carvalhoCookbookUsingModel2021) with the exception of milk and tiger sharks and to some extent copper shark, which showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.11.7).
+<br>
+
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.5.',i,'. ',Titl,'. Fits to the abundance series for the base case scenario. Observed (white circles and 95% CIs) and predicted (solid line) abundance. The dark shaded grey area shows 95% credibility intervals and the light shaded grey area shows the 95% posterior predictive distribution intervals.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'JABBA CPUE/S1/Fit_cpues.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display Runs test for S1--> 
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.6.',i,'. ',Titl,'. Runs test for the base case scenario and fishery. Green panel, no evidence of lack of randomness of abundance series residuals (p≥0.05); Red panel, evidence of lack of randomness of abundance series residuals. The shaded area spans three standard errors and red circles denote years with greater residuals.',sep=''),
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,
+                                           'JABBA CPUE/S1/Fit_runstest.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display dresiduals for S1--> 
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.7.',i,'. ',Titl,'. Residual diagnostic plots for the base case scenario. Boxplot, median and quantiles of the residuals; solid black line, loess smoother through the residuals.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'JABBA CPUE/S1/Fit_dresiduals.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display Retrospective analysis for S1--> 
+For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.11.8) and therefore supporting the use of the base case model for making future projections. For all moderately-lived and long-lived species, the Mohn's-rho (ρ) statistic fell within the expected interval for long-lived species of -0.15 and 0.2 whereas for milk shark, a short-lived species, the ρ statistic fell within the expected interval for short-lived species of -0.22 and 0.3 (@carvalhoCookbookUsingModel2021).
+<br>
+
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.8.',i,'. ',Titl,'. Retrospective analysis results for the base case scenario done by removing one year at a time sequentially (n=5) and predicting relevant management quantities. Grey shaded area, 95% CI from the reference model.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'JABBA CPUE/S1/Fit_retrospective.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<!-- Display Hindcasting for S1--> 
+For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.11.9).  For copper and gummy sharks, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that  the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). However, the predictions fell within the 95% CI and that for both species, the indices have a flat trend. For the other species, the MASE score was ≤ 1 (i.e., predictions are better than a random walk).
+<br>
+
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.11.9.',i,'. ',Titl,'. Hindcasting cross-validation results for the base case scenario showing one-year ahead forecast of abundance values, performed with 5 hindcast model runs relative to the expected value. Large color-coded circles, observations; grey shaded area, predicted 95% CI for the reference year; small color-coded circles, model predictions.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'JABBA CPUE/S1/Fit_hindcasting.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display parameter estimates for S1--> 
+For the base case scenario, model parameter, current depletion and reference point estimates are shown in Table A.11.2.
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 8. JABBA CPUE_estimates_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 8. JABBA CPUE_estimates_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+  filter(Scenario=='S1' & Parameter%in%c("Hmsy","K","MSY","r","SBmsy","m","P2021"))%>%
+  arrange(Species)%>%
+  dplyr::select(-c(Model, Scenario))%>%
+  mutate_if(is.numeric, round, 2) 
+  Tab%>%
+    mutate(Parameter=ifelse(Parameter=='Hmsy','FMSY',
+                     ifelse(Parameter=='SBmsy','BMSY',
+                     ifelse(grepl("P",Parameter),'Current depletion',
+                            Parameter))))%>% 
+    flextable()%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=2.5,unit='cm')%>%
+    width(j='Parameter',width=3,unit='cm')%>%
+    set_caption(caption = "Table A.11.2. Summary of posterior parameter estimates (medians) and 95% Bayesian Credibility Intervals for the base case scenario. r, maximum intrinsic rate of population increase; K, carrying capacity (tonnes).",
+                autonum = NULL)
+
+
+```
+
+<br>
+
+
+<!-- Display biomass trajectories for S1--> 
+For the base case scenario, the relative biomass trajectories for indicator species are shown in Figure A.11.10.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Indicator.sp.tiff',sep='')
+```
+![Figure A.11.10. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
+
+For the base case scenario, the relative biomass trajectories for non-indicator species are shown in Figure A.11.11.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Other.sp.tiff',sep='')
+```
+![Figure A.11.11. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for non-indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
+
+<br>
+<!-- Display F trajectories for S1--> 
+For the base case scenario, the F trajectories for indicator species are shown in Figure A.11.12.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/F.series_JABBA CPUE_Indicator.sp.tiff',sep='')
+```
+![Figure A.11.12. Estimated time series of fishing mortality for indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+For the base case scenario, the F trajectories for non-indicator species are shown in Figure A.11.13.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/F.series_JABBA CPUE_Other.sp.tiff',sep='')
+```
+![Figure A.11.13. Estimated time series of fishing mortality for non-indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+<br>
+
+<!-- Display Kobe plots for S1--> 
+For the base case scenario, Kobe plots for indicator species are shown in Figure A.11.14.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Kobe_plot_JABBA CPUE_WA_Fisheries_Indicator.sp.tiff',sep='')
+```
+![Figure A.11.14. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+
+For the base case scenario, Kobe plots for non-indicator species are shown in Figure A.11.15.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Kobe_plot_JABBA CPUE_WA_Fisheries_Other.sp.tiff',sep='')
+```
+![Figure A.11.15. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+
+<br>
+
+
+<!-- Display likelihoods for each Consequence--> 
+For the base case scenario and the biomass reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.11.3.
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 9. JABBA CPUE_Current.depletion_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 9. JABBA CPUE_Current.depletion_Other.sp.csv',sep=''))
+Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
+  filter(Scenario=='S1')%>%
+  dplyr::select(-Scenario)%>%
+  rename(Consequence=Range)%>%
+  mutate(Consequence=case_when(Consequence=='<lim'~'Major',
+                               Consequence=='lim.thr'~'High',
+                               Consequence=='thr.tar'~'Moderate',
+                               Consequence=='>tar'~'Minor'),
+         Consequence=factor(Consequence,levels=c('Minor','Moderate','High','Major')))%>%
+  gather(Species,Probability,-c(Consequence,finyear,Model))%>%
+  spread(Consequence,Probability)%>%
+  mutate(Species=gsub('\\.', ' ', Species))%>%
+  rename(Year=finyear)%>%
+  mutate(Year=as.character(Year))%>%
+  arrange(Model,Species,Year)
+  
+ Tab%>% 
+    flextable()%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=2,unit='cm')%>%
+    width(j='Species',width=2.5,unit='cm')%>%
+    set_caption(caption = "Table A.11.3. Biomass reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
+                autonum = NULL)%>%
+    footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, B>BTar","Moderate, BThr<B<BTar","High, BLim<B<BThr","Major, B<BLim")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+    fontsize(size=7.5, part='footer')
+
+```
+
+<br>
+For the base case scenario and the F reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.11.4.
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 9. JABBA CPUE_Current.f_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 9. JABBA CPUE_Current.f_Other.sp.csv',sep=''))
+Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
+  filter(Scenario=='S1')%>%
+  dplyr::select(-Scenario)%>%
+  rename(Consequence=Range)%>%
+  mutate(Consequence=case_when(Consequence=='>lim'~'Major',
+                               Consequence=='lim.thr'~'High',
+                               Consequence=='thr.tar'~'Moderate',
+                               Consequence=='<tar'~'Minor'),
+         Consequence=factor(Consequence,levels=c('Minor','Moderate','High','Major')))%>%
+  gather(Species,Probability,-c(Consequence,finyear,Model))%>%
+  spread(Consequence,Probability)%>%
+  mutate(Species=gsub('\\.', ' ', Species))%>%
+  rename(Year=finyear)%>%
+  mutate(Year=as.character(Year))%>%
+  arrange(Model,Species,Year)
+  
+ Tab%>% 
+    flextable()%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=2,unit='cm')%>%
+    width(j='Species',width=2.5,unit='cm')%>%
+    set_caption(caption = "Table A.11.4. F reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
+                autonum = NULL)%>%
+   footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, F<FTar","Moderate, FThr<F<FTar","High, FLim<F<FThr","Major, F>FLim.")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+    fontsize(size=7.5, part='footer')
+
+```
+
+<br>
+
+
+# Appendix 12. Integrated population dynamics modelling   
+We built sex- and age-structured models using Stock Synthesis and time series of catch and available time series of catch rate, catch length composition and mean body weight. For sandbar shark, point estimates of F derived from mark-recapture (@McAuley2007b) were also included. The *r4ss* (@taylorVisualizingCatchatageModels2021) and *ss3diags* R packages were used for pre- and post-processing Stock Synthesis inputs and outputs. A full description of Stock Synthesis is available in (@methotStockSynthesisBiological2013). Below is a description of model inputs and assumptions.
+
+Life history inputs (M~*a*~, fecundity, maturity, reproductive cycle length, growth, size at birth, length-weight) were sourced from the demographic and SSS modelling described above (Tables A.9.1, A.10.3, Figure A.12.1). Growth at age was assumed to follow the von Bertalanffy growth relationship. Mean length at age was assumed to follow a normal distribution with juvenile and adult CVs set at 0.14 and 0.1, respectively, based on the age-length data dispersion observed for gummy, dusky, whiskery and sandbar sharks. Fecundity was assumed to increase linearly with maternal length. For species when only a litter size range was reported, the intercept of the linear relationship was prespecified at the litter size mean and the slope was set at 0. The fecundity parameters were divided by the mean of the reproductive cycle length to calculate annual pup production. We assumed a Beverton-Holt stock-recruitment relationship parametrised as a function of lnRo, *h* and the standard deviation in recruitment ($\sigma_R$). Unexploited equilibrium recruitment was estimated whereas *h* was prespecified at the mean value used for SSS modelling (Table A.10.3). Deviates from the stock-recruit relationship were prespecified following examination of preliminary Stock Synthesis outputs with the *r4ss* package (e.g., @courtneyStockSynthesisSS32017). Preliminary examination with the *r4ss* package also allowed adjusting expected recruitment bias so that resulting recruitment on the standard scale is mean unbiased (@methotAdjustingBiasDue2011). These prespecified values are shown in Appendix 13. 
+
+The start and end years of the model were 1941 and 2021, respectively. Initial fishing mortality was not estimated as fishing was assumed to be negligible prior to 1941 (@Braccini2021). Available time series of catch, catch rates, length composition and mean body weight data (Figure A.12.2) were assigned to 'fleets' and 'surveys' (Table A.12.1). For dusky shark, abundance series were not considered for reasons explained in Appendix 11 so a catch-length model was constructed (@Rudd2021). Catch-length models were also built for smooth hammerhead and spinner shark because abundance time series were not available for smooth hammerhead and available TDGDLF catch rates were not considered to represent abundance trend for spinner shark as explained in Appendix 11.
+
+Gear selectivity estimates for the main fleets capturing the assessed species were only available or could be estimated for dusky, gummy, milk, sandbar, spinner and whiskery sharks, and smooth hammerhead. Hence, Stock Synthesis models were built for these species only and species. Logistic and dome-shaped selectivity functions were assumed based on fleet and species characteristics (Appendix 13). For the southern shark fisheries, which use predominately gillnets, dome-shaped selectivity parameters were mostly estimated using the empirical estimates derived by (@Kirkwood1986a, @Simpfendorfer1998c, @McAuley2007a, @Braccini2022) as initial values although for spinner shark and smooth hammerhead they were mostly prespecified due to data limitations. For the northern shark fisheries, which used predominately hooks, logistic selectivity parameters were estimated for milk shark or prespecified at 50% length at maturity for spinner shark, as mostly adult individuals were caught by these fisheries. For the other species taken in the northern shark fisheries, dome-shaped selectivity was assumed given their large size and capacity to bend hooks, which was reflected in the small number of large individuals in the length composition. For the Indonesian, Taiwanese and other fleets, selectivity mirrored the northern shark fisheries selectivity. For dusky shark, given the current maximum retention size limit (70 cm inter dorsal length), a retention function was implemented with discard mortality pre-specified at 60% (@bracciniHighPostcaptureSurvival2012). Sex-specific length composition from the northern and southern shark fisheries were collected by onboard observers as fork length (FL) (@Braccini2016b). This was input into Stock Synthesis as total length (TL) applying published conversion factors (@bartesLengthLengthRelationships2023). For each fleet, only years with at least 150 observations were included. The TL data were compiled in length bins of 5 cm. Due to the limited number of observations by sex, male and female length composition was combined for milk shark for the northern shark fisheries and the survey, for dusky shark for the survey, and for smooth hammerhead for the southern shark fisheries. Male selectivity was estimated as a female selectivity offset for sandbar shark for the northern shark fisheries and for whiskery and gummy sharks for the southern shark fisheries. For other species/fleets, males and females were assumed to have equal selectivity. 
+
+Following @Francis2011, we implemented a two-stage data weighting approach to iteratively tune variance adjustment factors for fleet-specific abundance indices externally to the model (Stage 1) and length composition data within SS3 (Stage 2). For the abundance indices, the same weighting process applied for building the JABBA models was applied. For the length composition data (Stage 2), the *r4ss* package was used to estimate the effective sample size of each data set based on @Francis2011 method and the residuals of the Stock Synthesis model fit (e.g., @courtneyStockSynthesisSS32017).
+
+Following @carvalhoCookbookUsingModel2021, model properties were evaluated based on convergence, goodness-of-fit, model consistency and prediction skills as implemented in the *ss3diags* package. Convergence was evaluated based on the objective function final gradient, estimable parameters hitting boundaries, whether the Hessian inverted and by ‘jittering’ the initial value of lnRo. Goodness-of-fit was evaluated based on residual patterns and runs test. Model consistency was evaluated based on likelihood profiles and retrospective analysis. Finally, prediction skill was evaluated based on hindcasting. Hindcasting and retrospective analysis were done only for species with available abundance indices. 
+
+Uncertainty in estimated and derived parameters was obtained from asymptotic standard errors. Finally, sensitivity tests were done to evaluate the effect of the assumed *h* and M~*a*~ value (Table A.12.1).
+
+
+<!---BLOCK_LANDSCAPE_START--->
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 10. Age.based_SS_scenarios_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 10. Age.based_SS_scenarios_Other.sp.csv',sep=''))
+SP_ind=Tab1%>%pull(Species)
+SP_other=Tab2%>%pull(Species)
+Species=unique(sort(c(SP_ind,SP_other)))
+
+Tab=rbind(Tab1,Tab2)%>%
+  arrange(Species)%>%
+  mutate(Fem.awt=formatC(Fem.awt, format = "e", digits = 1),
+         Mal.awt=formatC(Mal.awt, format = "e", digits = 1),
+         Fem.bwt=formatC(Fem.bwt, digits = 2),
+         Mal.bwt=formatC(Mal.bwt, digits = 2),
+         Fem.fec.a=formatC(Fem.fec.a, format = "e", digits = 1),
+         Fem.fec.b=formatC(Fem.fec.b, digits = 2),
+         Ln_R0_init=formatC(Ln_R0_init, digits = 1),
+         Fem.K=formatC(Fem.K, digits = 2),
+         Mal.K=formatC(Mal.K, digits = 2),
+         a_FL.to.TL=formatC(a_FL.to.TL, digits = 2),
+         b_FL.to.TL=formatC(b_FL.to.TL, digits = 2),
+         h.mean=round(h.mean,2),
+         SR_sigmaR=round(SR_sigmaR,2))%>%
+  dplyr::select(-c(F_ballpark,M.at.age,extra.SD.Q,Msd,h.sd,Mmean,NSF.selectivity))%>%
+  relocate(Ln_R0_init,.before=Ln_R0_max)%>%
+  relocate(SR_sigmaR,.after=h.mean)
+
+if('Daily.cpues'%in%names(Tab))
+{
+  Tab=Tab%>%mutate(Daily.cpues=ifelse(is.na(Daily.cpues),'',Daily.cpues))
+  flextable(Tab)%>%
+  fontsize(size=7, part='body')%>%
+  fontsize(j='Fleets',size=6, part='body')%>%
+  fontsize(size=8, part='header')%>%
+  width(width=.9,unit='cm')%>%
+  width(j='Species',width=1.9,unit='cm')%>%
+  width(j='Scenario',width=1.4,unit='cm')%>%
+  width(j='Fleets',width=2.2,unit='cm')%>%
+  width(j='Daily.cpues',width=1.7,unit='cm')%>%
+  width(j='Fem.awt',width=1.4,unit='cm')%>%
+  width(j='Mal.awt',width=1.4,unit='cm')%>%
+  width(j='Fem.TL50',width=1,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=c('Species','Fleets'),align='left',part='all')%>%
+  set_header_labels(
+      Species="",Scenario="",h.mean="",SR_sigmaR="",Ln_R0_min="Low",Ln_R0_init="Init.",Ln_R0_max="Up",Daily.cpues="CPUE",TLo="",
+      Fem.TL.inf="TL.inf",Fem.K="k",Fem.awt="a",Fem.bwt="b",
+      Fem.TL50="TL50",Fem.fec.a="f_a",Fem.fec.b="f_b",
+      Mal.TL.inf="TL.inf",Mal.K="k",Mal.awt="a",Mal.bwt="b",
+      a_FL.to.TL="",b_FL.to.TL="",Fleets="")%>%
+  add_header_row(values = c("Species","Scenario","h","SigmaR","lnRo","Removed","TLo","Female","Male","L_a","L_b","Fleets"),
+                 colwidths = c(1,1,1,1,3,1,1,7,4,1,1,1))%>%
+  flextable::compose(i=1,j=3,part='header',value=as_paragraph(as_i('h')))%>%
+  flextable::compose(i=1,j=4,part='header',value=as_paragraph(stri_unescape_unicode('\u03c3'),as_sub('R')))%>%
+  flextable::compose(i=2,j='Fem.TL50',part='header',value=as_paragraph('TL',as_sub('50')))%>%
+  flextable::compose(i=2,j=c(10,17),part='header',value=as_paragraph('TL',as_sub(stri_unescape_unicode('\\u221E'))))%>%
+  border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+  set_caption(caption = "Table A.12.1. Input parameter values for the integrated population dynamics models. h, steepness; σR, recruitment standard deviation; lnRo, log of unexploited equilibrium recruitment; Low, lower bound; Init., initial value; Up, upper bound; TLo, total length at birth (cm); TL50, total length at 50% maturity (cm); k, growth coefficient; a and b, parameters of the length-weight relationship (in cm and kg, respectively); f_a and f_b, parameters of the fecundity at age relationship; L_a and L_b, parameters of the TL-FL (fork length, in cm) relationship.",
+              autonum = NULL)
+}else
+{
+  flextable(Tab)%>%
+  fontsize(size=7, part='body')%>%
+  fontsize(j='Fleets',size=6, part='body')%>%
+  fontsize(size=8, part='header')%>%
+  width(width=.9,unit='cm')%>%
+  width(j='Species',width=1.8,unit='cm')%>%
+  width(j='Scenario',width=1.5,unit='cm')%>%
+  width(j='Fleets',width=2.2,unit='cm')%>%
+  width(j='Fem.awt',width=1.4,unit='cm')%>%
+  width(j='Mal.awt',width=1.4,unit='cm')%>%
+    width(j='Fem.fec.a',width=1.3,unit='cm')%>%
+  width(j='Fem.TL50',width=1,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=c('Species','Fleets'),align='left',part='all')%>%
+  set_header_labels(
+      Species="",Scenario="",h.mean="",SR_sigmaR="",Ln_R0_min="Low",Ln_R0_init="Init.",Ln_R0_max="Up",TLo="",
+      Fem.TL.inf="TL.inf",Fem.K="k",Fem.awt="a",Fem.bwt="b",
+      Fem.TL50="TL50",Fem.fec.a="f_a",Fem.fec.b="f_b",
+      Mal.TL.inf="TL.inf",Mal.K="k",Mal.awt="a",Mal.bwt="b",
+      a_FL.to.TL="",b_FL.to.TL="",Fleets="")%>%
+  add_header_row(values = c("Species","Scenario","h","SigmaR","lnRo","TLo","Female","Male","L_a","L_b","Fleets"),
+                 colwidths = c(1,1,1,1,3,1,7,4,1,1,1))%>%
+  flextable::compose(i=1,j=3,part='header',value=as_paragraph(as_i('h')))%>%
+  flextable::compose(i=1,j=4,part='header',value=as_paragraph(stri_unescape_unicode('\u03c3'),as_sub('R')))%>%
+  flextable::compose(i=2,j='Fem.TL50',part='header',value=as_paragraph('TL',as_sub('50')))%>%
+  flextable::compose(i=2,j=c(9,16),part='header',value=as_paragraph('TL',as_sub(stri_unescape_unicode('\\u221E'))))%>%
+  border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
+  set_caption(caption = "Table A.12.1. Input parameter values for the integrated population dynamics models. h, steepness; σR, recruitment standard deviation; lnRo, log of unexploited equilibrium recruitment; Low, lower bound; Init., initial value; Up, upper bound; TLo, total length at birth (cm); TL50, total length at 50% maturity (cm); k, growth coefficient; a and b, parameters of the length-weight relationship (in cm and kg, respectively); f_a and f_b, parameters of the fecundity at age relationship; L_a and L_b, parameters of the TL-FL (fork length, in cm) relationship.",
+              autonum = NULL)%>%
+   footnote(i = 1, j = 22,value = as_paragraph("Northern.shark, Northern Shark Fisheries; Southern.shark_1, TDGDLF monthly records; Southern.shark_2, TDGDLF daily records; WRL, Western Rock Lobster Fishery"), ref_symbols = 'a',part = "header",inline = TRUE)%>%
+   fontsize(size=7.5, part='footer')
+}
+  
+
+```
+<!---BLOCK_LANDSCAPE_STOP--->
+
+<!-- Display biological relationships -->
+```{r, results='asis'}
+# SP_ind=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Indicator.sp.csv",sep='/'))%>%
+#           pull(Species)
+# SP_other=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Other.sp.csv",sep='/'))%>%
+#           pull(Species)
+# Species=unique(sort(c(SP_ind,SP_other)))
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.1.',i,'. ',Titl,'. Biological relationships. FL, fork length; TL, total length; TLMax, Maximum total length; TL95 and TL50, total length at 95% and 50% maturity; TL0, TL at birth; Age50; age at 50% maturity (years; range provided); AgeMax, maximum age (years; range provided).',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           '1_Inputs/Visualise data/Biology.tiff',sep='/'),sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display available time series --> 
+```{r, results='asis', fig.show='asis',fig.align='left',fig.height=6,fig.width=7}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.2.',i,'. ',Titl,'. Available data time series.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           '1_Inputs/Visualise data/avail.dat.tiff',sep='/'),sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+<!-- Display Sensitivity analysis--> 
+The resulting relative biomass trajectories based on the scenarios considered are shown in Figures A.12.3 for indicator species and A.12.4 for non-indicator species. Overall, the different scenarios considered showed very similar trajectories and current depletion levels. On the basis of these comparisons, S1 was selected as the base case scenario.
+
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Indicator.sp_sensitivity.tiff',sep='')
+```
+![Figure A.12.3. Sensitivity analysis showing the influence of the assumed h (S2) and Ma (S3) for indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% confidence intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Other.sp_sensitivity.tiff',sep='')
+```
+![Figure A.12.4. Sensitivity analysis showing the influence of the assumed h (S2) and Ma (S3) for non-indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% confidence intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+<br>
+
+<!-- Display Fit to cpue  and length series for S1--> 
+**MISSING UPDATE TEXT. START with CONVERGENCE (GRADIENT AND HESSIAN). For the base case scenario, the models fit the abundance series reasonably well with most fits within the 95% CI (Figure A.12.5). Length COMPS (Figure A.12.6). Mean length (Figure A.12.7). The run tests provided no evidence to reject the hypothesis of randomly distributed residual for most species and indices (Figure A.12.8). The goodness-of-fit was adequate for most species (RMSE≤30%, @carvalhoCookbookUsingModel2021) with the exception of milk and tiger sharks and to some extent copper shark, which showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.12.9).....**
+<br>
+
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+  Titl=gsub(".*\\.", "", Species[i])
+  FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/S1/plots',sep='/'), sep=''))
+  x.indx=FilEs[grep('index2',FilEs)]
+  if(length(x.indx)>0)
+  {
+    for(x in 1:length(x.indx))
+    {
+        cat(sprintf('![%s](%s)', paste('Figure A.12.5.',i,'. ',paste(Titl,str_replace(str_replace(x.indx[x], "index2_cpuefit_",""),".png",""),sep='. '),'. Fits to the abundance series for the base case scenario. Observed (white circles and 95% CIs) and predicted (solid blue line) abundance.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/plots/',sep='/'),x.indx[x], sep='')), sep = '\n')
+  cat("\n")
+    }
+    ii=ii+1
+  }
+}
+```
+
+<br>
+
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+  Titl=gsub(".*\\.", "", Species[i])
+  FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/S1/plots',sep='/'), sep=''))
+  x.indx=FilEs[grep('comp_lenfit__aggregated_across',FilEs)]
+  if(length(x.indx)>0)
+  {
+    for(x in 1:length(x.indx))
+    {
+        cat(sprintf('![%s](%s)', paste('Figure A.12.6.',i,'. ',Titl,'. Fits to the length composition series for the base case scenario. Observed (grey-shaded area) and predicted (solid line) composition.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/plots/',sep='/'),x.indx[x], sep='')), sep = '\n')
+  cat("\n")
+    }
+    ii=ii+1
+  }
+}
+```
+
+<br>
+
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+  Titl=gsub(".*\\.", "", Species[i])
+  FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/S1/plots',sep='/'), sep=''))
+  x.indx=FilEs[grep('bodywt_fit_flt',FilEs)]
+  if(length(x.indx)>0)
+  {
+    for(x in 1:length(x.indx))
+    {
+        cat(sprintf('![%s](%s)', paste('Figure A.12.7.',ii,'. ',Titl,'. Fits to the mean body weight series for the base case scenario. Observed (white circles and 95% CIs) and predicted (solid blue line) mean body weight.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/plots/',sep='/'),x.indx[x], sep='')), sep = '\n')
+  cat("\n")
+    }
+    ii=ii+1
+  }
+}
+```
+
+<br>
+
+<!-- Display Runs test for S1--> 
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species)) 
+{
+  FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/Diagnostics',sep='/'), sep=''))
+  x.indx=FilEs[grep('runs_tests_cpu',FilEs)]
+  if(length(x.indx)>0)
+  {
+      Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.8.',ii,'. ',Titl,'. Runs test for the base case scenario and fishery. Green panel, no evidence of lack of randomness of abundance series residuals (p≥0.05); Red panel, evidence of lack of randomness of abundance series residuals. The shaded area spans three standard errors and red circles denote years with greater residuals.',sep=''),
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,
+                                           'SS3 integrated/S1/Diagnostics/runs_tests_cpue.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+  ii=ii+1
+  }
+}
+```
+
+<br>
+
+<!-- Display dresiduals for S1--> 
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.9.',i,'. ',Titl,'. Residual diagnostic plots for the base case scenario. Boxplot, median and quantiles of the residuals; solid black line, loess smoother through the residuals.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/Diagnostics/jabbaresidual.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!-- Display Likelihood profiles for S1--> 
+**MISSING UPDATE TEXT. For the base case scenario, XXX (Figure A.12.10)......**
+<br>
+  
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+   FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/S1/Diagnostics',sep='/'), sep=''))
+  x.indx=FilEs[grep('R0_profile_plot',FilEs)]
+  if(length(x.indx)>0)
+  {
+     Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.10.',ii,'. ',Titl,'. Log-likelihood profiles for Ro for the various data components included in the models.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/Diagnostics/R0_profile_plot.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+    ii=ii+1
+  }
+ 
+}
+```
+
+
+<!-- Display Retrospective analysis for S1--> 
+**MISSING UPDATE TEXT. For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.12.11) and therefore supporting the use of the base case model for making future projections. For all moderately-lived and long-lived species, the Mohn's-rho (ρ) statistic fell within the expected interval for long-lived species of -0.15 and 0.2 whereas for milk shark, a short-lived species, the ρ statistic fell within the expected interval for short-lived species of -0.22 and 0.3 (@carvalhoCookbookUsingModel2021).......**
+<br>
+  
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+   FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/S1/Diagnostics',sep='/'), sep=''))
+  x.indx=FilEs[grep('retro_Mohns_Rho',FilEs)]
+  if(length(x.indx)>0)
+  {
+     Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.11.',ii,'. ',Titl,'. Retrospective analysis results for the base case scenario done by removing one year at a time sequentially (n=5) and predicting relevant management quantities. Grey shaded area, 95% CI from the reference model.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/Diagnostics/retro_Mohns_Rho.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+    ii=ii+1
+  }
+ 
+}
+```
+
+<!-- Display Hindcasting for S1--> 
+**MISSING UPDATE TEXT. For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.12.12).  For copper and gummy sharks, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that  the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). However, the predictions fell within the 95% CI and that for both species, the indices have a flat trend. For the other species, the MASE score was ≤ 1 (i.e., predictions are better than a random walk).......**
+<br>
+  
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+  FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                             'SS3 integrated/S1/Diagnostics',sep='/'), sep=''))
+  x.indx=FilEs[grep('Hindcasting cross-validation_Survey',FilEs)]
+  if(length(x.indx)>0)
+  {
+    Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.12.',i,'. ',Titl,'. Hindcasting cross-validation results for the base case scenario showing one-year ahead forecast of abundance values, performed with 5 hindcast model runs relative to the expected value. Large color-coded circles, observations; grey shaded area, predicted 95% CI for the reference year; small color-coded circles, model predictions.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/Diagnostics/Hindcasting cross-validation_Survey.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+  ii=ii+1
+  }
+  
+}
+```
+
+<br>
+
+<!-- Display Jitters for S1--> 
+**MISSING UPDATE TEXT.  For the base case scenario, the jitter (Figure A.12.13). .......** 
+<br>
+  
+```{r, results='asis'}
+for(i in 1:length(Species)){
+  Titl=gsub(".*\\.", "", Species[i])
+  cat(sprintf('![%s](%s)', paste('Figure A.12.13.',i,'. ',Titl,'. Jitter plots for the base case scenario. Top panel, Spawning stock biomass trajectories obtained from the jittered model runs. Gray shaded areas are the 95% confidence intervals from the base case run. Bottom panel, solid black circles represent the total likelihood obtained from jittered model runs. The red horizontal line represents the total likelihood obtained from the base case run.',sep=''), 
+              paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                           'SS3 integrated/S1/Diagnostics/Jitter.tiff',sep='/'), sep='')), sep = '\n')
+  cat("\n")
+}
+```
+
+<br>
+
+<!---BLOCK_LANDSCAPE_START--->
+<!-- Display parameter estimates for S1--> 
+  For the base case scenario, model parameter, current depletion and reference point estimates are shown in Table A.12.2.
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_estimates_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_estimates_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+  filter(Scenario=='S1' & grepl(paste(c('SR_LN(R0)','LnQ','Size_DblN','SzSel_Male'),collapse='|'),Par))%>%
+  arrange(Species)%>%
+  dplyr::select(Species,Par,Value,Phase,Min,Max,Init,Status,Parm_StDev,Gradient)%>%
+  mutate_if(is.numeric, round, 2) 
+Tab%>%
+  flextable()%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(width=2.5,unit='cm')%>%
+  width(j=c('Phase','Min','Max','Init','Status'),width=1.5,unit='cm')%>%
+  width(j=c('Par'),width=6,unit='cm')%>%
+  width(j=c('Parm_StDev','Gradient'),width=2.5,unit='cm')%>% 
+  align(align='center',part='all')%>%
+  align(j=c('Species','Par'),align='left',part='all')%>%
+  set_caption(caption = "Table A.12.2. Summary of parameter estimates.",
+              autonum = NULL)
+```
+<!---BLOCK_LANDSCAPE_STOP--->
+<br>
+
+<!-- Display Selectivity at length for S1--> 
+  The modelled selectivity at lengths for each fleet are shown in Figure A.12.14.
+
+```{r, results='asis'}
+ii=1
+for(i in 1:length(Species))
+{
+  Titl=gsub(".*\\.", "", Species[i])
+  FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                                'SS3 integrated/S1/plots',sep='/'), sep=''))
+  x.indx=FilEs[grep('sel01_multiple_fleets_length1',FilEs)]
+  if(length(x.indx)>0)
+  {
+    for(x in 1:length(x.indx))
+    {
+      cat(sprintf('![%s](%s)', paste('Figure A.12.14.',i,'. ',Titl,'. Selectivity at length by fleet.',sep=''), 
+                  paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
+                                               'SS3 integrated/S1/plots/',sep='/'),x.indx[x], sep='')), sep = '\n')
+      cat("\n")
+    }
+    ii=ii+1
+  }
+}
+```
+<br>  
+  
+<!-- Display biomass trajectories for S1--> 
+For the base case scenario, the relative biomass trajectories for indicator species are shown in Figure A.12.15.
+<br>
+
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Indicator.sp.tiff',sep='')
+```
+![Figure A.12.15. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line)).](`r path`){width=800px}
+
+For the base case scenario, the relative biomass trajectories for non-indicator species are shown in Figure A.12.16.
+<br>
+  
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Other.sp.tiff',sep='')
+```
+![Figure A.12.16. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for non-indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
+
+<br>
+
+<!-- Display F trajectories for S1--> 
+For the base case scenario, the F trajectories for indicator species are shown in Figure A.12.17.
+<br>
+  
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/F.series_SS3 integrated_Indicator.sp.tiff',sep='')
+```
+![Figure A.12.17. Estimated time series of fishing mortality for indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+For the base case scenario, the F trajectories for non-indicator species are shown in Figure A.12.18.
+<br>
+  
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/F.series_SS3 integrated_Other.sp.tiff',sep='')
+```
+![Figure A.12.18. Estimated time series of fishing mortality for non-indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+
+<br>
+
+<!-- Display Kobe plots for S1--> 
+For the base case scenario, Kobe plots for indicator species are shown in Figure A.12.19.
+<br>
+  
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Indicator.sp.tiff',sep='')
+```
+![Figure A.12.19. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+
+For the base case scenario, Kobe plots for non-indicator species are shown in Figure A.12.20.
+<br>
+  
+```{r, echo=FALSE}
+path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Other.sp.tiff',sep='')
+```
+![Figure A.12.20. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+
+<br>
+
+<!-- Display likelihoods for each Consequence--> 
+For the base case scenario and the biomass reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.12.3.
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_current.depletion_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_current.depletion_Other.sp.csv',sep=''))
+Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
+  filter(Scenario=='S1')%>%
+  dplyr::select(-Scenario)%>%
+  rename(Consequence=Range)%>%
+  mutate(Consequence=case_when(Consequence=='<lim'~'Major',
+                               Consequence=='lim.thr'~'High',
+                               Consequence=='thr.tar'~'Moderate',
+                               Consequence=='>tar'~'Minor'),
+         Consequence=factor(Consequence,levels=c('Minor','Moderate','High','Major')))%>%
+  gather(Species,Probability,-c(Consequence,finyear,Model))%>%
+  spread(Consequence,Probability)%>%
+  mutate(Species=gsub('\\.', ' ', Species))%>%
+  rename(Year=finyear)%>%
+  mutate(Year=as.character(Year))
+  
+ Tab%>% 
+    flextable()%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=2,unit='cm')%>%
+    width(j='Species',width=2.5,unit='cm')%>%
+    set_caption(caption = "Table A.12.3. Biomass reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
+                autonum = NULL)%>%
+   footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, B>BTar","Moderate, BThr<B<BTar","High, BLim<B<BThr","Major, B<BLim")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+   fontsize(size=7.5, part='footer')
+
+```
+
+<br>  
+
+For the base case scenario and the F reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.12.4.
+```{r,echo=FALSE,ft.align="left"}
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_Current.f_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_Current.f_Other.sp.csv',sep=''))
+Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
+  filter(Scenario=='S1')%>%
+  dplyr::select(-Scenario)%>%
+  rename(Consequence=Range)%>%
+  mutate(Consequence=case_when(Consequence=='>lim'~'Major',
+                               Consequence=='lim.thr'~'High',
+                               Consequence=='thr.tar'~'Moderate',
+                               Consequence=='<tar'~'Minor'),
+         Consequence=factor(Consequence,levels=c('Minor','Moderate','High','Major')))%>%
+  gather(Species,Probability,-c(Consequence,finyear,Model))%>%
+  spread(Consequence,Probability)%>%
+  mutate(Species=gsub('\\.', ' ', Species))%>%
+  rename(Year=finyear)%>%
+  mutate(Year=as.character(Year))
+  
+ Tab%>% 
+    flextable()%>%
+    fontsize(size=8, part='body')%>%
+    fontsize(size=9, part='header')%>%
+    width(width=2,unit='cm')%>%
+    width(j='Species',width=2.5,unit='cm')%>%
+    set_caption(caption = "Table A.12.4. F reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
+                autonum = NULL)%>%
+   footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, F<FTar","Moderate, FThr<F<FTar","High, FLim<F<FThr","Major, F>FLim.")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+   fontsize(size=7.5, part='footer')
+
+```
+
+<br>  
+
+
+# Appendix 13. Stock Synthesis control files for the basecase integrated population dynamics models   
+
+```{r results="asis"}
+# SP_ind=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Indicator.sp.csv",sep='/'))%>%pull(Species)
+# SP_other=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Other.sp.csv",sep='/'))%>%pull(Species)
+# Species=unique(sort(c(SP_ind,SP_other)))
+for(i in 1:length(Species))
+{
+   cat('\n##', Species[i], '\n')
+   cat(readLines(paste(Model.outputs.an,paste("1.",Species[i],'/',this.yr,'/SS3 integrated/S1/control.ctl',sep=''),sep='')),sep = "  \n")
+   cat('\n')
+ }
+```  
