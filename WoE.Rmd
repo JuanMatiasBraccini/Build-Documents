@@ -24,6 +24,7 @@ library(flextable)
 library(stringi)
 library(Hmisc)
 library(officer)
+library(r4ss)
 ```
 
 <!-- global for setting path to figures -->
@@ -116,7 +117,7 @@ Next assessment is proposed for 2028 to allow for data collection, processing an
 
 
 # Assessed species
-Including the four indicator species, >100 shark and ray taxonomic groups (herein referred to as 'species') have been identified in the catch of recreational and/or commercial fisheries operating in WA (Table A2). However, only a subset of those are currently assessed because quantitative population assessment approaches are not suitable for species with negligible catches (@Martell2012) and some species were assessed elsewhere. Blacktip (*C. limbatus* and *C. tilstoni*) and spot-tail (*C. sorrah*) sharks form a single biological stock with the NT and WA catches are a small fraction of the total catch; hence, these species are assessed as part of the assessment conducted by the NT Fisheries Department (@Stewardson2018). Similarly, school shark (*Galeorhinus galeus*) form a single biological stock in southern Australia and WA catches are negligible compared to other jurisdictions. Hence, this species is assessed by the Commonwealth of Australia (@Stewardson2018). Next, white shark (*Carcharodon carcharias*), which were reported as landed catch in commercial logbooks until protection in 1997, were assessed by @hillaryGeneticRelatednessReveals2018. For bull shark (*C. leucas*), reported catches (mostly taken in the NSF), are negligible and unreliable as this species was not observed during three years of intensive on-board observer sampling or during several years of fishery-independent shark longline surveys (Heupel and McAuley, 2007). Hence, bull shark catches were combined with those of pigeye shark (*C. amboinensis*) and assessed as ‘pigeye’, given the species morphological similarities (@tillettSimilarLifeHistory2011) and the validated presence of pigeye sharks in the catches of northern shark fisheries (@Heupel2007b). Finally, due to variable resolution in species identification across the different catch sources, catsharks (Scyliorhinidae), sawsharks (Pristiophoridae), thresher sharks (Alopidae), wobbegongs (Orectolobidae), angel sharks (Squatinidae), banjo rays (Trygonorrhinidae), and wedgefish (Rhinidae) were assessed at the family level. All analyses were done using the statistical package R (@RDevelopmentCoreTeam2014). 
+Including the four indicator species, >100 shark and ray taxonomic groups (herein referred to as 'species') have been identified in the catch of recreational and/or commercial fisheries operating in WA (Table A.2). However, only a subset of those are currently assessed because quantitative population assessment approaches are not suitable for species with negligible catches (@Martell2012) and some species were assessed elsewhere. Blacktip (*C. limbatus* and *C. tilstoni*) and spot-tail (*C. sorrah*) sharks form a single biological stock with the NT and WA catches are a small fraction of the total catch; hence, these species are assessed as part of the assessment conducted by the NT Fisheries Department (@Stewardson2018). Similarly, school shark (*Galeorhinus galeus*) form a single biological stock in southern Australia and WA catches are negligible compared to other jurisdictions. Hence, this species is assessed by the Commonwealth of Australia (@Stewardson2018). Next, white shark (*Carcharodon carcharias*), which were reported as landed catch in commercial logbooks until protection in 1997, were assessed by @hillaryGeneticRelatednessReveals2018. For bull shark (*C. leucas*), reported catches (mostly taken in the NSF), are negligible and unreliable as this species was not observed during three years of intensive on-board observer sampling or during several years of fishery-independent shark longline surveys (Heupel and McAuley, 2007). Hence, bull shark catches were combined with those of pigeye shark (*C. amboinensis*) and assessed as ‘pigeye’, given the species morphological similarities (@tillettSimilarLifeHistory2011) and the validated presence of pigeye sharks in the catches of northern shark fisheries (@Heupel2007b). Finally, due to variable resolution in species identification across the different catch sources, catsharks (Scyliorhinidae), sawsharks (Pristiophoridae), thresher sharks (Alopidae), wobbegongs (Orectolobidae), angel sharks (Squatinidae), banjo rays (Trygonorrhinidae), and wedgefish (Rhinidae) were assessed at the family level. All analyses were done using the statistical package R (@RDevelopmentCoreTeam2014). 
 
 
 ```{r, echo=FALSE}
@@ -126,7 +127,7 @@ names.assessed.species<- paste(paste(assessed.species[1:(length(assessed.species
                              'and',assessed.species[length(assessed.species)])
 ```
 
-A PSA assessment was done to remove species with historically low catches from quantitative assessments. Productivity scores were determined using life history information on maturity, fecundity, reproductive strategy and trophic level (Table A3). Susceptibility scores were determined using information on species availability, encounterability, selectivity and post-capture survival in relation to the four main types of commercial fishing gears used in WA: gillnets, hooks, trawl and traps (Table A3). The cumulative impact of these gears was accounted for by calculating an aggregated susceptibility index following (@Micheli2014). Many species have been historically caught only sporadically and in very low volumes, indicating no sustainability risk (@Newman2018). Hence, availability and encounterability scores were set to one for species with maximum annual catches < 50 tonnes and annual catches < five tonnes for ≥ five years. Annual catches from WA shark and ray species taken in WA fisheries were extracted from @Braccini2021, @bracciniQuantifyingSharkRay2021 and @bracciniRecreationalHarvestSharks2021. These data include time series of reconstructed recreational catches, reported domestic commercial landings, unreported domestic discards, and illegal and unreported foreign catches within WA waters. For copper shark (*C. brachyurus*) catches from South Australia, New South Wales and Commonwealth Fisheries were also included in the assessment as this species forms a single unit-stock across southern Australia (Huveneers et al., 2021). Next, vulnerability scores were used to determine which species were further assessed. Vulnerability was calculated as the Euclidean distance from the origin to the coordinates of the productivity and susceptibility scores on the PSA plots (@cortesEXPANDEDECOLOGICALRISK2015). Vulnerability thresholds for defining risk level were set at <2.64 (low risk), 2.64 to 3.18 (medium risk) and > 3.18 (high risk) (@Hobday2007). Only species with ‘high’ vulnerability scores were considered in subsequent analyses. The indicator species were not considered in this analysis as the vulnerability score is high by definition.
+A PSA assessment was done to remove species with historically low catches from quantitative assessments. Productivity scores were determined using life history information on maturity, fecundity, reproductive strategy and trophic level (Table A.3). Susceptibility scores were determined using information on species availability, encounterability, selectivity and post-capture survival in relation to the four main types of commercial fishing gears used in WA: gillnets, hooks, trawl and traps (Table A.3). The cumulative impact of these gears was accounted for by calculating an aggregated susceptibility index following (@Micheli2014). Many species have been historically caught only sporadically and in very low volumes, indicating no sustainability risk (@Newman2018). Hence, availability and encounterability scores were set to one for species with maximum annual catches < 50 tonnes and annual catches < five tonnes for ≥ five years. Annual catches from WA shark and ray species taken in WA fisheries were extracted from @Braccini2021, @bracciniQuantifyingSharkRay2021 and @bracciniRecreationalHarvestSharks2021. These data include time series of reconstructed recreational catches, reported domestic commercial landings, unreported domestic discards, and illegal and unreported foreign catches within WA waters. For copper shark (*C. brachyurus*) catches from South Australia, New South Wales and Commonwealth Fisheries were also included in the assessment as this species forms a single unit-stock across southern Australia (Huveneers et al., 2021). Next, vulnerability scores were used to determine which species were further assessed. Vulnerability was calculated as the Euclidean distance from the origin to the coordinates of the productivity and susceptibility scores on the PSA plots (@cortesEXPANDEDECOLOGICALRISK2015). Vulnerability thresholds for defining risk level were set at <2.64 (low risk), 2.64 to 3.18 (medium risk) and > 3.18 (high risk) (@Hobday2007). Only species with ‘high’ vulnerability scores were considered in subsequent analyses. The indicator species were not considered in this analysis as the vulnerability score is high by definition.
 
 Of the >100 species considered in this assessment, `r tolower(names.assessed.species)` had high vulnerability (Figure 3) and were subsequently assessed.   
 
@@ -297,9 +298,9 @@ flextable(Tab)%>%
   width(j='Common name',width=5,unit='cm')%>%
   width(j='Scientific name',width=6,unit='cm')%>%
   italic(j='Scientific name')%>%
-  set_caption(caption = 'Table A2. Shark and ray species identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Species are ordered alphabetically by common name.',
+  set_caption(caption = 'Table A.2. Shark and ray species identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Species are ordered alphabetically by common name.',
               autonum = NULL)
-# knitr::kable(Tab, caption='Table A2. Shark and ray taxonomic groups identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Taxonomic groups are ordered alphabetically by common name.')
+# knitr::kable(Tab, caption='Table A.2. Shark and ray taxonomic groups identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Taxonomic groups are ordered alphabetically by common name.')
 
 ```
 <br>
@@ -307,6 +308,7 @@ flextable(Tab)%>%
 
 <!---BLOCK_LANDSCAPE_START--->
 # Appendix 3. PSA scores
+## Biology and vulnerability
 ```{r,echo=FALSE,ft.align="left"}
 Tab<- read.csv(paste(Model.outputs.an,'PSA/Table S2_PSA scores.csv',sep=''))
 Nms=names(Tab)
@@ -327,14 +329,14 @@ flextable(Tab)%>%
   add_header_row(values = c("Species", "Life history","Net","Hook","Trawl","Trap","Vu"),
                  colwidths = c(1, 7,4,4,4,4,1))%>%
   border_inner_h(border = fp_border_default(width = 0), part = "header")%>%
-  set_caption(caption = 'Table A3. PSA scores for the species considered in the assessment (NB, catsharks, sawsharks, thresher sharks, wobbegongs, angel sharks, banjo rays, wedgefishes, stingrays, and ‘rays and skates’ were aggregated and assessed as at the group level due to unreliable species reporting for some fisheries). MA, maximum age; AM, age at maturity; FE, fecundity; MS, maximum size; SM, size at maturity; RS, reproductive strategy; TL, trophic level; Av, availability; En, encounterability; Sel, selectivity; PCM, post-capture mortality; VU, vulnerability.',
+  set_caption(caption = 'Table A.3. PSA scores for the species considered in the assessment (NB, catsharks, sawsharks, thresher sharks, wobbegongs, angel sharks, banjo rays, wedgefishes, stingrays, and ‘rays and skates’ were aggregated and assessed as at the group level due to unreliable species reporting for some fisheries). MA, maximum age; AM, age at maturity; FE, fecundity; MS, maximum size; SM, size at maturity; RS, reproductive strategy; TL, trophic level; Av, availability; En, encounterability; Sel, selectivity; PCM, post-capture mortality; VU, vulnerability.',
               autonum = NULL)%>%
   flextable::align(align = "center", part = "all")%>%
   flextable::align(j=1,align='left',part='all')  
 
 ```
 <!---BLOCK_LANDSCAPE_STOP--->
-
+## Environment
 Climate change risk scores were sourced from (@chinIntegratedRiskAssessment2010) and (@Walker2021).
 
 ```{r, results = 'asis'}
@@ -344,7 +346,9 @@ plots=plots[-grep(paste(c('Eagle','Pencil','Common sawshark','Shortfin mako'),co
 for(i in 1:length(plots))
 {
   filename <- file.path(paste(Paz, plots[i],sep='/'))
-  Titl=gsub("\\..*", "", plots[i])  
+  Titl=gsub("\\..*", "", plots[i])
+  if(Titl=="Dusky whaler") Titl="Dusky shark"
+  if(Titl=="Hammerhead sharks") Titl="Hammerheads"
   cat(sprintf('![%s](%s)', paste('Figure A.3.1.',i,'. ',Titl,'. Spatial distribution of nominal catch rates (kg per km gillnet hour) for the TDGDLF. Also shown are the annual sea surface temperature anomalies.',sep=''), 
                filename), sep = '\n')
   cat("\n")
@@ -1415,10 +1419,34 @@ for(i in 1:length(Species)){
 Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_estimates_Indicator.sp.csv',sep=''))
 Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_estimates_Other.sp.csv',sep=''))
 Tab=rbind(Tab1,Tab2)%>%
-  filter(Scenario=='S1' & grepl(paste(c('SR_LN(R0)','LnQ','Size_DblN','SzSel_Male'),collapse='|'),Par))%>%
+  filter(Scenario=='S1')%>%
+  filter(!Par%in%c('F.target','F.threshold','F.limit'))%>%
   arrange(Species)%>%
   dplyr::select(Species,Par,Value,Phase,Min,Max,Init,Status,Parm_StDev,Gradient)%>%
-  mutate_if(is.numeric, round, 2) 
+  mutate_at(vars(c('Value','Min','Max','Init','Parm_StDev')), round, 2)
+
+dis.sp=unique(Tab$Species)
+Model.gradient=data.frame(Species=dis.sp,
+                          Model.Gradient=NA)
+for(i in 1:length(dis.sp))
+{
+  this.wd=paste(handl_OneDrive("Analyses/Population dynamics/1."),dis.sp[i],"/",this.yr,"/SS3 integrated",sep='')
+  this.wd1=paste(this.wd,"S1",sep='/')
+  MLE=read.admbFit(paste(this.wd1,'ss',sep='/'))
+  Model.gradient$Model.Gradient[i]=MLE$maxgrad
+}
+
+Tab=Tab%>%
+  left_join(Model.gradient,by='Species')%>%
+  mutate(Gradient=format(Gradient, scientific=T,digits=2),
+         Model.Gradient=format(Model.Gradient, scientific=T,digits=2))%>%
+  relocate(Model.Gradient,.after=Species)%>%
+  relocate(Init,.after=Min)%>%
+  relocate(Value,.before = Parm_StDev)%>%
+  rename('Model Gradient'=Model.Gradient,
+         Estimate=Value,
+         SE=Parm_StDev)%>%
+  dplyr::select(-Gradient)
 Tab%>%
   flextable()%>%
   fontsize(size=8, part='body')%>%
@@ -1426,7 +1454,7 @@ Tab%>%
   width(width=2.5,unit='cm')%>%
   width(j=c('Phase','Min','Max','Init','Status'),width=1.5,unit='cm')%>%
   width(j=c('Par'),width=6,unit='cm')%>%
-  width(j=c('Parm_StDev','Gradient'),width=2.5,unit='cm')%>% 
+  width(j=c('SE','Model Gradient'),width=2.5,unit='cm')%>% 
   align(align='center',part='all')%>%
   align(j=c('Species','Par'),align='left',part='all')%>%
   set_caption(caption = "Table A.12.2. Summary of parameter estimates.",
