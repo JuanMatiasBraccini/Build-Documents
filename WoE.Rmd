@@ -173,10 +173,10 @@ for(i in 1:length(Species))
   merge_at(i = 7, j = 1:2 )%>%
   merge_at(i = 8, j = 1:2 )%>%
   merge_at(i = 9, j = 1:2 )%>%
+  merge_at(i = 12, j = 1:2 )%>%
+  merge_at(i = 13, j = 1:2 )%>%
   merge_at(i = 15, j = 1:2 )%>%
   merge_at(i = 16, j = 1:2 )%>%
-  merge_at(i = 17, j = 1:2 )%>%
-  merge_at(i = 18, j = 1:2 )%>%
   merge_at(i = 19, j = 1:2 )%>%
   merge_at(i = 20, j = 1:2 )%>%
   merge_at(i = 21, j = 1:2 )%>%
@@ -185,12 +185,12 @@ for(i in 1:length(Species))
   merge_at(i = 24, j = 1:2 )%>%
   merge_at(i = 25, j = 1:2 )%>%
   merge_at(i = 26, j = 1:2 )%>%
-  bold(i=c(3,7,9,15:18,19,21,22,24,25))%>%
-  bg(i=c(3:4,7:9,15:24),bg='grey85')%>%
+  bold(i=c(3,7,9,12,15,19,21,22,24,25))%>%
+  bg(i=c(3:4,7:9,12:13,15:16,19:24),bg='grey85')%>%
   bg(i=c(25:26),bg='lightblue2')%>%
   bg(bg = 'grey85', part = "header")%>%
   bold(part = "header")%>%
-  bold(i=c(1:2,5:6,10:14,19),j=1)%>%
+  bold(i=c(1:2,5:6,10:11,14,17:18),j=1)%>%
   hline(i=c(3,7:8,15,17,19:20,22:23,25),border=fp_border(color="transparent"))%>%
     flextable_to_rmd
 
@@ -380,7 +380,7 @@ path=paste(Model.outputs.RAR,'/Catch_all_species_Other.sp.tiff',sep='')
 <br>
 
 # Appendix 5. Effort and management dynamics for shark fisheries
-```{r, fig.width = 7, fig.height=8, fig.cap = "Figure A.5. Total reported effort for the TDGDLF (top pane) and NSF (bottom pane) shark fisheries. Also shown are the management measures and data collection initiatives implemented since the start of these fisheries. Effort is shown in a logarithmic scale. Red, data collection; Blue, spatial closures; Green, other management measures.", fig.pos='h',fig.align='center'}
+```{r, fig.width = 7, fig.height=8, fig.cap = "Figure A.5. Total reported effort for the TDGDLF (top pane) and NSF (bottom pane). Also shown are the management measures and data collection initiatives implemented since the start of these fisheries. Effort is shown in a logarithmic scale. Red, data collection; Blue, spatial closures; Green, other management measures.", fig.pos='h',fig.align='center'}
 knitr::include_graphics(paste(handl_OneDrive('Management/Sharks/Timeline management measures/'),'Effort.management_TDGDLF & NSF.tiff',sep=''))
 ```
 <br>
@@ -390,12 +390,12 @@ knitr::include_graphics(paste(handl_OneDrive('Management/Sharks/Timeline managem
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Spatio.temporal.catch_Indicator.sp.tiff',sep='')
 ```
-![Figure A.6.1. Reported catch and effort dynamics for WA’s shark fisheries (indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the northern shark fisheries and km gillnet days for the southern shark fisheries) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the southern shark fisheries. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
+![Figure A.6.1. Reported catch and effort dynamics for WA’s shark fisheries (indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the NSF and km gillnet days for the TDGDLF) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the TDGDLF. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Spatio.temporal.catch_Other.sp.tiff',sep='')
 ```
-![Figure A.6.2. Effort and reported catch dynamics for WA’s shark fisheries (non-indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the northern shark fisheries and km gillnet days for the southern shark fisheries) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the southern shark fisheries. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
+![Figure A.6.2. Effort and reported catch dynamics for WA’s shark fisheries (non-indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the NSF and km gillnet days for the TDGDLF) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the TDGDLF. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
 
 <br>
 
@@ -419,32 +419,8 @@ flextable(Tab)%>%
 
 <br>
 
-# Appendix 7. Standardised catch rates
-Abundance indices are available for a subset of species from standardising the commercial catch and effort from the TDGDLF (kg per km gillnet-hours) and from the longline abundance survey conducted in north-western WA (number of individuals per 50 hook-hours). The standardisation process is described in (@bracciniSpatialTemporalPatterns2021) for the fishery-dependent abundance index and in (@Braccini2020) for the fishery-independent abundance index.
-
-```{r, results='asis'}
-Species.with.abundance<- read.csv(paste(Model.outputs.RAR,'/Species.with.abundance.csv',sep=''))
-Species.with.abundance=Species.with.abundance%>%pull(x)
-if(!"1.Dusky shark"%in%Species.with.abundance) Species.with.abundance=c(Species.with.abundance,"1.Dusky shark")
-if(!"1.Spinner shark"%in%Species.with.abundance) Species.with.abundance=c(Species.with.abundance,"1.Spinner shark")
-Species.with.abundance=sort(Species.with.abundance)
-sort.species.id=match(paste('1.',Indicator.species,sep=''),Species.with.abundance)
-Species.with.abundance=c(Species.with.abundance[sort.species.id],Species.with.abundance[-sort.species.id])
-
-for(i in 1:length(Species.with.abundance)){
-  Titl=gsub(".*\\.", "", Species.with.abundance[i])  
-       cat(sprintf('![%s](%s)', paste('Figure A.7.',i,'. ',Titl,'. Standardised catch rates (mean and 95% CI).',sep=''), 
-                 paste(Model.outputs.an,paste(Species.with.abundance[i],this.yr,
-                      '1_Inputs/Visualise data/All cpues.tiff',sep='/'),sep='')), sep = '\n')
-  cat("\n")
-}
-
-```
-
-<br>
-
-# Appendix 8. Commercial catch length composition
-Sex-specific length composition from the northern and southern shark fisheries are available for a subset of species collected by onboard observers. The sampling protocol is described in (Braccini and Taylor (2016)). No data are currently available on catch age-composition. 
+# Appendix 7. Commercial catch length composition
+Sex-specific length composition from the northern (NSF) and southern  (TDGDLF) shark fisheries are available for a subset of species collected by onboard observers. The sampling protocol is described in (Braccini and Taylor (2016)). No data are currently available on catch age-composition. 
 
 ```{r, results='asis', fig.width = 6, fig.height=6}
 Species.with.length.comp<- read.csv(paste(Model.outputs.RAR,'/Species.with.length.comp.csv',sep=''))
@@ -459,8 +435,9 @@ if(!only.indicator)
 {
   Species.with.length.comp=c(Species.with.length.comp[sort.species.id],Species.with.length.comp[-sort.species.id])
 }
-  
-for(i in 1:length(Species.with.length.comp)){
+Show.other.species=c("Copper shark","Angel sharks")  
+for(i in 1:length(Species.with.length.comp))
+{
   Titl=gsub(".*\\.", "", Species.with.length.comp[i])
   disfile=paste(Model.outputs.an,paste(Species.with.length.comp[i],this.yr,'1_Inputs/Visualise data',sep='/'),sep='')
   
@@ -470,19 +447,25 @@ for(i in 1:length(Species.with.length.comp)){
   file.ls=file.ls[-grep(paste(c("_dist","Catch curve"),collapse='|'),file.ls)]
   file.ls.names=file.ls.names[-grep(paste(c("_dist","Catch curve"),collapse='|'),file.ls.names)]
   file.ls.names=gsub("Size.comp.","",gsub('.tiff','',file.ls.names))
-   for(l in 1:length(file.ls))
+  if(!Titl %in%Show.other.species)
+  {
+    iaid=match("Other",file.ls.names)
+    file.ls=file.ls[-iaid]
+    file.ls.names=file.ls.names[-iaid]
+  }
+  for(l in 1:length(file.ls))
    {
      Nme=file.ls.names[l]
      if(Nme=='Other')
      {
       if(Titl=="Copper shark") Nme='SA MSF' 
-      if(Titl=="Angel sharks") Nme='GAB trawl' 
+      if(Titl=="Angel sharks") Nme='GAB Trawl' 
      }
      if(Nme=='Pilbara.trawl') Nme='Pilbara Fish Trawl'
      if(Nme=="TDGDLF") Nme= paste(Nme, 'by zone and mesh size (WC, West Coast; Zn1, Zone 1; Zn2, Zone 2)')
      if(!Nme=="Other")
      {
-      cat(sprintf('![%s](%s)', paste('Figure A.8.',i,'.',l,'. ',Titl,'. Observed size composition in the catches of the ',Nme,'.',sep=''), 
+      cat(sprintf('![%s](%s)', paste('Figure A.7.',i,'.',l,'. ',Titl,'. Observed size composition in the catches of the ',Nme,'.',sep=''), 
                  file.ls[l]), sep = '\n')
      cat("\n")
      }
@@ -491,6 +474,30 @@ for(i in 1:length(Species.with.length.comp)){
 }
 ```
 
+
+<br>
+
+# Appendix 8. Standardised catch rates
+Abundance indices are available for a subset of species from standardising the commercial catch and effort from the TDGDLF (kg per km gillnet-hours) and from the longline abundance survey conducted in north-western WA (number of individuals per 50 hook-hours). The standardisation process is described in (@bracciniSpatialTemporalPatterns2021) for the fishery-dependent abundance index and in (@Braccini2020) for the fishery-independent abundance index.
+
+```{r, results='asis'}
+Species.with.abundance<- read.csv(paste(Model.outputs.RAR,'/Species.with.abundance.csv',sep=''))
+Species.with.abundance=Species.with.abundance%>%pull(x)
+if(!"1.Dusky shark"%in%Species.with.abundance) Species.with.abundance=c(Species.with.abundance,"1.Dusky shark")
+if(!"1.Spinner shark"%in%Species.with.abundance) Species.with.abundance=c(Species.with.abundance,"1.Spinner shark")
+Species.with.abundance=sort(Species.with.abundance)
+sort.species.id=match(paste('1.',Indicator.species,sep=''),Species.with.abundance)
+Species.with.abundance=c(Species.with.abundance[sort.species.id],Species.with.abundance[-sort.species.id])
+
+for(i in 1:length(Species.with.abundance)){
+  Titl=gsub(".*\\.", "", Species.with.abundance[i])  
+       cat(sprintf('![%s](%s)', paste('Figure A.8.',i,'. ',Titl,'. Standardised catch rates (CPUE, mean and 95% CI).',sep=''), 
+                 paste(Model.outputs.an,paste(Species.with.abundance[i],this.yr,
+                      '1_Inputs/Visualise data/All cpues.tiff',sep='/'),sep='')), sep = '\n')
+  cat("\n")
+}
+
+```
 
 <br>
 
@@ -684,13 +691,13 @@ Standardisation of catch rates can yield very small CVs (as observed for the ana
 
 The construction of JABBA models was possible for a subset of species (copper, dusky, gummy, milk, sandbar, tiger and whiskery sharks) due to availability of reliable survey and catch rate series. 
 
-For spinner shark, TDGDLF catch rates were not considered to represent abundance trend as they tracked catch trends (Figures A.4.3, A.7.7). 
+For spinner shark, TDGDLF catch rates were not considered to represent abundance trend as they tracked catch trends (Figures A.4.3, A.8.7). 
 
-For dusky shark, the reliability of the TDGDLF catch rate as an index of abundance is unclear. Due to the tight gillnet selectivity schedule of the mesh sizes used in the TDGDLF, the catch comprises mostly of 0+ and 1 year old individuals, potentially representing a recruitment index. However, between 1975 and 1985 catches of the NSF and ‘other’ fisheries (which caught adult individuals) moderately increased from 36 to 74 tonnes but the TDGDLF monthly catch rates substantially decreased (75% reduction). Also, overall fishery catches substantially increased after 1985 (Figure A.4.2) and these higher catch levels were able to be sustained, suggesting that recruitment was unlikely to have markedly declined between 1975 and 1985 as suggested by the TDGDLF catch rates (Figure A.7.2). Hence, if the TDGDLF catch rates was a recruitment index, a substantial recruitment reduction between 1975 and 1985 within the context of the species exploitation history would be biologically unfeasible. Furthermore, since the late 1980s, TDGDLF catch rates fluctuated showing no overall trend (hence no trend in recruitment) despite catches (of adults and juveniles) substantially increasing to a history peak in the late 1980s and then substantially decreasing due to management-driven effort reductions (Figures A.4.2, A.5). The fishery-independent survey is highly uncertain as only a few individuals are caught each year due to nature of the survey (20 fishing stations revisited annually) which is designed to target mostly sandbar sharks (Figure A.7.2). Hence, abundance series were considered unreliable and JABBA models were not built for dusky shark.
+For dusky shark, the reliability of the TDGDLF catch rate as an index of abundance is unclear. Due to the tight gillnet selectivity schedule of the mesh sizes used in the TDGDLF, the catch comprises mostly of 0+ and 1 year old individuals, potentially representing a recruitment index. However, between 1975 and 1985 catches of the NSF and ‘other’ fisheries (which caught adult individuals) moderately increased from 36 to 74 tonnes but the TDGDLF monthly catch rates substantially decreased (75% reduction). Also, overall fishery catches substantially increased after 1985 (Figure A.4.2) and these higher catch levels were able to be sustained, suggesting that recruitment was unlikely to have markedly declined between 1975 and 1985 as suggested by the TDGDLF catch rates (Figure A.8.2). Hence, if the TDGDLF catch rates was a recruitment index, a substantial recruitment reduction between 1975 and 1985 within the context of the species exploitation history would be biologically unfeasible. Furthermore, since the late 1980s, TDGDLF catch rates fluctuated showing no overall trend (hence no trend in recruitment) despite catches (of adults and juveniles) substantially increasing to a history peak in the late 1980s and then substantially decreasing due to management-driven effort reductions (Figures A.4.2, A.5). The fishery-independent survey is highly uncertain as only a few individuals are caught each year due to nature of the survey (20 fishing stations revisited annually) which is designed to target mostly sandbar sharks (Figure A.8.2). Hence, abundance series were considered unreliable and JABBA models were not built for dusky shark.
 
-For sandbar shark, the TDGDLF monthly catch rate series was excluded from the analysis because it tracked the catch series (Figures A.4.2, A.7.4). Preliminary analysis including this catch series showed similar population trajectories albeit considerably more uncertain, displaying a sudden peak in relative biomass in 1986, not consistent with sandbar shark productivity. Hence, the TDGDLF monthly catch rate was considered unreliable as an index of abundance and not used in the JABBA models.
+For sandbar shark, the TDGDLF monthly catch rate series was excluded from the analysis because it tracked the catch series (Figures A.4.2, A.8.4). Preliminary analysis including this catch series showed similar population trajectories albeit considerably more uncertain, displaying a sudden peak in relative biomass in 1986, not consistent with sandbar shark productivity. Hence, the TDGDLF monthly catch rate was considered unreliable as an index of abundance and not used in the JABBA models.
 
-For gummy shark, the years 1975 to 1985 of the monthly catch rates series were not included because catch rates decreased by ~80% during this period following only a moderate increase in catches (Figures A.4.2, A.7.1) and the fleet was composed of a large number of vessels that fished mostly sporadically. 
+For gummy shark, the years 1975 to 1985 of the monthly catch rates series were not included because catch rates decreased by ~80% during this period following only a moderate increase in catches (Figures A.4.2, A.8.1) and the fleet was composed of a large number of vessels that fished mostly sporadically. 
 
 For whiskery shark, changes in fishers' targeting behaviour (from whiskery to dusky sharks) in the early 1980s (@Simpfendorfer2000a) were modeled by the inclusion of two catchability coefficients for the periods 1975-1980 and 1984-2005. Finally, sensitivity tests were done to evaluate the effect of the assumed process error, *r*, production function and K prior (Table A.11.1).
 
@@ -764,20 +771,20 @@ if('Daily.cpues'%in%names(Tab))
 <!---BLOCK_LANDSCAPE_STOP--->
 
 <!-- Display Sensitivity analysis--> 
- The resulting relative biomass trajectories based on the scenarios considered are shown in Figures A.11.1 for indicator species and A.11.2 for non-indicator species. Overall, the different scenarios considered showed very similar trajectories and current depletion levels. On the basis of these comparisons, S1 was selected as the base case scenario.
+ The resulting relative (total) biomass trajectories based on the scenarios considered are shown in Figures A.11.1 for indicator species and A.11.2 for non-indicator species. Overall, the different scenarios considered showed very similar trajectories and current depletion levels. On the basis of these comparisons, S1 was selected as the base case scenario.
 
 <br>
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Indicator.sp_sensitivity.tiff',sep='')
 ```
-![Figure A.11.1. Sensitivity analysis showing the influence of the assumed value of r (S2), process error (S3) and K (S4), and type of production model (S5 & S6) for indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% credibility intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+![Figure A.11.1. Sensitivity analysis showing the influence of the assumed value of r (S2), process error (S3) and K (S4), and type of production model (S5 & S6) for indicator species on the estimated relative (total) biomass (i.e. biomass over unfished biomass, solid line) with 95% credibility intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
 
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Other.sp_sensitivity.tiff',sep='')
 ```
-![Figure A.11.2. Sensitivity analysis showing the influence of the assumed value of r (S2), process error (S3) and K (S4), and type of production model (S5 & S6) for non-indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% credibility intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+![Figure A.11.2. Sensitivity analysis showing the influence of the assumed value of r (S2), process error (S3) and K (S4), and type of production model (S5 & S6) for non-indicator species on the estimated relative (total) biomass (i.e. biomass over unfished biomass, solid line) with 95% credibility intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
 
 <br>
 
@@ -921,21 +928,21 @@ Tab=rbind(Tab1,Tab2)%>%
 
 
 <!-- Display biomass trajectories for S1--> 
-For the base case scenario, the relative biomass trajectories for indicator species are shown in Figure A.11.10.
+For the base case scenario, the relative (total) biomass trajectories for indicator species are shown in Figure A.11.10.
 <br>
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Indicator.sp.tiff',sep='')
 ```
-![Figure A.11.10. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
+![Figure A.11.10. Estimated time series of relative (total) biomass (i.e. biomass over unfished biomass) for indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
 
-For the base case scenario, the relative biomass trajectories for non-indicator species are shown in Figure A.11.11.
+For the base case scenario, the relative (total) biomass trajectories for non-indicator species are shown in Figure A.11.11.
 <br>
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_JABBA CPUE_Other.sp.tiff',sep='')
 ```
-![Figure A.11.11. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for non-indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
+![Figure A.11.11. Estimated time series of relative (total) biomass (i.e. biomass over unfished biomass) for non-indicator species (60% and 95% credibility intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
 
 <br>
 <!-- Display F trajectories for S1--> 
@@ -964,7 +971,7 @@ For the base case scenario, Kobe plots for indicator species are shown in Figure
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Kobe_plot_JABBA CPUE_WA_Fisheries_Indicator.sp.tiff',sep='')
 ```
-![Figure A.11.14. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+![Figure A.11.14. Kobe plots showing the estimated trajectories of relative (total) biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
 
 For the base case scenario, Kobe plots for non-indicator species are shown in Figure A.11.15.
 <br>
@@ -972,7 +979,7 @@ For the base case scenario, Kobe plots for non-indicator species are shown in Fi
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Kobe_plot_JABBA CPUE_WA_Fisheries_Other.sp.tiff',sep='')
 ```
-![Figure A.11.15. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+![Figure A.11.15. Kobe plots showing the estimated trajectories of relative (total) biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
 
 <br>
 
@@ -1193,20 +1200,20 @@ for(i in 1:length(Species)){
 
 <br>
 <!-- Display Sensitivity analysis--> 
-The resulting relative biomass trajectories based on the scenarios considered are shown in Figures A.12.3 for indicator species and A.12.4 for non-indicator species. Overall, the different scenarios considered showed very similar trajectories and current depletion levels. On the basis of these comparisons, S1 was selected as the base case scenario.
+The resulting relative (spawning) biomass trajectories based on the scenarios considered are shown in Figures A.12.3 for indicator species and A.12.4 for non-indicator species. Overall, the different scenarios considered showed very similar trajectories and current depletion levels. On the basis of these comparisons, S1 was selected as the base case scenario.
 
 <br>
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Indicator.sp_sensitivity.tiff',sep='')
 ```
-![Figure A.12.3. Sensitivity analysis showing the influence of the assumed h (S2) and Ma (S3) for indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% confidence intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+![Figure A.12.3. Sensitivity analysis showing the influence of the assumed h (S2) and Ma (S3) for indicator species on the estimated relative (spawning) biomass (i.e. biomass over unfished biomass, solid line) with 95% confidence intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
 
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Other.sp_sensitivity.tiff',sep='')
 ```
-![Figure A.12.4. Sensitivity analysis showing the influence of the assumed h (S2) and Ma (S3) for non-indicator species on the estimated relative biomass (i.e. biomass over unfished biomass, solid line) with 95% confidence intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
+![Figure A.12.4. Sensitivity analysis showing the influence of the assumed h (S2) and Ma (S3) for non-indicator species on the estimated relative (spawning) biomass (i.e. biomass over unfished biomass, solid line) with 95% confidence intervals (shaded area). Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
 
 <br>
 
@@ -1447,6 +1454,8 @@ Tab=Tab%>%
          Estimate=Value,
          SE=Parm_StDev)%>%
   dplyr::select(-Gradient)
+duplis=duplicated(paste(Tab$Species,Tab$'Model Gradient'))
+Tab$'Model Gradient'[duplis] <- ""
 Tab%>%
   flextable()%>%
   fontsize(size=8, part='body')%>%
@@ -1490,21 +1499,21 @@ for(i in 1:length(Species))
 <br>  
   
 <!-- Display biomass trajectories for S1--> 
-For the base case scenario, the relative biomass trajectories for indicator species are shown in Figure A.12.15.
+For the base case scenario, the relative (spawning) biomass trajectories for indicator species are shown in Figure A.12.15.
 <br>
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Indicator.sp.tiff',sep='')
 ```
-![Figure A.12.15. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line)).](`r path`){width=800px}
+![Figure A.12.15. Estimated time series of relative (spawning) biomass (i.e. biomass over unfished biomass) for indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
 
-For the base case scenario, the relative biomass trajectories for non-indicator species are shown in Figure A.12.16.
+For the base case scenario, the relative (spawning) biomass trajectories for non-indicator species are shown in Figure A.12.16.
 <br>
   
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Other.sp.tiff',sep='')
 ```
-![Figure A.12.16. Estimated time series of relative biomass (i.e. biomass over unfished biomass) for non-indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
+![Figure A.12.16. Estimated time series of relative (spawning) biomass (i.e. biomass over unfished biomass) for non-indicator species (60% and 95% confidence intervals shown in dark grey and light grey, respectively). Forward projections are highlighted in brown. Also shown are the reference points (red, limit; orange, threshold; green, target) and the total catch series (broken blue line).](`r path`){width=800px}
 
 <br>
 
@@ -1534,7 +1543,7 @@ For the base case scenario, Kobe plots for indicator species are shown in Figure
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Indicator.sp.tiff',sep='')
 ```
-![Figure A.12.19. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+![Figure A.12.19. Kobe plots showing the estimated trajectories of relative (spawning) biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
 
 For the base case scenario, Kobe plots for non-indicator species are shown in Figure A.12.20.
 <br>
@@ -1542,7 +1551,7 @@ For the base case scenario, Kobe plots for non-indicator species are shown in Fi
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Other.sp.tiff',sep='')
 ```
-![Figure A.12.20. Kobe plots showing the estimated trajectories of relative biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
+![Figure A.12.20. Kobe plots showing the estimated trajectories of relative (spawning) biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
 
 <br>
 
