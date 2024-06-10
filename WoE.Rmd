@@ -65,55 +65,51 @@ Date	`r format(Sys.time(), "%d %B %Y")`
 
 
 # Background
-This memo provides the formal advice on the stock status and risks to sustainability for all elasmobranch (sharks and rays) stocks identified in the catch of commercial and/or recreational fisheries operating in Western Australia (WA). This includes indicator species, Gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*), whiskery (*Furgaleus macki*) and sandbar (*C. plumbeus*) sharks, and non-indicator species. A risk-based Weight of Evidence (WoE) assessment of stocks status was undertaken for all species, using ISO 31000-based risk assessment methods (Appendix 1).
+This memo provides the formal advice on the stock status and risks to sustainability for all elasmobranch (sharks and rays) stocks identified in the catch of commercial and/or recreational fisheries operating in Western Australia (WA). This includes indicator species, Gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*), whiskery (*Furgaleus macki*) and sandbar (*C. plumbeus*) sharks, and non-indicator species. A risk-based Weight of Evidence (WoE) assessment of stocks status was undertaken for all species using ISO 31000-based risk assessment methods (Appendix 1).
 
 Over a hundred elasmobranch species have been identified in the catch of commercial and/or recreational fisheries in WA. Gummy, dusky, whiskery and sandbar sharks are the most commonly captured species (~80% of the elasmobranch catch). These species have been targeted in the Temperate Demersal Gillnet and Demersal Longline Fisheries (TDGDLF), which operate in the West Coast and South Coast Bioregions and comprise the West Coast Demersal Gillnet and Demersal Longline (Interim) Managed Fishery (WCDGDLF), which operates between 26° and 33° S, and the Joint Authority Southern Demersal Gillnet and Demersal Longline Managed Fishery (JASDGDLF), which operates from 33° S to the WA/SA border. Sandbar shark and to a lower extent dusky shark were also targeted by the Northern Shark Fisheries, which operated between 114° 06' E and the WA/Northern Territory (NT) border and ceased operations in 2008-09. The current catch of sharks and rays in other WA commercial fisheries is negligible (< 10 t per annum) and recreational fishers retain very small numbers of sharks in WA. Indigenous catches of these species are considered to have always been negligible.
 
 Based on their inherent vulnerability and risk to the sustainability, whiskery, gummy, dusky and sandbar sharks have been selected as indicators for the status of the temperate elasmobranch (sharks and rays) ‘suite’ as they represent the range of life history strategies of other elasmobranch species caught by these fisheries. However, with the increasing number of elasmobranch species being listed in national (Environment Protection and Biodiversity Conservation Act 1999, EBPC Act) and international (Convention on International Trade in Endangered Species, CITES; Convention on the Conservation of Migratory Species, CMS) protection lists, species-specific scientific advice on stock status at the local level is needed to comply with national and international legislation.  
 
-Following a comprehensive reconstruction of total catch trajectories, a range of assessment methods was used to provide species-specific scientific advice on the stock status of all elasmobranch species identified in the reconstructed catches. First, a Productivity Susceptibility Analysis (PSA) was used to filter out species with historically low catch volumes from further analysis. Second, species ranked by the PSA as having high vulnerability were assessed using a combination of spatio-temporal changes in reported catch and effort, catch-only models, State-space surplus production models, and age- and sex-structured integrated models, depending on data availability (Figure 1). Biomass estimates from the production and integrated models were compared to reference levels relating to estimates of Maximum Sustainable Yield (MSY). The estimated biomass expected to achieve MSY (B~MSY~) is considered as the Threshold reference level (B~Thr~) for the stock, 0.5 B~MSY~ is set as the Limit reference level (B~Lim~) and 1.2 B~MSY~ was set as the Target reference level (B~Tar~). A flowchart explaining the steps undertaken in this assessment is shown in Figure 2.
+Following a comprehensive reconstruction of total catch trajectories, a range of assessment methods was used to provide species-specific scientific advice on the stock status of all elasmobranch species identified in the reconstructed catches. First, a Productivity Susceptibility Analysis (PSA) was used to filter out species with historically low catch volumes from further analysis. Second, species ranked by the PSA as having high vulnerability were assessed using a combination of spatio-temporal changes in reported catch and effort, catch-only models, State-space surplus production models, and age- and sex-structured integrated models, depending on data availability (Figure 1). Biomass estimates from the production and integrated models were compared to reference levels relating to estimates of Maximum Sustainable Yield (MSY). The estimated biomass expected to achieve MSY (B~MSY~) was considered as the Threshold reference level (B~Thr~) for the stock; 0.5 B~MSY~ was set as the Limit reference level (B~Lim~) and 1.2 B~MSY~ was set as the Target reference level (B~Tar~). A flowchart explaining the steps undertaken in this assessment is shown in Figure 2.
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Available time series by species.tiff',sep='')
 
 ```
-![Figure 1. Available time series for the species assessed as High vulnerability by the PSA. F, empirical fishing mortality estimates for the TDGDLF.](`r path`){width=800px}
+![Figure 1. Available time series for the species assessed as having High vulnerability to fishing by the PSA. F, empirical fishing mortality estimates for the TDGDLF.](`r path`){width=800px}
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.an,'/Stock assessment flow chart.tiff',sep='')
 
 ```
-![Figure 2. Flowchart describing the steps undertaken in the current assessment.](`r path`){width=800px}
+![Figure 2. Flowchart describing the steps undertaken in the current assessment. The number of species assessed by the different assessment methods is shown in brackets.](`r path`){width=800px}
 
 
 # Current situation
-**REDO FROM HERE....**For Snapper, the current assessment (Level 5) is primarily based on estimates of relative female spawning biomass (Brel) and fishing mortality (F) from an integrated model fitted to commercial catch rate data, catch and age composition data up to and including the 2020/21 quota year.
-Based on all available lines of evidence (see Weight of Evidence Table below), the risk level for  Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
-On the basis of this evidence, Gascoyne Oceanic Snapper is classified as a **Recovering stock**. 
-For Goldband snapper, the current assessment (Level 3) is primarily based on estimates of ‘long term’ (equilibrium) fishing mortality (F) and relative female spawning biomass (Brel) from catch curve and per-recruit analyses, respectively, and incorporates catch and age composition data up to and including the 2019/20 quota year.  
-Based on all available lines of evidence (see Weight of Evidence Table below), the risk level for Goldband snapper in Gascoyne over the next five years is estimated to be **Low**.
-On the basis of this evidence, Goldband snapper in the Gascoyne is classified as a **Sustainable stock**.
-**.... TO HERE**
+For Gummy shark, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Gummy shark over the next five years is estimated to be **Low**. On the basis of this evidence, Gummy shark is classified as a **Sustainable stock**. 
 
+For Dusky shark, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), and integrated population dynamics modelling (Level 5) fitted to length composition data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Dusky shark over the next five years is estimated to be **Medium**. Current (2021-22) median biomass is at threshold levels and projected to increase whereas median fishing mortality is under target levels and projected to remain just below this level. In addition, model estimates showed considerable uncertainty and the integrated model was fitted to length composition data only as abundance series were considered unreliable. On the basis of this evidence, Dusky shark is classified as a **Recovering stock**. 
 
-**REDO FROM HERE............** For whiskery and gummy sharks, an integrated size-based model was implemented in 2017 to extend previous assessment models. The integrated model incorporated life history, gear selectivity, size composition, growth, catch and standardised fishery-dependent catch rate data up to and including the 2015-16 financial year. In addition, life history and catch information were used in a combined demographic and stock-reduction model (SR) to assess stock sustainability. Standardised fishery-dependent catch rate of gummy sharks was concluded to be a poor index of population abundance. For dusky and sandbar sharks, the time series of catch and effort data were considered to be insufficient for estimating biomass trends from fitting population dynamics models. Hence, a SR modelling approach was implemented to determine catch sustainability using life history and catch information up to and including the 2015-16 financial year.
+For Whiskery shark, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Whiskery shark over the next five years is estimated to be **Medium**. Current (2021-22) biomass estimates showed considerable uncertainty but median estimates are at target levels and projected to increase and current median fishing mortality is below target levels and projected to decrease. On the basis of this evidence, Whiskery shark is classified as a **Sustainable stock**. 
 
-The integrated model estimate for fishing mortality in 2021 was 0.024 year-1, with the 95% CLs ranging from 0.011 to 0.037 year-1. As the current value of this performance indicator is well below the estimated level of F corresponding to B~MSY~ (i.e., F~MSY~), the stock is unlikely to deplete to a level at which recruitment could be impaired if the current historically low level of catch is maintained. The integrated model estimate for female spawning biomass in 2021 was at 0.27 of the unfished level (95% CLs = 0.13-0.42). Although the current value of this performance indicator is below the threshold of 0.3, Gascoyne Oceanic Snapper is expected to recover to above this level over the next five years if the current low level of catch is maintained.
+For Sandbar shark, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Sandbar shark over the next five years is estimated to be **Low**. On the basis of this evidence, Sandbar shark is classified as a **Sustainable stock**.
 
-Based on all available lines of evidence (see Table below), the risk level for Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
-On the basis of the evidence, Gascoyne Oceanic Snapper is classified as a  **Recovering stock**.**............. TO HERE**
+For the indicator species, current management settings will maintain risk at acceptable levels assuming that total catch is maintained at near current levels. However, biomass trajectories showed considerable uncertainty due to the data-limited nature of the assessments and this should be taken into consideration for future management changes.
+
+For non-indicator species, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to abundance series (Level 4) and/or integrated population dynamics modelling (Level 5) fitted to abundance series and/or length composition data depending on data availability. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Angel, Copper and Spinner sharks over the next five years is estimated to be **Medium** whereas the risk for other non-indicator species is estimated to be **Low**. Non-indicator species are only a minor component of currently operating fisheries and the highest sources of historic fishing mortality ceased decades ago. On the basis of this evidence, non-indicator species are classified as **Sustainable stocks**.
 
 
 # Future Monitoring & Assessment
-Additional data (e.g., providing information on mortality for a certain period, as could be generated from representative age composition data or at least length composition data), would assist in reducing model uncertainties, particularly for those species for which reconstructed catches are not negligible but only catch and life history information is available. Also, life history information for most species is not stock-specific, and in a few cases, not species-specific. Hence, targeted collection of biological information (reproduction, growth) would assist future assessments.
+Additional data (e.g., provision of information on mortality for a certain period, as could be generated from representative age composition data), would assist in reducing model uncertainties, particularly for those species for which reconstructed catches are not negligible but only catch and life history information is available. Also, life history information for most species is not stock-specific, and in a few cases, not species-specific. Hence, targeted collection of biological information (reproduction, growth) would assist future assessments.
 
-The reliance on fishery-dependent catch rate data to inform depletion levels is evident for all species except sandbar shark for which reliable fishery-independent data are available. A long-term monitoring program, particularly in temperate WA would also assist in reducing model uncertainties. 
+The reliance on fishery-dependent catch rate data to inform depletion levels is evident for all species except sandbar shark for which reliable fishery-independent data are available. A long-term monitoring program, particularly in temperate WA would also assist in reducing model uncertainties. This would be particular useful for gummy, whiskery and dusky sharks, noting that some of the integrated model fit diagnostics were not passed (e.g. retrospective analysis and hindcasting for gummy shark) due to data limitations or could not be conducted, such as retrospective analysis and hindcasting, due to lack of recent data (e.g. dusky shark).
 
-**UPDATE Consider JABBA select to include selectivity as Sandbar TDGDLF discardedSS high risk for dusky and whiskery due to uncertainties and overall poor diagnostics, hence need for better data, genetics techniques?? Need to properly use conventional tagging for indicator species and to provide spatially-explicit indices by zone-mesh as different fleets??.......**
+From a modelling viewpoint, future surplus production models could explore the use of JABBA-select to allow incorporating catch rate series from fisheries with different selectivity schedules. Also, future integrated populations models should explicitly account for the spatial structure of the TDGDLF and the use of two different mesh sizes (6.5 and 7 inch).
 
-Finally, a formal harvest strategy that considers and defines reference points and control rules for managing the resource (which also considers economic and social objectives) is required.  **test harvest strategy thru MSE. Also, add management recommendations here (catch ranges, MSY, etc) in relations to RISK and uncertainties...**
-Next assessment is proposed for 2028 to allow for data collection, processing and analyses.
+Finally, a formal harvest strategy that considers and defines reference points and control rules for managing the resource is required because in the current management settings there is currently a single reference point for assessing shark species (i.e. 40% unfished biomass) which is not explicitly defined as a target, threshold or limit. In addition, unlike other resources for which reference points relate to the spawning biomass (equivalent to female mature biomass for sharks), the current reference point in the TDGDLF relates to total biomass. A successful harvest strategy could be determined through Management Strategy Evaluation.  
 
+Next assessment is proposed for 2029 to allow for data collection, processing and analyses.
 
 
 # Assessed species
@@ -129,7 +125,7 @@ names.assessed.species<- paste(paste(assessed.species[1:(length(assessed.species
 
 A PSA assessment was done to remove species with historically low catches from quantitative assessments. Productivity scores were determined using life history information on maturity, fecundity, reproductive strategy and trophic level (Table A.3). Susceptibility scores were determined using information on species availability, encounterability, selectivity and post-capture survival in relation to the four main types of commercial fishing gears used in WA: gillnets, hooks, trawl and traps (Table A.3). The cumulative impact of these gears was accounted for by calculating an aggregated susceptibility index following (@Micheli2014). Many species have been historically caught only sporadically and in very low volumes, indicating no sustainability risk (@Newman2018). Hence, availability and encounterability scores were set to one for species with maximum annual catches < 50 tonnes and annual catches < five tonnes for ≥ five years. Annual catches from WA shark and ray species taken in WA fisheries were extracted from @Braccini2021, @bracciniQuantifyingSharkRay2021 and @bracciniRecreationalHarvestSharks2021. These data include time series of reconstructed recreational catches, reported domestic commercial landings, unreported domestic discards, and illegal and unreported foreign catches within WA waters. For copper shark (*C. brachyurus*) catches from South Australia, New South Wales and Commonwealth Fisheries were also included in the assessment as this species forms a single unit-stock across southern Australia (Huveneers et al., 2021). Next, vulnerability scores were used to determine which species were further assessed. Vulnerability was calculated as the Euclidean distance from the origin to the coordinates of the productivity and susceptibility scores on the PSA plots (@cortesEXPANDEDECOLOGICALRISK2015). Vulnerability thresholds for defining risk level were set at <2.64 (low risk), 2.64 to 3.18 (medium risk) and > 3.18 (high risk) (@Hobday2007). Only species with ‘high’ vulnerability scores were considered in subsequent analyses. The indicator species were not considered in this analysis as the vulnerability score is high by definition.
 
-Of the >100 species considered in this assessment, `r tolower(names.assessed.species)` had high vulnerability (Figure 3) and were subsequently assessed.   
+Of the >100 species considered in this assessment, `r tolower(names.assessed.species)` had high vulnerability to fishing (Figure 3) and were subsequently assessed.   
 
 
 ```{r, echo=FALSE}
@@ -220,12 +216,12 @@ path=paste(Model.outputs.RAR,'/Risk_Other.sp.tiff',sep='')
 path=paste(Model.outputs.RAR,'/Risk_all LoE for each species.tiff',sep='')
 
 ```
-![Figure 6. Risk score for each line of evidence (LoE) and overall risk score for all species assessed. Species names were color coded: Bold brown, indicator species; Grey, non-indicator species; Black, species assessed only by the PSA.](`r path`){width=800px}  
+![Figure 6. Risk score for each line of evidence (LoE) and overall risk score for all species assessed. Species names were color coded: Bold brown, indicator species; Grey, non-indicator species; Black, species assessed only by the PSA. PSA, Productivity Susceptibility Analysis; Spatial; Spatio-temporal changes in catch and effort; JABBA, State Space Surplus Production Model; Integrated, Integrated Population Dynamics Model.](`r path`){width=800px}  
 
 <br>
 
 <!-- Display Final risk for each LoE and Overall--> 
-The final risk for each line of evidence and the overall risk score is shown in Table 1 for each species. 
+The final risk for each line of evidence and the overall risk score is shown in Table 1 for each species.  
   
 ```{r,echo=FALSE,ft.align="left"}
 Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 13. Risk of each LoE and Overall.csv',sep=''))
@@ -244,7 +240,7 @@ Tab%>%
   fontsize(size=9, part='header')%>%
   width(width=2,unit='cm')%>%
   width(j='Species',width=4,unit='cm')%>%
-  set_caption(caption = "Table 1 Final risk score for each line of evidence and overall risk.",
+  set_caption(caption = "Table 1 Final risk score for each line of evidence and overall risk. PSA, Productivity Susceptibility Analysis; Spatial; Spatio-temporal changes in catch and effort; JABBA, State Space Surplus Production Model; Integrated, Integrated Population Dynamics Model",
               autonum = NULL)
 
 ```
@@ -257,8 +253,8 @@ Tab%>%
 <br>
 
 # Appendix 1. Consequence, Likelihood and Risk Levels (based on AS 4360 / ISO 31000) 
-Following @Fletcher2015, fishing sustainability risk was defined as negligible, low, medium, high or severe. These risk levels were calculated as the combination of consequence and likelihood (see definition below). The likelihood of each consequence level was calculated for each line of evidence as follows. For changes in catch and effort, the likelihood values were derived using Table A.6.1. For COMs, likelihood values were derived from the probability of the average total catch for the last five years being below, between or above catch reference points. The target, threshold and limit catch reference point were set at the 50%, 60% and 95% percentiles of the estimated MSY, respectively. For the state-space surplus production and integrated models, likelihood levels were derived from the model outputs. Risk scores were calculated for `r year.current` and `r year.future`. For this, the population models were projected for five years assuming a constant catch set at the average catch of the last five years.
-Finally, risk scores were then calculated as the product of each consequence level and a weighted mean likelihood. Changes in catch and effort, COMs, state-space surplus production models and integrated population models were given a weight of 0.25, 0.5, 1 and 2, respectively. The highest score chosen as the overall fishing sustainability risk following the precautionary approach.
+Following @Fletcher2015, fishing sustainability risk was defined as negligible, low, medium, high or severe. These risk levels were calculated as the combination of consequence and likelihood (see definition below). The likelihood of each consequence level was calculated for each line of evidence as follows. For spatio-temporal changes in catch and effort, the likelihood values were derived using Table A.6.1. For COMs, likelihood values were derived from the probability of the average total catch for the last five years being below, between or above catch reference points. The target, threshold and limit catch reference point were set at the 50%, 60% and 95% percentiles of the estimated MSY, respectively. For the state-space surplus production and integrated models, likelihood levels were derived from the model outputs. Risk scores were calculated for `r year.current` and `r year.future`. For this, the population models were projected for five years assuming a constant catch set at the average catch of the last five years.
+Finally, risk scores were then calculated as the product of each consequence level and a weighted mean likelihood. Spatio-temporal changes in catch and effort, COMs, state-space surplus production models and integrated population models were given a weight of 0.25, 0.5, 1 and 2, respectively. The highest score was chosen as the overall fishing sustainability risk following the precautionary approach.
 
 
 ## Consequence levels
@@ -672,6 +668,35 @@ path=paste(Model.outputs.an,'Steepness_vs_r.tiff',sep='')
 ```
 ![Figure A.10.1. Linear regression of maximum intrinsic rate of population increase (r) and steepness (h).](`r path`){width=800px}
 
+<br>
+
+```{r,echo=FALSE,ft.align="left"}
+#quantities of interest
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 4. Catch.only_catch_vs_MSY_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 4. Catch.only_catch_vs_MSY_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+  arrange(Species)%>%
+  dplyr::select(Species,MSY_Median,MSY_Lower.95,MSY_Upper.95)%>%
+  mutate_at(vars('MSY_Median','MSY_Lower.95','MSY_Upper.95'), round, 2)%>%
+  rename(Median=MSY_Median,
+         Lower.95=MSY_Lower.95,
+         Upper.95=MSY_Upper.95)%>%
+  relocate(Species,Lower.95)
+
+Tab%>%
+  flextable()%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(width=2.5,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=c('Species'),align='left',part='all')%>%
+  width(j='Species',width=3.5,unit='cm')%>%
+  set_caption(caption = "Table A.10.4. Inferred MSY values from the COM ensemble for the base case scenario.",
+              autonum = NULL)
+
+
+```
+
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Catch_vs_MSY_catch.only_Indicator.sp.tiff',sep='')
 ```
@@ -827,7 +852,7 @@ for(i in 1:length(Species)){
 <br>
 
 <!-- Display Fit to cpue series for S1--> 
-For the base case scenario, the models fit the abundance series reasonably well with most fits falling within the 95% CI (Figure A.11.5). The run tests provided no evidence to reject the hypothesis of randomly distributed residuals (Figure A.11.6). The goodness-of-fit was adequate for most species (RMSE≤30%, @carvalhoCookbookUsingModel2021) with the exception of milk and tiger sharks and to some extent copper shark, which showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.11.7).
+For the base case scenario, the models fit the abundance series reasonably well with most fits falling within the 95% CI (Figure A.11.5). The runs tests provided no evidence to reject the hypothesis of randomly distributed residuals (Figure A.11.6). The goodness-of-fit was adequate for most species (RMSE≤30%, @carvalhoCookbookUsingModel2021) with the exception of milk and tiger sharks and to some extent copper shark, which showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.11.7).
 <br>
 
 ```{r, results='asis'}
@@ -869,7 +894,7 @@ for(i in 1:length(Species)){
 <br>
 
 <!-- Display Retrospective analysis for S1--> 
-For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.11.8) and therefore supporting the use of the base case model for making future projections. For all moderately-lived and long-lived species, the Mohn's-rho (ρ) statistic fell within the expected interval for long-lived species of -0.15 and 0.2 whereas for milk shark, a short-lived species, the ρ statistic fell within the expected interval for short-lived species of -0.22 and 0.3 (@carvalhoCookbookUsingModel2021).
+For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.11.8) and therefore supporting the use of the base case model for making future projections. For all moderately-lived and long-lived species, the Mohn's-rho (ρ) statistic fell within the acceptable interval for long-lived species of -0.15 and 0.2 whereas for milk shark, a short-lived species, the ρ statistic fell within the acceptable interval for short-lived species of -0.22 and 0.3 (@carvalhoCookbookUsingModel2021).
 <br>
 
 ```{r, results='asis'}
@@ -883,7 +908,7 @@ for(i in 1:length(Species)){
 ```
 
 <!-- Display Hindcasting for S1--> 
-For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.11.9).  For copper and gummy sharks, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that  the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). However, the predictions fell within the 95% CI and that for both species, the indices have a flat trend. For the other species, the MASE score was ≤ 1 (i.e., predictions are better than a random walk).
+For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.11.9). For copper and gummy sharks, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). For the other species, the MASE score was ≤ 1 (i.e., predictions are better than a random walk).
 <br>
 
 ```{r, results='asis'}
@@ -899,7 +924,7 @@ for(i in 1:length(Species)){
 <br>
 
 <!-- Display parameter estimates for S1--> 
-For the base case scenario, model parameter, current depletion and reference point estimates are shown in Table A.11.2.
+For the base case scenario, model parameter estimates and management quantities of interest are shown in Table A.11.2.
 ```{r,echo=FALSE,ft.align="left"}
 Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 8. JABBA CPUE_estimates_Indicator.sp.csv',sep=''))
 Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 8. JABBA CPUE_estimates_Other.sp.csv',sep=''))
@@ -907,7 +932,8 @@ Tab=rbind(Tab1,Tab2)%>%
   filter(Scenario=='S1' & Parameter%in%c("Hmsy","K","MSY","r","SBmsy","m","P2021"))%>%
   arrange(Species)%>%
   dplyr::select(-c(Model, Scenario))%>%
-  mutate_if(is.numeric, round, 2) 
+  mutate_if(is.numeric, round, 2)%>%
+  filter(!Parameter%in%c('Hmsy','SBmsy'))
   Tab%>%
     mutate(Parameter=ifelse(Parameter=='Hmsy','FMSY',
                      ifelse(Parameter=='SBmsy','BMSY',
@@ -917,8 +943,9 @@ Tab=rbind(Tab1,Tab2)%>%
     fontsize(size=8, part='body')%>%
     fontsize(size=9, part='header')%>%
     width(width=2.5,unit='cm')%>%
-    width(j='Parameter',width=3,unit='cm')%>%
-    set_caption(caption = "Table A.11.2. Summary of posterior parameter estimates (medians) and 95% Bayesian Credibility Intervals for the base case scenario. r, maximum intrinsic rate of population increase; K, carrying capacity (tonnes).",
+    width(j='Parameter',width=3.5,unit='cm')%>%
+    set_header_labels(Parameter = "Parameter/Quantity")%>%
+    set_caption(caption = "Table A.11.2. Summary of posterior parameter estimates and management quantities of interest with 95% Bayesian Credibility Intervals for the base case scenario. r, maximum intrinsic rate of population increase; K, carrying capacity (tonnes).",
                 autonum = NULL)
 
 
@@ -1003,7 +1030,8 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
   mutate(Species=gsub('\\.', ' ', Species))%>%
   rename(Year=finyear)%>%
   mutate(Year=as.character(Year))%>%
-  arrange(Model,Species,Year)
+  arrange(Model,Species,Year)%>%
+  dplyr::select(-Model)
   
  Tab%>% 
     flextable()%>%
@@ -1013,7 +1041,7 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
     width(j='Species',width=2.5,unit='cm')%>%
     set_caption(caption = "Table A.11.3. Biomass reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
                 autonum = NULL)%>%
-    footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, B>BTar","Moderate, BThr<B<BTar","High, BLim<B<BThr","Major, B<BLim")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+    footnote(i = 1, j = 3:6,value = as_paragraph(c("Minor, B>BTar","Moderate, BThr<B<BTar","High, BLim<B<BThr","Major, B<BLim")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
     fontsize(size=7.5, part='footer')
 
 ```
@@ -1037,7 +1065,8 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
   mutate(Species=gsub('\\.', ' ', Species))%>%
   rename(Year=finyear)%>%
   mutate(Year=as.character(Year))%>%
-  arrange(Model,Species,Year)
+  arrange(Model,Species,Year)%>%
+  dplyr::select(-Model)
   
  Tab%>% 
     flextable()%>%
@@ -1047,7 +1076,7 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
     width(j='Species',width=2.5,unit='cm')%>%
     set_caption(caption = "Table A.11.4. F reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
                 autonum = NULL)%>%
-   footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, F<FTar","Moderate, FThr<F<FTar","High, FLim<F<FThr","Major, F>FLim.")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+   footnote(i = 1, j = 3:6,value = as_paragraph(c("Minor, F<FTar","Moderate, FTar<F<FThr","High, FThr<F<FLim","Major, F>FLim.")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
     fontsize(size=7.5, part='footer')
 
 ```
@@ -1066,9 +1095,9 @@ Gear selectivity estimates for the main fleets capturing the assessed species we
 
 Following @Francis2011, we implemented a two-stage data weighting approach to iteratively tune variance adjustment factors for fleet-specific abundance indices externally to the model (Stage 1) and length composition data within SS3 (Stage 2). For the abundance indices, the same weighting process applied for building the JABBA models was applied. For the length composition data (Stage 2), the *r4ss* package was used to estimate the effective sample size of each data set based on @Francis2011 method and the residuals of the Stock Synthesis model fit (e.g., @courtneyStockSynthesisSS32017).
 
-Following @carvalhoCookbookUsingModel2021, model properties were evaluated based on convergence, goodness-of-fit, model consistency and prediction skills as implemented in the *ss3diags* package. Convergence was evaluated based on the objective function final gradient, estimable parameters hitting boundaries, whether the Hessian inverted and by ‘jittering’ the initial value of lnRo. Goodness-of-fit was evaluated based on residual patterns and runs test. Model consistency was evaluated based on likelihood profiles and retrospective analysis. Finally, prediction skill was evaluated based on hindcasting. Hindcasting and retrospective analysis were done only for species with available abundance indices. 
+Following @carvalhoCookbookUsingModel2021, model properties were evaluated based on convergence, goodness-of-fit, model consistency and prediction skills as implemented in the *ss3diags* package. Convergence was evaluated based on the objective function final gradient, estimable parameters hitting boundaries, whether the Hessian inverted and by ‘jittering’ the initial value of lnRo. Goodness-of-fit was evaluated based on residual patterns and runs test. Model consistency was evaluated based on likelihood profiles and retrospective analysis. Finally, prediction skill was evaluated based on hindcasting. Runs tests, hindcasting and retrospective analyses were done only for species with a continuous series of available abundance data in recent years. 
 
-Uncertainty in estimated and derived parameters was obtained from asymptotic standard errors. Finally, sensitivity tests were done to evaluate the effect of the assumed *h* and M~*a*~ value (Table A.12.1).
+Uncertainty in estimated and derived parameters was obtained from asymptotic standard errors. Finally, sensitivity tests were done to evaluate the effect of the assumed *h* and M~*a*~ values (Table A.12.1).
 
 
 <!---BLOCK_LANDSCAPE_START--->
@@ -1171,11 +1200,6 @@ if('Daily.cpues'%in%names(Tab))
 
 <!-- Display biological relationships -->
 ```{r, results='asis'}
-# SP_ind=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Indicator.sp.csv",sep='/'))%>%
-#           pull(Species)
-# SP_other=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Other.sp.csv",sep='/'))%>%
-#           pull(Species)
-# Species=unique(sort(c(SP_ind,SP_other)))
 for(i in 1:length(Species)){
   Titl=gsub(".*\\.", "", Species[i])
   cat(sprintf('![%s](%s)', paste('Figure A.12.1.',i,'. ',Titl,'. Biological relationships. FL, fork length; TL, total length; TLMax, Maximum total length; TL95 and TL50, total length at 95% and 50% maturity; TL0, TL at birth; Age50; age at 50% maturity (years; range provided); AgeMax, maximum age (years; range provided).',sep=''), 
@@ -1218,7 +1242,8 @@ path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Other.sp_sensitiv
 <br>
 
 <!-- Display Fit to cpue  and length series for S1--> 
-**MISSING UPDATE TEXT. START with CONVERGENCE (GRADIENT AND HESSIAN). For the base case scenario, the models fit the abundance series reasonably well with most fits within the 95% CI (Figure A.12.5). Length COMPS (Figure A.12.6). Mean length (Figure A.12.7). The run tests provided no evidence to reject the hypothesis of randomly distributed residual for most species and indices (Figure A.12.8). The goodness-of-fit was adequate for most species (RMSE≤30%, @carvalhoCookbookUsingModel2021) with the exception of milk and tiger sharks and to some extent copper shark, which showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.12.9).....**
+For the base case scenario of all assessed species, the model final gradient was small (<$1e^{-4}$), the Hessian was positive definite and parameters were not estimated close to bounds (Table A.12.2). The models fit the abundance series reasonably well with most fits within the 95% CI (Figure A.12.5). The models also fit the length composition data and mean body weight data reasonably well (Figures A.12.6 and  A.12.7).The runs tests provided no evidence to reject the hypothesis of randomly distributed residuals (Figure A.12.8). Runs tests were not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only length composition was available from sporadic earlier years mostly). The goodness-of-fit was adequate for the abundance data (RMSE≤30%, @carvalhoCookbookUsingModel2021) but for most species length composition showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.12.9). 
+
 <br>
 
 ```{r, results='asis'}
@@ -1299,7 +1324,7 @@ ii=1
 for(i in 1:length(Species)) 
 {
   FilEs=list.files(paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
-                             'SS3 integrated/Diagnostics',sep='/'), sep=''))
+                             'SS3 integrated/S1/Diagnostics',sep='/'), sep=''))
   x.indx=FilEs[grep('runs_tests_cpu',FilEs)]
   if(length(x.indx)>0)
   {
@@ -1329,7 +1354,8 @@ for(i in 1:length(Species)){
 <br>
 
 <!-- Display Likelihood profiles for S1--> 
-**MISSING UPDATE TEXT. For the base case scenario, XXX (Figure A.12.10)......**
+For the base case scenario, the Ro likelihood profile is shown in Figure A.12.10. For all species, the total negative log-likelihood showed a large decrease along the profile from low Ro values to the model-estimated value for all species. For Ro values higher than the model estimate, the likelihood profile showed a more gradual increase for most species except for gummy and dusky sharks which showed no increase or a slight increase, respectively. This suggests a relative uninformative data sources for these models. For dusky, gummy, milk, sandbar and whiskery sharks, the likelihood profile for the penalty on the recruitment deviations had the greatest gradient. For smooth hammerhead and spinner sharks, length composition had the greatest likelihood profile gradient.   
+
 <br>
   
 ```{r, results='asis'}
@@ -1342,7 +1368,7 @@ for(i in 1:length(Species))
   if(length(x.indx)>0)
   {
      Titl=gsub(".*\\.", "", Species[i])
-  cat(sprintf('![%s](%s)', paste('Figure A.12.10.',ii,'. ',Titl,'. Log-likelihood profiles for Ro for the various data components included in the models.',sep=''), 
+  cat(sprintf('![%s](%s)', paste('Figure A.12.10.',ii,'. ',Titl,'. Log-likelihood profiles for Ro for the various data components included in the models. The vertical broken lines indicate the estimated value.',sep=''), 
               paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
                                            'SS3 integrated/S1/Diagnostics/R0_profile_plot.tiff',sep='/'), sep='')), sep = '\n')
   cat("\n")
@@ -1353,8 +1379,8 @@ for(i in 1:length(Species))
 ```
 
 
-<!-- Display Retrospective analysis for S1--> 
-**MISSING UPDATE TEXT. For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.12.11) and therefore supporting the use of the base case model for making future projections. For all moderately-lived and long-lived species, the Mohn's-rho (ρ) statistic fell within the expected interval for long-lived species of -0.15 and 0.2 whereas for milk shark, a short-lived species, the ρ statistic fell within the expected interval for short-lived species of -0.22 and 0.3 (@carvalhoCookbookUsingModel2021).......**
+<!-- Display Retrospective analysis for S1-->  
+ For the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates (Figure A.12.11) and therefore supporting the use of the base case model for making future projections. For sandbar shark, the Mohn's-rho (ρ) statistic fell within the acceptable interval for long-lived species of -0.15 and 0.2 whereas for whiskery and milk sharks, the ρ statistic fell within the acceptable interval for short-lived species of -0.22 and 0.3 (@carvalhoCookbookUsingModel2021). For gummy shark, however, ρ (0.37) fell outside the expected ranges of either short- or long-lived species and the 2016 peel fell outside the upper 95% CI for stock fecundity, yielding a positive retrospective pattern, i.e. an overestimation of biomass. Retrospective analyses were not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only length composition was available from sporadic earlier years mostly).
 <br>
   
 ```{r, results='asis'}
@@ -1378,7 +1404,7 @@ for(i in 1:length(Species))
 ```
 
 <!-- Display Hindcasting for S1--> 
-**MISSING UPDATE TEXT. For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.12.12).  For copper and gummy sharks, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that  the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). However, the predictions fell within the 95% CI and that for both species, the indices have a flat trend. For the other species, the MASE score was ≤ 1 (i.e., predictions are better than a random walk).......**
+For the base case scenario, the hindcasting cross-validation results showed predictions fell within the 95% CI suggesting good predicting skills overall (Figure A.12.12). For gummy shark, the mean absolute scale error (MASE) score was > 1 (the reference level), which implies that the average model forecast is no better than a random walk (@carvalhoCookbookUsingModel2021). For the other species, the MASE score was ≤ 1 (i.e., predictions are better than a random walk). Hindcasting was not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only length composition was available from sporadic earlier years mostly).
 <br>
   
 ```{r, results='asis'}
@@ -1404,7 +1430,7 @@ for(i in 1:length(Species))
 <br>
 
 <!-- Display Jitters for S1--> 
-**MISSING UPDATE TEXT.  For the base case scenario, the jitter (Figure A.12.13). .......** 
+For the base case scenario, the jitter test for global convergence is shown in Figure A.12.13. For smooth hammerhead and spinner shark, all of the 50 iterations of the jitter test converged at the total likelihood estimate value of the base model run. For the other species, most of the iterations converged at or close to the total likelihood estimate value of the base model run with 3, 2, 8, 6, 2 converging at greater values for dusky, gummy, milk, sandbar and whiskery sharks, respectively. This suggests that the jittered models were some how sensitive to the initial values of the parameters. However, all converged model runs resulted in total likelihood values equal to or greater than the base model hence the jitter test support the hypothesis that the base model optimisation converged to the global solution. 
 <br>
   
 ```{r, results='asis'}
@@ -1421,8 +1447,9 @@ for(i in 1:length(Species)){
 
 <!---BLOCK_LANDSCAPE_START--->
 <!-- Display parameter estimates for S1--> 
-  For the base case scenario, model parameter, current depletion and reference point estimates are shown in Table A.12.2.
+  For the base case scenario, model gradient and parameter estimates are shown in Table A.12.2 and management quantities of interest are shown in Table A.12.3.
 ```{r,echo=FALSE,ft.align="left"}
+#parameters
 Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_estimates_Indicator.sp.csv',sep=''))
 Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_estimates_Other.sp.csv',sep=''))
 Tab=rbind(Tab1,Tab2)%>%
@@ -1472,8 +1499,34 @@ Tab%>%
 <!---BLOCK_LANDSCAPE_STOP--->
 <br>
 
+```{r,echo=FALSE,ft.align="left"}
+#quantities of interest
+Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_quantities_Indicator.sp.csv',sep=''))
+Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 11. Age.based_SS_quantities_Other.sp.csv',sep=''))
+Tab=rbind(Tab1,Tab2)%>%
+  filter(Scenario=='S1')%>%
+  arrange(Species)%>%
+  mutate(SE=formatC(SE, format = "e", digits = 2))%>%
+  mutate_at(vars('Median'), round, 2)%>%
+  dplyr::select(-Scenario)
+
+Tab%>%
+  flextable()%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(width=2.5,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=c('Species','Label'),align='left',part='all')%>%
+  width(j='Label',width=3.5,unit='cm')%>%
+  set_header_labels(Label = "Quantity")%>%
+  set_caption(caption = "Table A.12.3. Management quantities of interest for the base case scenario.",
+              autonum = NULL)
+
+
+```
+<br> 
 <!-- Display Selectivity at length for S1--> 
-  The modelled selectivity at lengths for each fleet are shown in Figure A.12.14.
+  The modelled selectivity at lengths for each fleet is shown in Figure A.12.14.
 
 ```{r, results='asis'}
 ii=1
@@ -1556,7 +1609,7 @@ path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Other.sp.tiff
 <br>
 
 <!-- Display likelihoods for each Consequence--> 
-For the base case scenario and the biomass reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.12.3.
+For the base case scenario and the biomass reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.12.4.
 ```{r,echo=FALSE,ft.align="left"}
 Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_current.depletion_Indicator.sp.csv',sep=''))
 Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_current.depletion_Other.sp.csv',sep=''))
@@ -1573,7 +1626,9 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
   spread(Consequence,Probability)%>%
   mutate(Species=gsub('\\.', ' ', Species))%>%
   rename(Year=finyear)%>%
-  mutate(Year=as.character(Year))
+  mutate(Year=as.character(Year))%>%
+  arrange(Species,Year)%>%
+  dplyr::select(-Model)
   
  Tab%>% 
     flextable()%>%
@@ -1581,16 +1636,16 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
     fontsize(size=9, part='header')%>%
     width(width=2,unit='cm')%>%
     width(j='Species',width=2.5,unit='cm')%>%
-    set_caption(caption = "Table A.12.3. Biomass reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
+    set_caption(caption = "Table A.12.4. Biomass reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
                 autonum = NULL)%>%
-   footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, B>BTar","Moderate, BThr<B<BTar","High, BLim<B<BThr","Major, B<BLim")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+   footnote(i = 1, j = 3:6,value = as_paragraph(c("Minor, B>BTar","Moderate, BThr<B<BTar","High, BLim<B<BThr","Major, B<BLim")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
    fontsize(size=7.5, part='footer')
 
 ```
 
 <br>  
 
-For the base case scenario and the F reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.12.4.
+For the base case scenario and the F reference points, the Probability for each Consequence level used in the Weight of Evidence assessment is shown in Table A.12.5.
 ```{r,echo=FALSE,ft.align="left"}
 Tab1<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_Current.f_Indicator.sp.csv',sep=''))
 Tab2<- read.csv(paste(Model.outputs.RAR,'/Table 12. Age.based_SS_Current.f_Other.sp.csv',sep=''))
@@ -1607,7 +1662,9 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
   spread(Consequence,Probability)%>%
   mutate(Species=gsub('\\.', ' ', Species))%>%
   rename(Year=finyear)%>%
-  mutate(Year=as.character(Year))
+  mutate(Year=as.character(Year))%>%
+  arrange(Species,Year)%>%
+  dplyr::select(-Model)
   
  Tab%>% 
     flextable()%>%
@@ -1615,9 +1672,9 @@ Tab=full_join(Tab1,Tab2,by=c("Range","Scenario","finyear","Model"))%>%
     fontsize(size=9, part='header')%>%
     width(width=2,unit='cm')%>%
     width(j='Species',width=2.5,unit='cm')%>%
-    set_caption(caption = "Table A.12.4. F reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
+    set_caption(caption = "Table A.12.5. F reference points. Probability for each consequence levels used in the Weight of Evidence assessment.",
                 autonum = NULL)%>%
-   footnote(i = 1, j = 4:7,value = as_paragraph(c("Minor, F<FTar","Moderate, FThr<F<FTar","High, FLim<F<FThr","Major, F>FLim.")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
+   footnote(i = 1, j = 3:6,value = as_paragraph(c("Minor, F<FTar","Moderate, FTar<F<FThr","High, FThr<F<FLim","Major, F>FLim.")), ref_symbols = 1:4,part = "header",inline = TRUE)%>%
    fontsize(size=7.5, part='footer')
 
 ```
