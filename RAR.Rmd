@@ -1,0 +1,149 @@
+---
+title: "Resource Assessment Report Elasmobranch Resource of Western Australia"
+author: "Matias Braccini, Clinton Syers & Alex Hesp"
+date: "December 2023"
+output:
+  word_document:  
+    toc: yes
+bibliography: "`r rbbt::bbt_write_bib('library.bib', overwrite = TRUE)`"
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Reports/RARs/2022") })
+
+---
+
+```{=openxml}
+<w:p><w:r><w:br w:type="page"/></w:r></w:p>
+```
+```{r globaloptions, include=FALSE}
+this.yr=2022  #update year of assessment
+source('C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/SOURCE_SCRIPTS/Git_other/handl_OneDrive.R')
+library(knitr)
+knitr::opts_chunk$set(fig.width = 10,fig.height = 10,
+                        echo = TRUE, warning=FALSE,message=FALSE)
+library(tidyverse)
+library(readxl)
+library(Hmisc)
+format_cells <- function(df, rows ,cols, value = c("italics", "bold", "strikethrough"))
+  {
+  # select the correct markup
+  # one * for italics, two ** for bold
+  map <- setNames(c("*", "**", "~~"), c("italics", "bold", "strikethrough"))
+  markup <- map[value]  
+  
+  for (r in rows){
+    for(c in cols){
+      
+      # Make sure values are not factors
+      df[[c]] <- as.character( df[[c]])
+      
+      # Update formatting
+      df[r, c] <- paste0(markup, df[r, c], markup)
+    }
+  }
+  
+  return(df)
+}
+```
+
+<!-- global for setting path to figures -->
+```{r, echo=FALSE}
+Model.outputs.RAR=handl_OneDrive(paste('Reports/RARs/',this.yr,sep=''))   #location of model outputs
+Repository=handl_OneDrive('Reports/RARs/Repository')   #location of static figures/tables (i.e. background info)
+
+```
+
+# Executive summary
+Whiskery (*Furgaleus macki*), gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*) and sandbar (*C. plumbeus*) sharks are the main (~80% of the shark catch) shark species of the Temperate Demersal Elasmobranch Resource (TDER). These species are targeted in the Temperate Demersal Gillnet and Demersal Longline Fisheries (TDGDLF), which operate in the West Coast and South Coast Bioregions and comprise the West Coast Demersal Gillnet and Demersal Longline (Interim) Managed Fishery (WCDGDLF), which operates between 26° and 33° S, and the Joint Authority Southern Demersal Gillnet and Demersal Longline Managed Fishery (JASDGDLF ), which operates from 33° S to the WA/SA border. Most fishers employ demersal gillnets to target mainly sharks. Scalefish, dominated by blue morwong (*Nemadactylus valenciennesi*), blue groper (*Achoerodus gouldii*) and snapper (*Chrysophrys auratus*), are also landed as a byproduct and typically account for ~10% of catches. Demersal longline is also permitted but is not widely used. 
+Based on their inherent vulnerability and risk to the sustainability, whiskery, gummy, dusky and sandbar sharks have been selected as indicators for the status of the temperate elasmobranch (sharks and rays) ‘suite’ as they represent the range of life history strategies of other elasmobranch species caught by these fisheries. The catch of sharks and rays in other Western Australia (WA) commercial fisheries is negligible (< 10 t per annum) and recreational fishers retain very small numbers of sharks in WA. Indigenous catches of these species have always been negligible. 
+For whiskery and gummy sharks, an integrated size-based model was implemented in 2017 to extend previous assessment models. The integrated model incorporated life history, gear selectivity, size composition, growth, catch and standardised fishery-dependent catch rate data up to and including the 2015-16 financial year. In addition, life history and catch information were used in a combined demographic and stock-reduction model (SR) to assess stock sustainability. Standardised fishery-dependent catch rate of gummy sharks was concluded to be a poor index of population abundance. For dusky and sandbar sharks, the time series of catch and effort data were considered to be insufficient for estimating biomass trends from fitting population dynamics models. Hence, a SR modelling approach was implemented to determine catch sustainability using life history and catch information up to and including the 2015-16 financial year.
+Currently, there is a single biological Reference Point (RP) for whiskery, gummy and dusky sharks. The biological RP is 40% of the unfished biomass and was considered a target level as an overall management objective: ‘to maintain the biomass of the fisheries’ for the three traditional target stocks at or above 40% of their unfished levels by 2010 for gummy and whiskery sharks and by 2040 for dusky shark’. Currently, there is no specific biological RP for sandbar sharks and no economic or social RPs for the fisheries. As a result, and similar to assessments for other WA finfish resources, the current assessment sets the target, threshold and limit RPs at 40%, 30% and 20% of the unfished biomass, respectively.
+For the whiskery shark stock, the current (2015-16) risk level was estimated to be Medium. Biomass projections indicate continued stock rebuilding under current fishing and management settings for the projection period (to 2020-21). Hence, the current status of the whiskery shark stock is acceptable with current risk control measures in place (i.e. no new management required).
+For the gummy shark stock, the current (2015-16) risk level was estimated to be Medium. Biomass projections indicate only minor declines in biomass under current fishing and management settings for the projection period (to 2020-21). Hence, the current status of the gummy shark stock is acceptable with current risk control measures in place (i.e. no new management required).
+For the dusky shark stock, the current (2015-16) risk level was estimated to be Medium. Biomass projections indicate only minor declines in biomass under current fishing and management settings for the projection period (to 2020-21). Hence, the current status of the dusky shark stock is acceptable with current risk control measures in place (i.e. no new management required).
+For the sandbar shark stock, the current (2015-16) risk level was estimated to be Medium. Biomass projections indicate continued stock rebuilding under current fishing and management settings for the projection period (to 2020-21). Hence, the current status of the sandbar shark stock is acceptable with current risk control measures in place (i.e. no new management required).
+A formal harvest strategy that considers and defines RPs and harvest control rules for managing the resource (which also considers economic and social objectives) is required and will be developed as part of the JASDGDLF transition to WA.  Currently, there is only a single reference point for assessing all temperate shark species (i.e. 40% unfished biomass) which is not explicitly defined as a target, threshold or limit in the current management settings, but has been interpreted as a target to determine stock status and risks. 
+Additional data (e.g. providing information on mortality for a certain period, as could be generated from representative age composition data), would assist in reducing assessment uncertainties, and an investigation of an index of abundance on large juvenile and adult dusky and sandbar sharks based on existing fishery-independent longline survey data should be undertaken for use in future integrated assessment models for these two species. 
+The TDGDLF key target species span multiple regional boundaries but risks to the stocks from other fisheries are currently low due to the negligible catches levels from other fisheries. Environmental drivers pose low risk to shark stocks due to their life history strategies. The main external risk to the viability of the TDGDLF is the introduction of Commonwealth Marine Reserves and Australian Seal Lion, Neophoca cinerea, (ASL) closures.
+
+
+# Scope
+This document provides a cumulative description and assessment of the TDER and all of the fishing activities (i.e. fisheries / fishing sectors) affecting this resource in WA. Future Resource Assessment Reports will assess the Statewide Sharks and Rays Resource.
+The report is focused on the temperate indicator species (whiskery, gummy, dusky and sandbar sharks) used to assess the suites of demersal sharks and rays that comprise this resource. These species are primarily captured by demersal gillnets used in the TDGDLF that operate in the West Coast and South Coast Bioregions. For the North Coast bioregion, no commercial fishing for sharks has been reported since 2008-09 by the Northern Shark Fisheries (NSF).
+The report contains information relevant to assist the assessment of the resource against Environment Protection and Biodiversity Conservation (EPBC) Act export approval requirements (i.e. Wildlife Trade Operations, WTO), the Marine Stewardship Council (MSC) Principles and Criteria for Sustainable Fishing and for other reporting requirements (e.g. Status of Australian Fish Stocks, SAFS).
+ 
+
+ 
+# How the Department operates
+Fisheries management in WA has evolved over the last 40-50 years from a focus on managing catch of target species by commercial fishers to a fully integrated Ecosystem-Based Fisheries Management (EBFM) approach, which ensures that fishing impacts on the overall ecosystems are appropriately assessed and managed (@Fletcher2010). In line with the principles of Ecologically Sustainable Development (ESD, @Fletcher2002), the EBFM approach also recognises that the economic and social benefits of fishing to all users must be considered. 
+Implementation of EBFM involves a risk-based approach to monitoring and assessing the cumulative impacts on WA’s aquatic resources from all fishing activities (commercial, recreational, customary), operating at a bioregional or ecosystem level. The level of risk to each resource is used as a key input to the Department Risk Register, which is an integral component of the annual planning cycle for assigning activity priorities (research, management, compliance, education etc.) across each bioregion. A summary of the Department’s risk-based planning annual cycle that is delivering EBFM in the long-term is provided in Figure 3.1. 
+To ensure that management is effective in achieving the relevant ecological, economic and social objectives, formal harvest strategies are being developed for each resource. These harvest strategies outline the performance indicators used to measure how well objectives are being met and set out control rules that specify the management actions to be taken in situations when objectives are not being met. The WA harvest strategy policy (DoF 2015) has been designed to ensure that the harvest strategies cover the broader scope EBFM and thus considers not only fishing impacts of target species but also other retained species, bycatch, endangered, threatened and protected (ETP) species, habitats and other ecological components (Fletcher et al. 2016).
+
+```{r, echo=FALSE}
+path=paste(Repository,'Figure1_Outline.risk.based.png',sep='/')
+```
+![Figure 1. An outline of the risk-based planning cycle used for determining Departmental priorities and activities. ](`r path`){width=500px}
+
+# Aquatic environment
+The marine ecosystems of WA have moderate to low productivity (Molony et al. 2011). The assessed species are currently captured in fisheries operating in continental shelf waters along the West Coast Bioregion (WCB) and South Coast Bioregion (SCB).  
+
+```{r, echo=FALSE}
+path=paste(Repository,'Figure2_Bioregions.png',sep='/')
+```
+![Figure 2. The Bioregions of Western Australia. ](`r path`){width=500px}
+
+## West Coast bioregion
+The marine environment of the WCB (see Figure 2) between Kalbarri (27.7° S 114.16° E) and Augusta (34.310° S and 115.16° E) is predominantly a temperate oceanic zone, but it is heavily influenced by the Leeuwin Current, which transports warm tropical water southward along the edge of the continental shelf (Gaughan & Santoro 2018). Most of the fish stocks of the region are temperate, in keeping with the coastal water temperatures that range from 18° C to about 24° C. The Leeuwin Current is also responsible for the existence of the unusual Abrolhos Islands coral reefs at latitude 29° S and the extended southward distribution of many tropical species along the West Coast and even into the South Coast.
+The Leeuwin Current system, which can be up to several hundred kilometres wide along the West Coast, flows most strongly in autumn / winter (April to August) and has its origins in ocean flows from the Pacific through the Indonesian archipelago. The current is variable in strength from year-to-year, flowing at speeds typically around 1 knot, but has been recorded at 3 knots on occasions. The annual variability in current strength is reflected in variations in Fremantle sea levels, and is related to El Niño Southern Oscillation (ENSO) events in the Pacific Ocean. Weaker counter-currents on the continental shelf (shoreward of the Leeuwin Current), such as the Capes Current that flows northward from Cape Leeuwin as far as Shark Bay, occur during summer and influence the distribution of many of the coastal finfish species.
+The most significant impact of the clear, warm, low-nutrient waters of the Leeuwin Current is on the growth and distribution of the temperate seagrasses. These form extensive meadows in protected coastal waters of the WCB, generally in depths of 20 m (but up to 30 m), and act as major nursery areas for many fish species and particularly for the western rock lobster stock.
+The West Coast is characterised by exposed sandy beaches and a limestone reef system that creates surface reef lines, often about 5 kilometres off the coast. Further offshore, the continental shelf habitats are typically composed of coarse sand interspersed with low limestone reef associated with old shorelines. There are few areas of protected water along the West Coast, the exceptions being within the Abrolhos Islands, the leeward sides of some small islands off the Midwest Coast, plus behind Rottnest and Garden Islands in the Perth metropolitan area.
+The two significant marine embayments in the West Coast are Cockburn Sound and Geographe Bay. Along the West Coast, there are four significant estuarine systems – the Swan-Canning, Peel-Harvey and Leschenault estuaries and Hardy Inlet (Blackwood estuary). All of these are permanently open to the sea and form an extension of the marine environment except when freshwater run-off displaces the oceanic water for a short period in winter and spring. 
+Southward of Cape Naturaliste, the coastline changes from limestone to predominantly granite and becomes more exposed to the influences of the Southern Ocean.
+
+## South Coast bioregion
+The SCB (Figure 2) extends east from Augusta (34.310° S, 115.16° E) to the South Australian (SA) border. The continental shelf waters of the SCB are generally temperate but low in nutrients, due to the seasonal winter presence of the tail of the tropical Leeuwin Current and limited terrestrial run-off from an infertile landscape (Gaughan & Santoro 2018). Sea surface temperatures typically range from approximately 15°C to 21°C, which is warmer than would normally be expected in these latitudes due to the influence of the Leeuwin Current. The effect of the Leeuwin Current, particularly west of Albany, limits winter minimum temperatures (away from terrestrial effects along the beaches) to about 16 to 17°C. Fish stocks in this region are predominantly temperate, with many species' distributions extending right across southern Australia. Tropical species are occasionally found, which are thought to be brought into the area as larvae as they are unlikely to form breeding populations.
+The SCB is a high-energy environment, heavily influenced by large swells generated in the Southern Ocean. The coastline from Cape Leeuwin to Israelite Bay is characterised by white sand beaches separated by high granite headlands. East of Israelite Bay, there are long sandy beaches backed by large sand dunes, until replaced by high limestone cliffs at the South Australian border. There are few large areas of protected water along the South Coast, the exceptions being around Albany and in the Recherche Archipelago off Esperance.
+Along the western section of the coastline that receives significant winter rainfall, there are numerous estuaries fed by winter-flowing rivers. Several of these, such as Walpole/Nornalup Inlet and Oyster Harbour, are permanently open, but most are closed by sandbars and open only seasonally after heavy winter rains. The number of rivers and estuaries decreases to the east as the coastline becomes more arid. While these estuaries, influenced by terrestrial run-off, have higher nutrient levels (and some, such as Oyster Harbour and Wilson Inlet, are suffering eutrophication), their outflow to the ocean does not significantly influence the low nutrient status of coastal waters.
+The marine habitats of the SCB are similar to the coastline, having fine, clear sand sea floors interspersed with occasional granite outcrops and limestone shoreline platforms and sub-surface reefs. A mixture of seagrass and kelp habitats occurs along the South Coast, with seagrass more abundant in protected waters and some of the more marine estuaries. The kelp habitats are diverse but dominated by the relatively small Ecklonia radiata, rather than the larger kelps expected in these latitudes where waters are typically colder and have higher nutrient levels.
+
+
+# Resource description
+## Resource
+Whiskery, gummy, dusky and sandbar sharks are the main shark species targeted (~80% of the fisheries’ shark catch) in the TDGDLF, which comprised the JASDGDLF and the WCDGDLF. These fisheries operate in continental shelf waters along the south and lower west coasts, respectively. The majority of operators employ demersal gillnets and power-hauled reels to target sharks, with scalefish (mainly blue morwong, blue groper and snapper) also being a legitimate byproduct of these fisheries. Demersal longline is also a permitted method of fishing, but is not widely used. Whiskery, gummy, dusky and sandbar sharks have been identified as indicators for the status of the temperate shark ‘suite’ as they represent the range of life history strategies of other shark species caught by these fisheries (DoF 2011). 
+
+## Selection of indicator species
+Following the adoption of the ESD policy (Fletcher 2002) by the Department in 2002, the process for monitoring and assessment of marine fishery resources in WA has involved identifying species within Bioregions and allocating each species into one of five suites – Estuarine, Nearshore, Inshore Demersal, Offshore Demersal and Pelagic (DoF 2011). A risk-based approach is then employed to quantify the risks to the sustainability of the stocks based on biological and other criteria to develop a matrix of risk. From the list of species within a suite for a given Bioregion, indicator species are identified based on their vulnerability to fishing and other considerations, such as whether they are target species in the major fisheries, the value to the community, economic value, recreational value and cultural value (Newman et al. 2018). It is these indicator species that are monitored and the status of these indicators is assumed to represent the status of the suite and therefore the resource. 
+Based on the inherent vulnerability and risk to the sustainability of major species within the different suites of inshore and offshore demersal sharks and rays in the West and South Coast Bioregions (see DoF 2011), the indicator species selected for assessing the status of Statewide sharks and rays include:
+* Whiskery shark 
+* Gummy shark
+* Dusky shark 
+* Sandbar shark 
+
+
+# Species descriptions
+## Whiskery shark
+
+```{r, echo=FALSE}
+path=paste(Repository,'Figure3_Whiskery shark.png',sep='/')
+```
+![Figure 3. Whiskery shark (Whitley, 1943). Source: Last and Stevens (2009). © R. Swainston. ](`r path`){width=400px}
+The whiskery shark (Figure 3) is a small to moderate sized (up to 1.6 m TL) species of houndshark (Family Triakidae) endemic to Australia (Last & Stevens 2009). Whiskery sharks occur in temperate continental shelf waters from the North West Cape in WA to Wynyard in Tasmania (Figure 4).
+
+```{r, echo=FALSE}
+path=paste(Repository,'Figure4_Whiskery shark distribution.png',sep='/')
+```
+![Figure 4. Distribution of whiskery shark (Last & Stevens 2009). ](`r path`){width=400px}
+  
+
+# Dummy
+Dummy text 
+
+# Dummy
+Dummy text 
+
+# Dummy
+Dummy text 
+
+# References
+
+<div id="refs"></div>
+

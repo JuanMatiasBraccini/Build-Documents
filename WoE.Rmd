@@ -95,7 +95,7 @@ For Whiskery shark, the current assessment is based on catch-only modelling and 
 
 For Sandbar shark, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Sandbar shark over the next five years is estimated to be **Low**. On the basis of this evidence, Sandbar shark is classified as a **Sustainable stock**.
 
-For the indicator species, current management settings will maintain risk at acceptable levels assuming that total catch is maintained at near current levels. However, biomass trajectories showed considerable uncertainty due to the data-limited nature of the assessments and this should be taken into consideration for future management changes.
+For the indicator species, current management settings will maintain risk at acceptable levels assuming that total catch is maintained at near current levels. However, biomass trajectories showed considerable uncertainty due to the data-limited nature of the assessments and this should be taken into consideration for future management.
 
 For non-indicator species, the current assessment is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to abundance series (Level 4) and/or integrated population dynamics modelling (Level 5) fitted to abundance series and/or length composition data depending on data availability. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for Angel, Copper and Spinner sharks over the next five years is estimated to be **Medium** whereas the risk for other non-indicator species is estimated to be **Low**. Non-indicator species are only a minor component of currently operating fisheries and the highest sources of historic fishing mortality ceased decades ago. On the basis of this evidence, non-indicator species are classified as **Sustainable stocks**.
 
@@ -253,8 +253,16 @@ Tab%>%
 <br>
 
 # Appendix 1. Consequence, Likelihood and Risk Levels (based on AS 4360 / ISO 31000) 
-Following @Fletcher2015, fishing sustainability risk was defined as negligible, low, medium, high or severe. These risk levels were calculated as the combination of consequence and likelihood (see definition below). The likelihood of each consequence level was calculated for each line of evidence as follows. For spatio-temporal changes in catch and effort, the likelihood values were derived using Table A.6.1. For COMs, likelihood values were derived from the probability of the average total catch for the last five years being below, between or above catch reference points. The target, threshold and limit catch reference point were set at the 50%, 60% and 95% percentiles of the estimated MSY, respectively. For the state-space surplus production and integrated models, likelihood levels were derived from the model outputs. Risk scores were calculated for `r year.current` and `r year.future`. For this, the population models were projected for five years assuming a constant catch set at the average catch of the last five years.
-Finally, risk scores were then calculated as the product of each consequence level and a weighted mean likelihood. Spatio-temporal changes in catch and effort, COMs, state-space surplus production models and integrated population models were given a weight of 0.25, 0.5, 1 and 2, respectively. The highest score was chosen as the overall fishing sustainability risk following the precautionary approach.
+Following @Fletcher2015, fishing sustainability risk was defined as negligible, low, medium, high or severe. These risk levels were calculated as the product of consequence and likelihood (see definition below). The likelihood of each consequence level was calculated for each line of evidence as follows. 
+
+For spatio-temporal changes in catch and effort, likelihood values were derived from spatial and temporal dynamics of the number of blocks fished in total and with catch for each assessed species as well as market dynamics and legislated species protection (Appendix 6). 
+
+For the data-limited COMs analyses, likelihood values were calculated based on probabilities of the total catch of a species being above, between or below catch reference points. Rather than using a point estimate of total catch, a normal distribution was used with mean and standard deviation set at the mean and standard deviation of the observed total catch for the last five years. For each species, the limit reference point for catch was set to the median value for MSY produced by COMs models, i.e. the limit reference point is considered to be breached if there is greater than 50% probability of MSY being exceeded. The threshold reference for catch was set to 0.8 of the median value for MSY produced by the COMs models, i.e. the threshold is considered to be breached if there is greater than 20% probability (and thus still appreciable risk) of MSY being exceeded. These limit and threshold catch reference points were derived based on the theoretical expectation that, for any stock, catches above MSY, over any period other than the short term, will result in overfishing and should thus be avoided (@Martell2012). The target reference point for catch was set to 0.5 of the median value for MSY produced by COMs models, i.e. to a level of catch this is much lower than the median expectation for MSY and, taking into account full uncertainty for MSY from these data-limited approaches, was able to be shown for all species in this assessment to have zero chance of exceeding MSY.
+
+For the state-space surplus production and integrated models, likelihood levels were derived from the model outputs. Risk scores were calculated for `r year.current` and `r year.future`. For this, the population models were projected for five years assuming a constant catch set at the average catch of the last five years. 
+
+For each assessed species, risk scores for each consequence level were derived from the highest assessment level available interpreted within the context of lower assessment levels. The highest score was chosen as the overall fishing sustainability risk following the precautionary approach.
+
 
 
 ## Consequence levels
@@ -392,26 +400,6 @@ path=paste(Model.outputs.RAR,'/Spatio.temporal.catch_Indicator.sp.tiff',sep='')
 path=paste(Model.outputs.RAR,'/Spatio.temporal.catch_Other.sp.tiff',sep='')
 ```
 ![Figure A.6.2. Effort and reported catch dynamics for WA’s shark fisheries (non-indicator species). The left pane shows a heatmap of the distribution of relative effort (hook days for the NSF and km gillnet days for the TDGDLF) by 5-year intervals and 60 nm blocks. The right pane shows the proportion of blocks fished  with reported catch (primary y axis, red dots) with a trend line (red line) and the total number of blocks fished (secondary y axis, grey line) within the species core area for the TDGDLF. The inset in the right pane shows the species’ core area. Core area was defined as the spatial blocks accounting for 95% of the catch.](`r path`){width=800px}
-
-<br>
-
-```{r,echo=FALSE,ft.align="left"}
-Tab<- read.csv(paste(Model.outputs.RAR,'/Spatial_LoE_Table.csv',sep=''))
-
-flextable(Tab)%>%
-      set_header_labels(Blocks.fished="Blocks\nfished",
-                        Blocks.fished.with.catch="Blocks fished\nwith catch")%>%
-  fontsize(size=8, part='body')%>%
-  fontsize(size=9, part='header')%>%
-  width(j='Effort',width=2,unit='cm')%>%
-  width(j='Blocks.fished',width=3,unit='cm')%>%
-  width(j='Blocks.fished.with.catch',width=3,unit='cm')%>%
-  width(j='Consequence',width=3,unit='cm')%>%
-  align(align='center',part='all')%>%
-  align(j=c('Effort'),align='left',part='all')%>%
-  set_caption(caption = 'Table A.6.1. Derived Consequence and Likelihood levels from the spatial distribution of catch and effort (NB for species for which market value decrease or became protected, ‘Blocks fished with catch’ were set to ‘Stable’).',
-              autonum = NULL)
-```
 
 <br>
 
@@ -659,7 +647,7 @@ flextable(Tab)%>%
 
 <!---BLOCK_LANDSCAPE_STOP--->
 
-The COMs considered here represent alternative states of nature; hence, an ensemble was constructed as model ensembles can streamline stock assessments and are typically more accurate and less biased than individual COM estimates (@jardimOperationalizingEnsembleModels2021). For each COM, an equal number of random samples of accepted trajectories and inferred MSY values were drawn and the 60% and 95% percentiles were calculated.
+The COMs considered here represent alternative states of nature; hence, an ensemble was constructed as model ensembles can streamline stock assessments and are typically more accurate and less biased than individual COM estimates (@jardimOperationalizingEnsembleModels2021). For each COM, random samples of accepted trajectories and inferred MSY values were drawn and the 60% and 95% percentiles were calculated. When drawing random samples, SSS was given double the weight than the other COMs given the higher biological realism (e.g. sex- and age-structure, stock-recruitment relationship) of SSS.
 
 <br>
 
@@ -700,11 +688,11 @@ Tab%>%
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Catch_vs_MSY_catch.only_Indicator.sp.tiff',sep='')
 ```
-![Figure A.10.2. Time series of total catch (blue line) and MSY (black line) with 60% and 95% confidence intervals (dark grey and light grey shaded areas, respectively) inferred from the catch-only model ensemble for indicator species.](`r path`){width=800px}
+![Figure A.10.2. Time series of total catch (blue line) and MSY (black line) with 60% and 95% confidence intervals (dark grey and light grey shaded areas, respectively) inferred from the catch-only model ensemble for indicator species. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Catch_vs_MSY_catch.only_Other.sp.tiff',sep='')
 ```
-![Figure A.10.3. Time series of total catch (blue line) and MSY (black line) with 60% and 95% confidence intervals (dark grey and light grey shaded areas, respectively) inferred from the catch-only model ensemble for non-indicator species.](`r path`){width=800px}
+![Figure A.10.3. Time series of total catch (blue line) and MSY (black line) with 60% and 95% confidence intervals (dark grey and light grey shaded areas, respectively) inferred from the catch-only model ensemble for non-indicator species. Also shown are the reference points (red, limit; orange, threshold; green, target).](`r path`){width=800px}
 
 <br>
 
@@ -1242,7 +1230,7 @@ path=paste(Model.outputs.RAR,'/Relative.biomass_SS3 integrated_Other.sp_sensitiv
 <br>
 
 <!-- Display Fit to cpue  and length series for S1--> 
-For the base case scenario of all assessed species, the model final gradient was small (<$1e^{-4}$), the Hessian was positive definite and parameters were not estimated close to bounds (Table A.12.2). The models fit the abundance series reasonably well with most fits within the 95% CI (Figure A.12.5). The models also fit the length composition data and mean body weight data reasonably well (Figures A.12.6 and  A.12.7).The runs tests provided no evidence to reject the hypothesis of randomly distributed residuals (Figure A.12.8). Runs tests were not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only length composition was available from sporadic earlier years mostly). The goodness-of-fit was adequate for the abundance data (RMSE≤30%, @carvalhoCookbookUsingModel2021) but for most species length composition showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.12.9). 
+For the base case scenario of all assessed species, the model final gradient was small (<$1e^{-4}$), the Hessian was positive definite and parameters were not estimated close to bounds (Table A.12.2). The models fit the abundance series reasonably well with most fits within the 95% CI (Figure A.12.5). The models also fit the length composition data and mean body weight data reasonably well (Figures A.12.6 and  A.12.7). The runs tests provided no evidence to reject the hypothesis of randomly distributed residuals (Figure A.12.8). Runs tests were not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only length composition was available from sporadic earlier years mostly). The goodness-of-fit was adequate for the abundance data (RMSE≤30%, @carvalhoCookbookUsingModel2021) but for most species length composition showed larger RMSE values and residual boxplots, and an apparent trend (Figure A.12.9). 
 
 <br>
 
@@ -1258,7 +1246,9 @@ for(i in 1:length(Species))
   {
     for(x in 1:length(x.indx))
     {
-        cat(sprintf('![%s](%s)', paste('Figure A.12.5.',i,'. ',paste(Titl,str_replace(str_replace(x.indx[x], "index2_cpuefit_",""),".png",""),sep='. '),'. Fits to the abundance series for the base case scenario. Observed (white circles and 95% CIs) and predicted (solid blue line) abundance.',sep=''), 
+      xxx=x.indx[x]
+      if(grepl('F.series',xxx)) xxx=str_replace(str_replace(xxx, "F.series","F series"),".png","")
+        cat(sprintf('![%s](%s)', paste('Figure A.12.5.',i,'. ',paste(Titl,str_replace(str_replace(xxx, "index2_cpuefit_",""),".png",""),sep='. '),'. Fits to the abundance series for the base case scenario. Observed (white circles and 95% CIs) and predicted (solid blue line) abundance.',sep=''), 
               paste(Model.outputs.an,paste(paste('1.',Species[i],sep=''),this.yr,  
                                            'SS3 integrated/S1/plots/',sep='/'),x.indx[x], sep='')), sep = '\n')
   cat("\n")
@@ -1430,7 +1420,7 @@ for(i in 1:length(Species))
 <br>
 
 <!-- Display Jitters for S1--> 
-For the base case scenario, the jitter test for global convergence is shown in Figure A.12.13. For smooth hammerhead and spinner shark, all of the 50 iterations of the jitter test converged at the total likelihood estimate value of the base model run. For the other species, most of the iterations converged at or close to the total likelihood estimate value of the base model run with 3, 2, 8, 6, 2 converging at greater values for dusky, gummy, milk, sandbar and whiskery sharks, respectively. This suggests that the jittered models were some how sensitive to the initial values of the parameters. However, all converged model runs resulted in total likelihood values equal to or greater than the base model hence the jitter test support the hypothesis that the base model optimisation converged to the global solution. 
+For the base case scenario, the jitter test for global convergence is shown in Figure A.12.13. For smooth hammerhead and spinner shark, all of the 50 iterations of the jitter test converged at the total likelihood estimate value of the base model run. For the other species, most of the iterations converged at or close to the total likelihood estimate value of the base model run with 3, 2, 8, 6, 2 converging at greater values for dusky, gummy, milk, sandbar and whiskery sharks, respectively. This suggests that the jittered models were some how sensitive to the initial values of the parameters. However, all converged model runs resulted in total likelihood values equal to or greater than the base model hence the jitter test supports the hypothesis that the base model optimisation converged to the global solution. 
 <br>
   
 ```{r, results='asis'}

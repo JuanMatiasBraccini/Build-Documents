@@ -35,6 +35,29 @@ The integrated model estimate for fishing mortality in 2021 was 0.024 year-1, wi
 Based on all available lines of evidence (see Table below), the risk level for Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
 On the basis of the evidence, Gascoyne Oceanic Snapper is classified as a  **Recovering stock**.**............. TO HERE**
 
+```{r,echo=FALSE,ft.align="left"}
+Tab<- read.csv(paste(Model.outputs.RAR,'/Spatial_LoE_Table.csv',sep=''))
+
+flextable(Tab)%>%
+      set_header_labels(Blocks.fished="Blocks\nfished",
+                        Blocks.fished.with.catch="Blocks fished\nwith catch")%>%
+  fontsize(size=8, part='body')%>%
+  fontsize(size=9, part='header')%>%
+  width(j='Effort',width=2,unit='cm')%>%
+  width(j='Blocks.fished',width=3,unit='cm')%>%
+  width(j='Blocks.fished.with.catch',width=3,unit='cm')%>%
+  width(j='Consequence',width=3,unit='cm')%>%
+  align(align='center',part='all')%>%
+  align(j=c('Effort'),align='left',part='all')%>%
+  set_caption(caption = 'Table A.6.1. Derived Consequence and Likelihood levels from the spatial distribution of catch and effort (NB for species for which market value decreased or they became protected, ‘Blocks fished with catch’ were set to ‘Stable’).',
+              autonum = NULL)
+```
+
+<br>
+
+Finally, risk scores were then calculated as the product of each consequence level and a weighted mean likelihood. Spatio-temporal changes in catch and effort, COMs, state-space surplus production models and integrated population models were given a weight of 0.25, 0.5, 1 and 2, respectively. The highest score was chosen as the overall fishing sustainability risk following the precautionary approach.
+
+
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Available time series by species.tiff',sep='')
 
