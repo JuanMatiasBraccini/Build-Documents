@@ -35,6 +35,9 @@ The integrated model estimate for fishing mortality in 2021 was 0.024 year-1, wi
 Based on all available lines of evidence (see Table below), the risk level for Gascoyne Oceanic Snapper over the next five years is estimated to be **Medium**.
 On the basis of the evidence, Gascoyne Oceanic Snapper is classified as a  **Recovering stock**.**............. TO HERE**
 
+
+For example, for grey nurse shark and shortfin mako, the inferred K equates to a virgin population size of ~7,000 individuals each across WA. 
+
 ```{r,echo=FALSE,ft.align="left"}
 Tab<- read.csv(paste(Model.outputs.RAR,'/Spatial_LoE_Table.csv',sep=''))
 
