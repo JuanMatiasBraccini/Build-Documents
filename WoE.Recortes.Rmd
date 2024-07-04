@@ -1,8 +1,17 @@
 ---
-title: "Recortes"
-output: html_document
-date: "2023-11-13"
+title: "Risk-based Weight of Evidence Assessment of the Elasmobranch Resources of Western Australia"
+author: "Matias Braccini & Alex Hesp"
+date: "`r format(Sys.time(), '%B %Y')`"
+output:
+  officedown::rdocx_document  
+bibliography: 'C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/Build-Documents/My Library.bib'
+csl: 'C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/Build-Documents/canadian-journal-of-fisheries-and-aquatic-sciences.csl'
+knit: (function(inputFile, encoding) {
+  rmarkdown::render(inputFile, encoding = encoding, output_dir = "C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Reports/WoE Advice/2023") })
+
+
 ---
+
 
 
 # Background
@@ -160,3 +169,14 @@ For the base case scenario, the hindcasting cross-validation results showed pred
 
 The alternative M scenarios used in the demographic analysis were used as a sensitivity (Table A.10.1).
 Two *r* scenarios, resulting from the alternative M scenarios used in the demographic analysis, were used as a sensitivity (Table A.10.2).
+
+
+
+```{r, fig.width = 5, fig.height=5, fig.cap = "Figure A.4.1. Proportional shark and ray catch for Western Australia fisheries. The top panel shows the proportion by method for shark and non-shark fisheries. The bottom panel is a word cloud of the different fisheries interacting with sharks and rays. The southern and northern shark fisheries are shown in green and orange, respectively, whereas non-shark fisheries are shown in black. The size of the word is proportional to the square root of the total catch.", fig.pos='h',fig.align='center'}
+knitr::include_graphics(paste(Model.outputs.an,'Proportional catch_WA_combined.tiff',sep=''))
+```
+
+
+```{r, fig.width = 7, fig.height=8, fig.cap = "Figure A.5. Total reported effort for the TDGDLF (top pane) and NSF (bottom pane). Also shown are the management measures and data collection initiatives implemented since the start of these fisheries. Effort is shown in a logarithmic scale. Red, data collection; Blue, spatial closures; Green, other management measures.", fig.pos='h',fig.align='center'}
+knitr::include_graphics(paste(handl_OneDrive('Management/Sharks/Timeline management measures/'),'Effort.management_TDGDLF & NSF.tiff',sep=''))
+```

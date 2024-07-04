@@ -1,14 +1,14 @@
 ---
-title: "Risk-based Weight of Evidence Assessment of the Elasmobranch Resources of Western Australia"
-author: "Matias Braccini & Alex Hesp"
-date: "`r format(Sys.time(), '%B %Y')`"
+title: "MEMORANDUM"
+subtitle: '(not for distribution outside DPIRD)'
 output:
   officedown::rdocx_document  
 bibliography: 'C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/Build-Documents/My Library.bib'
 csl: 'C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Analyses/Build-Documents/canadian-journal-of-fisheries-and-aquatic-sciences.csl'
 knit: (function(inputFile, encoding) {
   rmarkdown::render(inputFile, encoding = encoding, output_dir = "C:/Users/myb/OneDrive - Department of Primary Industries and Regional Development/Matias/Reports/WoE Advice/2023") })
-
+header-includes:
+  - \pagenumbering{gobble}
 
 ---
 
@@ -29,7 +29,7 @@ library(r4ss)
 # https://www.zotero.org/styles?fields=biology  Zotero Citation Style Language
 ```
 
-<!-- global for setting path to figures -->
+<!-- global for setting path to figures and formattig -->
 ```{r, echo=FALSE}
 #outputs in RAR folder
 Model.outputs.RAR=handl_OneDrive(paste('Reports/RARs',this.yr,'Figures_and_Tables',sep='/'))   
@@ -51,8 +51,10 @@ year.future=year_current_future$year.future
 knitr::opts_chunk$set(echo = FALSE, ft.keepnext = F)  #chunk for keep table next to caption
 knitr::opts_chunk$set(tab.cap.pre = "", tab.cap.sep = "")   #remove Table prefix
 knitr::opts_chunk$set(comment = '', fig.width = 10,fig.height = 10)   #figure dimensions
+knitr::opts_chunk$set(number_sections = FALSE)  #suppressing numbering of subheadings
 ```
 
+\pagenumbering{arabic}
 To	      Executive Director – Fisheries and Agriculture Resource Assessment
 	
 From	    Chief Fisheries Scientist – Aquatic Science and Assessment
@@ -67,8 +69,38 @@ Date	`r format(Sys.time(), "%d %B %Y")`
 
 
 # Background
-This document provides the formal advice on the stock status and risks to sustainability for all elasmobranch (sharks and rays) species and/or stocks identified in the catches of commercial and/or recreational fisheries operating in Western Australia (WA). This includes the indicator species, gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*), whiskery (*Furgaleus macki*) and sandbar (*C. plumbeus*) sharks, and non-indicator species. A risk-based Weight of Evidence (WoE) assessment of stocks status was undertaken for all species using ISO 31000-based risk assessment methods (Appendix 1).
+This document provides the `r format(Sys.time(), "%Y")` research advice on the stock status and risk to sustainability over the next five years for all elasmobranch (sharks and rays) species and/or stocks identified in the catches of commercial and/or recreational fisheries operating in Western Australia (WA). This includes the indicator species, gummy (*Mustelus antarcticus*), dusky (*Carcharhinus obscurus*), whiskery (*Furgaleus macki*) and sandbar (*C. plumbeus*) sharks, and non-indicator species. A risk-based Weight of Evidence (WoE) assessment of stocks status was undertaken for all these species using ISO 31000-based risk assessment methods.
 
+# Current situation
+The current assessment for gummy shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to the abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for gummy shark over the next five years is estimated to be **Low**. Current (2021-22) biomass estimates exhibit considerable uncertainty, but estimates are above the target level and are projected to increase. Current fishing mortality estimates are below the target level and are projected to remain below this level. 
+
+On the basis of this evidence, gummy shark is classified as a **Sustainable stock**. 
+
+The current assessment for dusky shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), and integrated population dynamics modelling (Level 5) fitted to length composition data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for dusky shark over the next five years is estimated to be **High**. Current (2021-22) median biomass is at the threshold level and projected to increase whereas median fishing mortality is below the target level and projected to remain slightly below this level. However, model estimates showed considerable uncertainty and the integrated model was fitted to length composition data only as the available abundance series was considered unreliable for this stock. 
+
+On the basis of this evidence, dusky shark is classified as a **Recovering stock**. 
+
+The current assessment for whiskery shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to the abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for whiskery shark over the next five years is estimated to be **Medium**. Current (2021-22) biomass estimates showed considerable uncertainty but median estimates are at the target level and are projected to increase. Current fishing mortality estimates are below the target level and are projected to decrease. 
+
+On the basis of this evidence, whiskery shark is classified as a **Sustainable stock**. 
+
+The current assessment for sandbar shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to the abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for sandbar shark over the next five years is estimated to be **Low**. Current (2021-22) biomass estimates are above the target level and are projected to increase. Current fishing mortality estimates are below the target level and are projected to remain below this level. 
+
+On the basis of this evidence, sandbar shark is classified as a **Sustainable stock**.
+
+For the indicator species, maintaining current management settings (i.e., assuming total catches are sustained at current levels) is predicted to maintain the sustainability risk at acceptable levels. However, biomass trajectories show considerable uncertainty due to the data-limited nature of the assessments and this should be a consideration for future management arrangements.
+
+The current assessment for non-indicator species is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and/or integrated population dynamics modelling (Level 5) fitted to the abundance series and/or length composition data depending on data availability. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level over the next five years is estimated to be **High** for angel sharks, **Medium** for sawsharks, copper, and spinner sharks, and  **Low** for the other non-indicator species. Non-indicator species are only a minor component of fisheries currently operating under the jurisdiction of WA. The highest sources of fishing mortality for these species ceased decades ago. For two of the non-indicator species (copper and angel sharks), most of the catch has been taken by fisheries outside the jurisdiction of WA. Copper shark is a shared stock across southern Australia and most of the catch originates from South Australia’s Marine Scalefish Fishery. Angel sharks in WA are mainly captured by the Commonwealth managed Great Australian Bight Trawl Fishery and were classed as **High** risk due to the high levels of uncertainty in the MSY value inferred from catch-only modelling (see *Level 1 Assessment* below in *Risk-based weight of evidence table: Non-indicator species*). 
+
+On the basis of this evidence, all non-indicator species are classified as **Sustainable stocks**.
+
+\newpage
+
+# Risk-based Weight of Evidence Assessment of the Elasmobranch Resources of Western Australia
+
+Assessment date: `r format(Sys.time(), "%B %Y")`
+
+# Executive Summary
 Over 100 elasmobranch species have been identified in the catches of commercial and/or recreational fisheries in WA. Gummy, dusky, whiskery, and sandbar sharks are the most commonly captured species (~80% of the elasmobranch catch). These species have been targeted in the Temperate Demersal Gillnet and Demersal Longline Fisheries (TDGDLF), which operate in the West Coast and South Coast Bioregions and comprise the West Coast Demersal Gillnet and Demersal Longline (Interim) Managed Fishery (WCDGDLF), which operates between 26° and 33° S, and the Joint Authority Southern Demersal Gillnet and Demersal Longline Managed Fishery (JASDGDLF), which operates from 33° S to the WA/South Australia (SA) border. Sandbar shark and to a lesser extent dusky shark were also targeted by the Northern Shark Fisheries, which operated between 114° 06' E and the WA/Northern Territory (NT) border and ceased operations in 2008-09. The current catch of sharks and rays in other WA commercial fisheries is negligible (< 10 t per annum) and recreational fishers retain very small numbers of sharks in WA. Indigenous catches of these species are considered to be negligible both in terms of historical and extant harvest.
 
 Based on their importance to fisheries, inherent vulnerabilities and sustainability risk, whiskery, gummy, dusky and sandbar sharks have been selected as indicators for the status of the temperate elasmobranch (sharks and rays) ‘suite’ as they represent the range of life history strategies of other elasmobranch species caught by these fisheries. However, with the increasing number of elasmobranch species being listed in national (Environment Protection and Biodiversity Conservation Act 1999, EBPC Act) and international (Convention on International Trade in Endangered Species, CITES; Convention on the Conservation of Migratory Species, CMS) protection lists, species-specific scientific advice on stock status at the local level is needed to comply with national and international legislation.  
@@ -76,6 +108,19 @@ Based on their importance to fisheries, inherent vulnerabilities and sustainabil
 For whiskery shark, the initial historical stock assessment was based on a bespoke age- and sex-structured model (i.e., L5 assessment, [@Simpfendorfer2000a]). This assessment determined that female mature biomass in 1997-98 (the last year of the assessed data series) was at 23% of virgin levels, and to achieve management biomass targets with a 50% probability by 2010, recommended catches were required to be maintained below 190 tonnes. For sandbar and dusky sharks, previous stock assessments were based on demographic and mark recapture analyses [@McAuley2007b]. These assessments determined that the combined fishing pressure from WA shark fisheries and cryptic mortality from other fisheries was deemed unsustainable at the effort peak (1990s-2000s). More recently, the weight of evidence assessments for the four indicator species (L1 and L5 assessments for whiskery shark, L1 assessments for gummy, dusky and sandbar sharks), determined that the risk posed by fishing to the sustainability of these stocks was assessed as Medium for 2015-16 (last year of the data series) and for the projected period to 2020-21 [@bracciniRiskbasedWeightEvidence2021]. Prior to the current study, there has been no stock assessments for other shark and ray species captured in WA.  
 
 Following a comprehensive reconstruction of the total catch trajectories of all species for which data are available [@Braccini2021; @bracciniQuantifyingSharkRay2021; @bracciniRecreationalHarvestSharks2021], a range of assessment methods was used to provide species-specific scientific advice on the stock status of all elasmobranch species. First, a Productivity Susceptibility Analysis (PSA) was used to filter out species with historically very low catch volumes and those with low vulnerability  from further analysis. Second, species ranked by the PSA as having high vulnerability were assessed using a combination of spatio-temporal changes in reported catch and effort, catch-only models, State-space surplus production models, and age- and sex-structured integrated models, depending on data availability (Figure 1). Biomass estimates from the production and integrated models were compared to reference levels relating to estimates of Maximum Sustainable Yield (MSY). The estimated biomass expected to achieve MSY (B~MSY~) was considered as the Threshold reference level (B~Thr~) for the stock; 0.5 B~MSY~ was set as the Limit reference level (B~Lim~) and 1.2 B~MSY~ was set as the Target reference level (B~Tar~). A flowchart explaining the steps undertaken in this assessment is shown in Figure 2.
+
+For the indicator species, the major performance measures for assessing stock status are spawning stock levels and fishing mortality (F), estimated using an integrated age-structured assessment model. For the non-indicator species, a range of performance measures for assessing stock status are used based on data availability.
+
+For gummy shark, the estimated biomass and F trajectories showed considerable uncertainty. Biomass trajectories considerably declined in the 1980s following increased exploitation but median biomass remained above target levels throughout the time series. Projections to 2026-27 show a slight increasing trend. For 2021-22 and 2026-27, the probability that the relative biomass was above the limit reference level was 100% and the probability that F was below the limit reference level was 100%. Based on all available lines of evidence (see Table below), the risk level over the next five years is estimated to be **Low**. On the basis of this evidence, gummy shark is classified as a **Sustainable stock**.
+
+For dusky shark, biomass trajectories considerably declined in the late 1970s following increased exploitation, with median biomass falling below the threshold reference level in the 2010s, and increasing in recent years following a reduction in catches, with median biomass reaching threshold levels in 2020-21. Projections to 2026-27 show a slight increasing trend. For 2021-22 and 2026-27, the probability that relative biomass was above the limit reference level was 100%. However, the probability that relative biomass was between the limit and threshold reference levels was 47% for 2021-22, and 43% for 2026-27. F trajectories remained at a negligible level at the start of the time series, peaking in the late 1980s and 1990s (when limit reference levels were exceeded), and declining in recent years. For 2021-22, the median F was just below the target reference level. Projections to 2026-27 showed a stable trend. For 2021-22 and 2026-27, the probability that F was below the limit reference level was 100%. However, the probability that F was between the threshold and target levels was 31% for 2026-27. Based on all available lines of evidence (see Table below), the risk level over the next five years is estimated to be **High** mostly due to estimation uncertainty as the integrated model was fitted to length composition data only. On the basis of this evidence, dusky shark is classified as a **Recovering stock**.
+
+For whiskery shark, biomass trajectories considerably declined in the late 1940s following increased exploitation, with median biomass falling below the limit reference level between the 1990s and early 2010s, before increasing in recent years following a reduction in catches, with median biomass remaining above target reference levels since 2020-21. Projections to 2026-27 show an increasing trend. For 2021-22 and 2026-27, the probability that relative biomass was above the limit reference level was 87% and 97%, respectively. However, the probability that relative biomass was below the limit, and between the limit and threshold reference levels was 13% and 19%, respectively, for 2021-22. F trajectories remained at a negligible level at the start of the time series, peaking in the 1990s (when limit reference levels were exceeded), and declining in recent years. For 2021-22, median F was considerably below the target reference level. Projections to 2026-27 show a declining trend. For 2021-22 and 2026-27, the probability that F was below the limit reference level was 100%. Based on all available lines of evidence (see Table below), the risk level over the next five years is estimated to be **Medium**. On the basis of this evidence, whiskery shark is classified as a **Sustainable stock**.
+
+For sandbar shark, biomass trajectories considerably declined in the 1970s following initial exploitation, with median biomass falling between target and threshold reference levels in the mid 2000s but increasing in recent years following a reduction in catches, with median biomass remaining above target reference levels since the early 2010s. Projections to 2026-27 show an increasing trend. F trajectories remained at a negligible level at the start of the time series, peaking in the late 2000s (when limit reference levels were exceeded) and declining in recent years. For 2021-22, median F was considerably below the target reference level.  Projections to 2026-27 show a stable trend in F. For 2021-22 and 2026-27, the probability that the relative biomass was above the limit reference level was 100% and the probability that F was below the limit reference level was 100%. Based on all available lines of evidence (see Table below), the risk level over the next five years is estimated to be **Low**. On the basis of this evidence, sandbar shark is classified as a **Sustainable stock**.
+
+For the non-indicator species, based on all available lines of evidence (see Table below), the risk level over the next five years is estimated to be **High** for angel sharks, **Medium** for sawsharks, copper, and spinner sharks, and **Low** for the other non-indicator species. For copper and angel sharks, most of the catch has been taken by fisheries outside the jurisdiction of WA and angel sharks were classed as **High** risk due to the high levels of uncertainty in the MSY value inferred from catch-only modelling. On the basis of this evidence, all non-indicator species are classified as **Sustainable stocks**.
+
 
 ```{r, echo=FALSE}
 path=paste(Model.outputs.RAR,'/Available time series by species.tiff',sep='')
@@ -88,20 +133,6 @@ path=paste(Model.outputs.an,'/Stock assessment flow chart.tiff',sep='')
 
 ```
 ![Figure 2. Flowchart describing the steps undertaken in the current assessment. The number of species assessed by the different assessment methods is shown in brackets.](`r path`){width=800px}
-
-
-# Current status (2021-22)
-The current assessment for gummy shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to the abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for gummy shark over the next five years is estimated to be **Low**. Current (2021-22) biomass estimates exhibit considerable uncertainty, but estimates are above the target level and are projected to increase. Current fishing mortality estimates are below the target level and are projected to remain below this level. On the basis of this evidence, gummy shark is classified as a **Sustainable stock**. 
-
-The current assessment for dusky shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), and integrated population dynamics modelling (Level 5) fitted to length composition data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for dusky shark over the next five years is estimated to be **High**. Current (2021-22) median biomass is at the threshold level and projected to increase whereas median fishing mortality is below the target level and projected to remain slightly below this level. However, model estimates showed considerable uncertainty and the integrated model was fitted to length composition data only as the available abundance series was considered unreliable for this stock. On the basis of this evidence, dusky shark is classified as a **Recovering stock**. 
-
-The current assessment for whiskery shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to the abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for whiskery shark over the next five years is estimated to be **Medium**. Current (2021-22) biomass estimates showed considerable uncertainty but median estimates are at the target level and are projected to increase. Current fishing mortality estimates are below the target level and are projected to decrease. On the basis of this evidence, whiskery shark is classified as a **Sustainable stock**. 
-
-The current assessment for sandbar shark is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and integrated population dynamics modelling (Level 5) fitted to the abundance series, length composition and mean body weight data. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level for sandbar shark over the next five years is estimated to be **Low**. Current (2021-22) biomass estimates are above the target level and are projected to increase. Current fishing mortality estimates are below the target level and are projected to remain below this level. On the basis of this evidence, sandbar shark is classified as a **Sustainable stock**.
-
-For the indicator species, maintaining current management settings (i.e., assuming total catches are sustained at current levels) is predicted to maintain the sustainability risk at acceptable levels. However, biomass trajectories show considerable uncertainty due to the data-limited nature of the assessments and this should be a consideration for future management arrangements.
-
-The current assessment for non-indicator species is based on catch-only modelling and spatio-temporal catch and effort distribution (Level 1), state space surplus production modelling fitted to the abundance series (Level 4) and/or integrated population dynamics modelling (Level 5) fitted to the abundance series and/or length composition data depending on data availability. Based on all available lines of evidence (see Weight of Evidence Tables below), the risk level over the next five years is estimated to be **High** for angel sharks, **Medium** for sawsharks, copper, and spinner sharks, and  **Low** for the other non-indicator species. Non-indicator species are only a minor component of fisheries currently operating under the jurisdiction of WA. The highest sources of fishing mortality for these species ceased decades ago. For two of the non-indicator species (copper and angel sharks), most of the catch has been taken by fisheries outside the jurisdiction of WA. Copper shark is a shared stock across southern Australia and most of the catch originates from South Australia’s Marine Scalefish Fishery. Angel sharks in WA are mainly captured by the Commonwealth managed Great Australian Bight Trawl Fishery and were classed as **High** risk due to the high levels of uncertainty in the MSY value inferred from catch-only modelling (see *Level 1 Assessment* below in *Risk-based weight of evidence table: Non-indicator species*). On the basis of this evidence, all non-indicator species are classified as **Sustainable stocks**.
 
 
 # Future Monitoring & Assessment
@@ -143,7 +174,7 @@ path=paste(Model.outputs.an,'PSA/Figure_PSA.tiff',sep='')
 <br>
 
 
-# Weight of evidence by species
+# Risk-Based Weight of Evidence Tables
 <!-- Populate each species' Weight of evidence table and Risk-based weight of evidence -->
 ```{r, echo=FALSE, results ='asis', ft.align="left"}
 get.excel.tabs=function(PATH)
@@ -159,7 +190,8 @@ WoE.tables=get.excel.tabs(paste(Model.risk.tabs.RAR,'1.Weight of evidence tables
 Species=names(WoE.tables)
 for(i in 1:length(Species))
 {
-  cat('\n##', paste('Risk-based weight of evidence table:',Species[i]), '\n')
+  cat('\n##', Species[i], '\n')
+  #cat('\n##', paste('Risk-based weight of evidence table:',Species[i]), '\n')
   flextable(WoE.tables[[i]])%>%
   width(j='Category',width=3,unit='cm')%>%
   width(j='Lines of evidence',width=14,unit='cm')%>%
@@ -244,7 +276,7 @@ Tab%>%
   fontsize(size=9, part='header')%>%
   width(width=2,unit='cm')%>%
   width(j='Species',width=4,unit='cm')%>%
-  set_caption(caption = "Table 1 Final risk score for each line of evidence and overall risk. PSA, Productivity Susceptibility Analysis; Spatial; Spatio-temporal changes in catch and effort; JABBA, State Space Surplus Production Model; Integrated, Integrated Population Dynamics Model",
+  set_caption(caption = "Table 1. Final risk score for each line of evidence and overall risk. PSA, Productivity Susceptibility Analysis; Spatial; Spatio-temporal changes in catch and effort; JABBA, State Space Surplus Production Model; Integrated, Integrated Population Dynamics Model.",
               autonum = NULL)
 
 ```
@@ -306,7 +338,7 @@ flextable(Tab)%>%
   width(j='Common name',width=5,unit='cm')%>%
   width(j='Scientific name',width=6,unit='cm')%>%
   italic(j='Scientific name')%>%
-  set_caption(caption = 'Table A.2. Shark and ray species identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Species are ordered alphabetically by common name.',
+  set_caption(caption = 'Table A.2. Shark and ray species identified in the catch of commercial and/or recreational fisheries operating in Western Australia.',
               autonum = NULL)
 # knitr::kable(Tab, caption='Table A.2. Shark and ray taxonomic groups identified in the catch of commercial and/or recreational fisheries operating in Western Australia. Taxonomic groups are ordered alphabetically by common name.')
 
@@ -317,7 +349,7 @@ flextable(Tab)%>%
 <!---BLOCK_LANDSCAPE_START--->
 # Appendix 3. PSA scores
 ## Biology and vulnerability
-Productivity scores (Table A.3.1) were determined using life history information on maturity, fecundity, reproductive strategy and trophic level (Table A.3.3), derived from life history information obtained from several scientific papers and reports (Appendix 9) and FishBase.
+Productivity scores (Table A.3.1) were determined using life history information on maturity, fecundity, reproductive strategy and trophic level (Table A.3.3), derived from life history information obtained from several scientific papers and reports (Appendix 9) and FishBase (https://www.fishbase.org).
 
 ```{r, echo=FALSE,ft.align="left"}
 Tab<- read.csv(paste(Model.outputs.an,'PSA/Table S2_PSA productivity definition.csv',sep=''))  
@@ -413,9 +445,11 @@ for(i in 1:length(plots))
 # Appendix 4. Catch
 A breakdown of the combined reported total catch of sharks and rays taken by Western Australian fisheries is shown in Figure A.4.1. Since 1975-76, >40 fisheries have historically reported catches of shark and ray species in statutory fishing returns but ~3/4 of the total shark and ray catch taken in WA originates from the state's shark fisheries, particularly gillnet fisheries.
 
-```{r, fig.width = 5, fig.height=5, fig.cap = "Figure A.4.1. Proportional shark and ray catch for Western Australia fisheries. The top panel shows the proportion by method for shark and non-shark fisheries. The bottom panel is a word cloud of the different fisheries interacting with sharks and rays. The southern and northern shark fisheries are shown in green and orange, respectively, whereas non-shark fisheries are shown in black. The size of the word is proportional to the square root of the total catch.", fig.pos='h',fig.align='center'}
-knitr::include_graphics(paste(Model.outputs.an,'Proportional catch_WA_combined.tiff',sep=''))
+```{r, echo=FALSE}
+path=paste(Model.outputs.an,'Proportional catch_WA_combined.tiff',sep='')
 ```
+![Figure A.4.1. Proportional shark and ray catch for Western Australia fisheries. The top panel shows the proportion by method for shark and non-shark fisheries. The bottom panel is a word cloud of the different fisheries interacting with sharks and rays. The southern and northern shark fisheries are shown in green and orange, respectively, whereas non-shark fisheries are shown in black. The size of the word is proportional to the square root of the total catch.](`r path`){width=800px}
+
 
 For each assessed species, reported and reconstructed time series of catch by fishery is shown in Figure A.4.2 for indicator species and Figure A.4.3 for non-indicator species.
 
@@ -434,9 +468,11 @@ path=paste(Model.outputs.RAR,'/Catch_all_species_Other.sp.tiff',sep='')
 # Appendix 5. Effort and management dynamics for shark fisheries
 For the TDGDLF and NSF, due to the overall rapid increase in catches between the mid 1970s and 1990s, and sustainability concerns around the general vulnerability of shark species, various management measures and data collection initiatives have been introduced since the late 1980s to reduce effort, and consequently catches (Figure A.5).
 
-```{r, fig.width = 7, fig.height=8, fig.cap = "Figure A.5. Total reported effort for the TDGDLF (top pane) and NSF (bottom pane). Also shown are the management measures and data collection initiatives implemented since the start of these fisheries. Effort is shown in a logarithmic scale. Red, data collection; Blue, spatial closures; Green, other management measures.", fig.pos='h',fig.align='center'}
-knitr::include_graphics(paste(handl_OneDrive('Management/Sharks/Timeline management measures/'),'Effort.management_TDGDLF & NSF.tiff',sep=''))
+```{r, echo=FALSE}
+path=paste(handl_OneDrive('Management/Sharks/Timeline management measures/'),'Effort.management_TDGDLF & NSF.tiff',sep='')
 ```
+![Figure A.5. Total reported effort for the TDGDLF (top pane) and NSF (bottom pane). Also shown are the management measures and data collection initiatives implemented since the start of these fisheries. Effort is shown in a logarithmic scale. Red, data collection; Blue, spatial closures; Green, other management measures.](`r path`){width=800px}
+
 <br>
 
 
