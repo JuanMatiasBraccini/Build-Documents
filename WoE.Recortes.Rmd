@@ -12,6 +12,19 @@ knit: (function(inputFile, encoding) {
 
 ---
 
+# Appendix 13. Stock Synthesis control files for the basecase integrated population dynamics models   
+
+```{r results="asis"}
+# SP_ind=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Indicator.sp.csv",sep='/'))%>%pull(Species)
+# SP_other=read.csv(paste(Model.outputs.RAR,"Table 10. Age.based_SS_scenarios_Other.sp.csv",sep='/'))%>%pull(Species)
+# Species=unique(sort(c(SP_ind,SP_other)))
+for(i in 1:length(Species))
+{
+   cat('\n##', Species[i], '\n')
+   cat(readLines(paste(Model.outputs.an,paste("1.",Species[i],'/',this.yr,'/SS3 integrated/S1/control.ctl',sep=''),sep='')),sep = "  \n")
+   cat('\n')
+ }
+```  
 
 
 # Background
