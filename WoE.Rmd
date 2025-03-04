@@ -135,7 +135,7 @@ path=paste(Model.outputs.RAR,'/Available time series by species.tiff',sep='')
 path=paste(Model.outputs.an,'/Stock assessment flow chart.tiff',sep='')
 
 ```
-![Figure 2. Flowchart describing the steps undertaken in the current assessment. The number of species assessed by the different assessment methods is shown in brackets. (N.B., vulnerability thresholds for defining risk level were obtained from Hobday et al. (2007))](`r path`){width=800px}
+![Figure 2. Flowchart describing the steps undertaken in the current assessment. The number of species assessed by the different assessment methods is shown in brackets. (N.B., PSA vulnerability thresholds for defining risk level were obtained from Hobday et al. (2007))](`r path`){width=800px}
 
 
 # Future Monitoring & Assessment
@@ -1504,7 +1504,7 @@ for(i in 1:length(Species))
 
 
 <!-- Display Retrospective analysis for S1-->  
- For species with abundance series and the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates for milk, sandbar, and whiskery sharks (Figure A.12.12) and therefore supporting the use of the base case model for making future projections. For sandbar shark, the Mohn's-rho (ρ) statistic fell within the acceptable interval for long-lived species of -0.15 and 0.2 whereas for whiskery and milk sharks, the ρ statistic fell within the acceptable interval for short-lived species of -0.22 and 0.3 [@carvalhoCookbookUsingModel2021]. For gummy shark, however, ρ (0.37) fell outside the expected ranges of either short- or long-lived species and the 2016 peel fell outside the upper 95% CI for stock fecundity, yielding a positive retrospective pattern, i.e. an overestimation of biomass. This indicates that data at least up to 2017 are need to produce stable results. Retrospective analyses were not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only sporadic length compositions were available, mainly from earlier years).
+ For species with abundance series and the base case scenario, there was an overall negligible retrospective pattern, producing consistent stock status estimates for milk, sandbar, and whiskery sharks (Figure A.12.12) and therefore supporting the use of the base case model for making future projections. For sandbar shark, the Mohn's-rho (ρ) statistic fell within the acceptable interval for long-lived species of -0.15 and 0.2 whereas for whiskery and milk sharks, the ρ statistic fell within the acceptable interval for short-lived species of -0.22 and 0.3 [@carvalhoCookbookUsingModel2021]. For gummy shark, however, ρ (0.37) fell outside the expected ranges of either short- or long-lived species and the 2016 peel fell outside the upper 95% CI for stock fecundity, yielding a positive retrospective pattern, i.e. an overestimation of biomass. This indicates that data at least up to 2017 are needed to produce stable results. Retrospective analyses were not done for dusky and spinner sharks, and smooth hammerhead due to data limitations (only sporadic length compositions were available, mainly from earlier years).
 <br>
   
 ```{r, results='asis'}
@@ -1693,7 +1693,7 @@ For the base case scenario, Kobe plots for indicator species are shown in Figure
 <br>
   
 ```{r, echo=FALSE}
-path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Indicator.sp.tiff',sep='')
+path=paste(Model.outputs.RAR,'/Kobe_plot_SS3 integrated_WA_Fisheries_Indicator.sp.tiff',sep='')
 ```
 ![Figure A.12.19. Kobe plots showing the estimated trajectories of relative (spawning) biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
 
@@ -1701,7 +1701,7 @@ For the base case scenario, Kobe plots for non-indicator species are shown in Fi
 <br>
   
 ```{r, echo=FALSE}
-path=paste(Model.outputs.RAR,'/Kobe_plot_Age.based_SS_WA_Fisheries_Other.sp.tiff',sep='')
+path=paste(Model.outputs.RAR,'/Kobe_plot_SS3 integrated_WA_Fisheries_Other.sp.tiff',sep='')
 ```
 ![Figure A.12.20. Kobe plots showing the estimated trajectories of relative (spawning) biomass (i.e. biomass over unfished biomass, B0) and fishing mortality for non-indicator species. The red, orange, yellow and green panels indicate the areas below (above for fishing mortality) limit, between limit and threshold, between threshold and target, and above (below for fishing mortality) reference points.](`r path`){width=800px}
 
